@@ -1,15 +1,23 @@
-<div class="navbar-wagon chapter-navbar">
-  <div class="title">
-    <h1>
-      <%= @chapter.title %>
-    </h1>
+<div class="reader">
+
+  <div class="navbar-wagon chapter-navbar">
+    <div class="title">
+      <h1>
+        <%= @chapter.title %>
+      </h1>
+    </div>
   </div>
-</div>
 
-<div class="overview">
+  <div class="overview">
+    <h2><a href="">Sommaire  ></a></h2>
+    <div class="chapters">
+      <% @chapter.book.chapters.all.each do |chapter| %>
+        <%= chapter.title %>
+      <% end %>
+    </div>
+  </div>
 
-</div>
+  <div class="text-content">
 
-<div class="text-content">
-
+  </div>
 </div>

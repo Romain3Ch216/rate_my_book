@@ -1,7 +1,30 @@
-.chapter-navbar {
-  height: 200px;
+.reader {
+  background-color: #fff;
 }
 
-.chapter-navbar > h1 {
-  text-align: center;
+.chapter-navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #FBFAF2;
+  h1 {
+    font-size: 20px;
+    color: rgb(5,5,5)
+  }
+}
+
+.overview {
+  width: 240px;
+  height: 100vh;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  a {
+    font-size: 14px;
+    color: rgba(136, 136, 136, 1);
+    position: absolute;
+    left: 50px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
