@@ -9,8 +9,8 @@
   </div>
 
   <div class="overview">
-    <h2><a href="">Sommaire  ></a></h2>
-    <div class="chapters">
+    <a href="">Sommaire  ></a>
+    <div class="chapters hidden">
       <% @chapter.book.chapters.all.each do |chapter| %>
         <p><%= chapter.title %></p>
       <% end %>
@@ -21,3 +21,4 @@
 
   </div>
 </div>
+
