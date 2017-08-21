@@ -16,14 +16,16 @@
 .overview {
   width: 240px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: 0;
   a {
+    margin: 0px;
     color: rgba(136, 136, 136, 1);
     font-size: 14px;
     position: absolute;
-    left: 50px;
+    top: 10px;
+    left: 70px;
   }
   a:hover {
     text-decoration: none;
@@ -32,10 +34,18 @@
 
 .chapters {
   position: absolute;
-  top: 55px;
-  left: 50px;
+  top: 45px;
+  left: 80px;
   p {
     color: rgba(136, 136, 136, 1);
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 30px;
   }
+}
+
+.text-content {
+  position: absolute;
+  top: 100px;
+  margin: 5px 300px;
+  text-align: justify;
 }

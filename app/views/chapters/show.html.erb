@@ -18,7 +18,39 @@
   </div>
 
   <div class="text-content">
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+    <p>
+      <%= @chapter.content %>
+    </p>
+  </div>
 
+  <div class="feedback">
+    <div class="review">
+      <%= simple_form_for [@chapter, @review] do |f| %>
+        <%= f.input :content %>
+      <% end %>
+    </div>
+    <a href="" class="follow">Demander le prochain chapitre</a>
   </div>
 </div>
 
