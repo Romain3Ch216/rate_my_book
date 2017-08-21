@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :books
   validates :name, :email, presence: true, uniqueness: true
-  validates :age, :sex, :description
+  validates :age, :sex, :description, presence: true
 end
