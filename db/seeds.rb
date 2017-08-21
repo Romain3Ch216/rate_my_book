@@ -1,8 +1,10 @@
 puts "Cleaning seed"
 
-User.destroy_all
-Book.destroy_all
 Chapter.destroy_all
+Book.destroy_all
+User.destroy_all
+
+
 
 puts "Generating seed"
 
