@@ -1,3 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
+  validates :title, :summary, presence: true
+  validates :category, inclusion: { in: %w(Policier Science-fiction Fantastique Romance Historique Biographie) }
+
 end
