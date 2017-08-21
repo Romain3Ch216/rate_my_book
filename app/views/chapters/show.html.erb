@@ -12,7 +12,7 @@
     <h2><a href="">Sommaire  ></a></h2>
     <div class="chapters">
       <% @chapter.book.chapters.all.each do |chapter| %>
-        <%= chapter.title %>
+        <p><%= chapter.title %></p>
       <% end %>
     </div>
   </div>

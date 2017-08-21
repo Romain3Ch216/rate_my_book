@@ -8,7 +8,8 @@
   background-color: #FBFAF2;
   h1 {
     font-size: 20px;
-    color: rgb(5,5,5)
+    color: rgb(5,5,5);
+    margin: 0;
   }
 }
 
@@ -19,12 +20,22 @@
   top: 100px;
   left: 0;
   a {
-    font-size: 14px;
     color: rgba(136, 136, 136, 1);
+    font-size: 14px;
     position: absolute;
     left: 50px;
   }
   a:hover {
     text-decoration: none;
+  }
+}
+
+.chapters {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  p {
+    color: rgba(136, 136, 136, 1);
+    font-size: 12px;
   }
 }
