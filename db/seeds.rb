@@ -34,7 +34,25 @@ chapter_1 = Chapter.new({
   })
 
 chapter_1.book = tendre_est_la_nuit
-
 chapter_1.save!
+
+chapter_2 = Chapter.new({
+  title: 'Chapter 2',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  })
+
+chapter_2.book = tendre_est_la_nuit
+chapter_2.save!
+
+chapter_3 = Chapter.new({
+  title: 'Chapter 3',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  })
+
+chapter_3.book = tendre_est_la_nuit
+chapter_3.save!
+
+
+
 
 puts "Seed complete"
