@@ -1,19 +1,39 @@
 .book-card {
-  width: 224px;
-  height: 292.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 400px;
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
 .rectangle-1 {
-  width: 190px;
-  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 370px;
   border: solid 0.5px #b69fbf;
 }
 
 .rectangle-2 {
-  width: 185px;
-  height: 245px;
+  width: 240px;
+  height: 360px;
   border: solid 0.5px #b69fbf;
+  text-align: center;
 }
+
+.description {
+  text-align: center;
+  position: relative;
+  top: 25px;
+}
+
+.summary {
+  position: absolute;
+  top: 200px;
+  left: 35px;
+}
+
