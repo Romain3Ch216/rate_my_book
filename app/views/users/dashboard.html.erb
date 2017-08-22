@@ -6,19 +6,35 @@
 
   </div>
   <div class="library">
-    <% current_user.follows.each do |follow| %>
-      <p>
-        <%= follow.chapter.book.title %>
-      </p>
-    <% end  %>
-
+    <h2>Ma Bibliothèque</h2>
+    <div class="library-content">
+      <% current_user.follows.each do |follow| %>
+        <p>
+          <%= follow.chapter.book.title %>
+        </p>
+      <% end  %>
+    </div>
   </div>
 
+
   <div class="view">
-    <% current_user.follows.each do |follow| %>
-      <div class="new">
-          <%= follow.chapter.book.chapters.all.last.title %>
-      </div>
-    <% end %>
+    <div class="tabs">
+      <a href="#" class="tab active">
+        <p>Chapitres Suivis</p>
+      </a>
+      <a href="#" class="tab">
+        <p>Mes Commentaires</p>
+      </a>
+    </div>
+    <div class="news">
+      <% current_user.follows.each do |follow| %>
+        <div class="new">
+            <%= follow.chapter.book.chapters.all.last.title %>,
+            <%= follow.chapter.book.title %>
+            de <%= follow.chapter.book.user.first_name %>
+            <%= follow.chapter.book.user.last_name %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
