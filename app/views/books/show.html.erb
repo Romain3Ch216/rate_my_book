@@ -28,9 +28,26 @@
 
   <div class="contents">
     <h2>Sommaire</h2>
-    <div class="chapter">
-      <%=  %>
-    </div>
+      <% @book.chapters.each do |chapter| %>
+      <div class="chapter-title">
+        <%= chapter.title %>
+
+        <div class="chapter-stats">
+          <div class="views">
+            <%=  chapter.read_count %>
+          </div>
+          <div class="upvotes">
+
+          </div>
+          <div class="comments">
+
+          </div>
+        <% end %>
+        </div>
+      </div>
+
+      <div>
+      </div>
   </div>
 
 </div>
