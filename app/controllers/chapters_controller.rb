@@ -1,5 +1,5 @@
 class ChaptersController < ApplicationController
-
+  layout "reader"
   before_action :set_book, only: [:new, :create]
 
   def show
