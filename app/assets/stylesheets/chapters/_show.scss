@@ -21,11 +21,6 @@
 }
 
 
-.feedback {
-  margin-top: 70px;
-  margin-bottom: 100px;
-}
-
 .overview {
   position: fixed;
   width: 20%;
@@ -57,4 +52,50 @@
   width: 80%;
   margin: 5px 300px;
   text-align: justify;
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  border-top: solid 1px rgba(136, 136, 136, 1);
+  padding-top: 15px;
+}
+
+
+.new_review {
+  width: 70%;
+  flex-grow: 1;
+}
+
+#review_content {
+  background-color: $light-gray;
+  border: none;
+  box-shadow: none;
+  font-size: 17px;
+}
+
+.send {
+  background-color: $light-gray;
+  color: rgba(136, 136, 136, 1);
+  font-size: 15px;
+  border: none;
+}
+
+.comment:hover {
+  background-color: $light-gray;
+  color: rgba(90, 90, 90, 1);
+}
+
+#follow {
+  width: 30%;
+  flex-grow: 1;
+  text-align: right;
+  padding-top: 90px;
+}
+
+#follow:hover {
+  color: rgba(90, 90, 90, 1);
+  text-decoration: none;
 }

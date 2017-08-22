@@ -41,14 +41,13 @@
     <p>
       <%= @chapter.content %>
     </p>
-    <div class="feedback">
-      <div class="review">
-        <%= simple_form_for [@chapter, @review] do |f| %>
-          <%= f.input :content, label: false, placeholder: "Donnez votre avis à l'auteur..." %>
-          <%= f.button :submit, value: "Commenter" %>
-        <% end %>
-      </div>
-      <%= link_to 'Demander le prochain chapitre', '#' %>
+
+    <div class="review">
+      <%= simple_form_for [@chapter, @review] do |f| %>
+        <%= f.input :content, label: false, placeholder: "Donnez votre avis à l'auteur..." %>
+        <%= f.button :submit, value: "Commenter", class: "send comment" %>
+      <% end %>
+      <%= link_to 'Demander le prochain chapitre', '#', class: "send", id: "follow" %>
     </div>
   </div>
 </div>
