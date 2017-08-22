@@ -4,7 +4,6 @@ class ChaptersController < ApplicationController
 
   def show
     @chapter = Chapter.find(params[:id])
-    @disable_nav = true
     @review = Review.new
   end
 
