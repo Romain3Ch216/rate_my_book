@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+.banner {
+  height: 500px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner-cta {
+  width: 270px;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 2px #ffffff;
+  text-align: center;
+  font-family: MarkPro;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.banner-content {
+  width: 510.5px;
+  height: 133px;
+  font-family: MarkPro;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  h1 {
+  width: 510.5px;
+  height: 133px;
+  font-family: MarkPro;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  }
+ }
+
+.title-home {
+
+}
