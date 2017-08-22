@@ -1,0 +1,59 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  background-color: #fff;
+}
+
+.profile-details {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  border-radius: 1.5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    color: rgba(136, 136, 136, 1);
+    font-size: 12px;
+  }
+}
+
+.edit-button {
+  color: rgba(136, 136, 136, 1);
+  border: solid 1px rgba(136, 136, 136, 1);
+  padding: 5px 10px;
+  border-radius: 1.5px;
+  font-size: 13px;
+  margin: 10px 85px;
+}
+
+.edit-button:hover {
+  text-decoration: none;
+  color: rgba(136, 136, 136, 1);
+}
+
+.library {
+  grid-row: 2 / span 3;
+  grid-column: 1 / span 1;
+  border-radius: 1.5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px;
+}
+
+.view {
+  grid-row: 1 / span 4;
+  grid-column: 2 / span 3;
+  border-radius: 1.5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px;
+}
