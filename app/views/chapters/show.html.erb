@@ -1,13 +1,12 @@
-<div class="reader">
-
-  <div class="navbar-wagon chapter-navbar">
-    <div class="title">
-      <h1>
-        <%= @chapter.title %>
-      </h1>
-    </div>
+<div class="chapter-navbar">
+  <div class="title">
+    <h1>
+      <%= @chapter.title %>
+    </h1>
   </div>
+</div>
 
+<div class="content">
   <div class="overview">
     <a href="">Sommaire  ></a>
     <div class="chapters hidden">
@@ -42,15 +41,16 @@
     <p>
       <%= @chapter.content %>
     </p>
-  </div>
-
-  <div class="feedback">
-    <div class="review">
-      <%= simple_form_for [@chapter, @review] do |f| %>
-        <%= f.input :content %>
-      <% end %>
+    <div class="feedback">
+      <div class="review">
+        <%= simple_form_for [@chapter, @review] do |f| %>
+          <%= f.input :content, label: false, placeholder: "Donnez votre avis à l'auteur..." %>
+          <%= f.button :submit, value: "Commenter" %>
+        <% end %>
+      </div>
+      <%= link_to 'Demander le prochain chapitre', '#' %>
     </div>
-    <%= link_to 'Demander le prochain chapitre', '#' %>
   </div>
 </div>
+
 
