@@ -18,23 +18,30 @@
 
 
   <div class="view">
-    <div class="tabs">
-      <a href="#" class="tab active">
-        <p>Chapitres Suivis</p>
-      </a>
-      <a href="#" class="tab">
-        <p>Mes Commentaires</p>
-      </a>
-    </div>
     <div class="news">
+      <div class="tabs">
+        <a class="tab active" data-target="#news">
+          <p>Chapitres Suivis</p>
+        </a>
+        <a class="tab" data-target="#reviews">
+          <p>Mes Commentaires</p>
+        </a>
+      </div>
       <% current_user.follows.each do |follow| %>
-        <div class="new">
+        <div class="tab-content" id="news">
             <%= follow.chapter.book.chapters.all.last.title %>,
             <%= follow.chapter.book.title %>
             de <%= follow.chapter.book.user.first_name %>
             <%= follow.chapter.book.user.last_name %>
         </div>
       <% end %>
+      <div class="tab-content hidden" id="reviews">
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+      </div>
     </div>
   </div>
 </div>
