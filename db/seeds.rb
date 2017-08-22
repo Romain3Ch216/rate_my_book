@@ -111,7 +111,7 @@ ida = User.new ({
   sex: 'Femme',
   age: 27,
   description: 'Jeune écrivain talentueux',
-  email: 'ida@gmail.com',
+  email: 'john@gmail.com',
   password: '123soleil'
   })
 

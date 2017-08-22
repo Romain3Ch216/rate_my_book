@@ -1,18 +1,27 @@
 <div class="book-card">
-
   <div class="rectangle-1">
     <div class="rectangle-2">
-      <div class="description">
-        <h2><%= book.title %></h2>
-        <h3><%= book.category %></h3>
-        <div class="summary">
-        <p><%= book.summary %></p>
+      <div class="content">
+        <div class="card-title">
+          <h2><%= book.title %></h2>
+          <h3 style="color: <%= book.hex_for_category %>;"><%= book.category %></h3>
         </div>
-      <% link_to "", book_path(book) %>
-
+        <div class="summary">
+          <p><%= book.summary %></p>
+        </div>
+        <div class="card-stats">
+          <ul class="list-inline">
+            <li><i class="fa fa-eye" aria-hidden="true"></i>...</li>
+            <li><i class="fa fa-bookmark" aria-hidden="true"></i>...</li>
+            <li><i class="fa fa-comment" aria-hidden="true"></i>...</li>
+          </ul>
+        </div>
+        <% link_to "", book_path(book) %> <!--here or in index?-->
+      </div>
     </div>
   </div>
-
 </div>
+
+
 
 
