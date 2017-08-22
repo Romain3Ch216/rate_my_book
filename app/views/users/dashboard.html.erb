@@ -35,13 +35,13 @@
             <%= follow.chapter.book.user.last_name %>
         </div>
       <% end %>
-      <div class="tab-content hidden" id="reviews">
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-      </div>
+
+      <% current_user.reviews.each do |review| %>
+        <div class="tab-content hidden" id="reviews">
+          <%= review.chapter.title %>
+          <%= review.content.chars.first(100).join('') + '...' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
