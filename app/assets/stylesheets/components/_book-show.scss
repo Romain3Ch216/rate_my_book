@@ -4,8 +4,8 @@
 
 .card-large-level-3 {
   background-color: #fff;
-  height: 470px;
-  width: 340px;
+  height: 450px;
+  width: 320px;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -15,10 +15,9 @@
 }
 
 .card-large-level-2 {
-  border: 1px solid #B69FBF;
   background-color: #fff;
-  height: 440px;
-  width: 310px;
+  height: 420px;
+  width: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,10 +25,9 @@
 }
 
 .card-large-level-1 {
-  border: 1px solid #B69FBF;
   background-color: #fff;
-  height: 430px;
-  width: 300px;
+  height: 410px;
+  width: 280px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -45,10 +43,10 @@
     font-size: 35px;
   }
   p {
-  color: #B69FBF;
   margin-top: 20px;
   }
 }
+
 
 .book-description-header h1 {
   font-size: 50px;
@@ -66,19 +64,67 @@
   margin-bottom: 20px;
 }
 
+.button {
+  color: #fff;
+  background-color: #B69FBF;
+  border: 1px solid #B69FBF;
+  border-radius: 2px;
+  padding: 10px 15px;
+  &:hover {
+    text-decoration: none;
+    color: #B69FBF;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
 .book-button {
-  text-align: center;
   padding: 30px 0px;
 }
 
 .contents {
   margin-top: 50px;
+  padding: 0 65px;
   h2 {
     font-weight: bold;
   }
 }
 
-.chapter-title {
+.chapter-info {
   padding: 25px 5px;
   border-bottom: 1px solid #DDD;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 2px solid rgba(0, 0, 0, 0);
+  &:hover {
+    border-left: 2px solid #B69FBF;
+    background-color: rgba(182, 159, 191, 0.1);
+  }
+}
+
+.chapter-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  padding: 0 16px;
+  p {
+    margin: 0;
+    color: #969696;
+  }
+  img {
+    padding: 0 7px;
+    // width: 50px;
+    svg:hover {
+      fill: #000;
+    }
+  }
+}
+
+.to-be-continued {
+  text-align: center;
+margin: 30px 0;
 }
