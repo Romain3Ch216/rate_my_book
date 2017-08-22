@@ -10,15 +10,29 @@
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
-  display: flex;
   align-items: center;
-  justify-content: space-around;
   background-color: #f11f11f11;
   h1 {
     font-size: 20px;
     color: rgb(5,5,5);
     margin: 0;
   }
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+}
+
+.exit >  a {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: rgba(5,5,5,1);
+}
+
+.exit > a:hover {
+  text-decoration: none;
 }
 
 .overview {
