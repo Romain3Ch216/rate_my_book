@@ -7,4 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  h1 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 44px;
+    color : #fff;
+    border-bottom: solid 1px #fff;
+    padding-bottom: 3px;
+  }
 }
