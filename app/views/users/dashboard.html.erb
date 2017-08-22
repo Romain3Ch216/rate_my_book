@@ -15,7 +15,10 @@
   </div>
 
   <div class="view">
-
+    <% current_user.follows.each do |follow| %>
+      <div class="new">
+          <%= follow.chapter.book.chapters.all.last.title %>
+      </div>
+    <% end %>
   </div>
-
 </div>
