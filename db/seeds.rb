@@ -86,4 +86,9 @@ follow_1 = Follow.new
 follow_1.user = pierre
 follow_1.chapter = ecume_chapter_1
 follow_1.save!
+
+review_1 = Review.new
+review_1.content = "Incroyable, c'est une révélation."
+review_1.user = pierre
+review_1.chapter = ecume_chapter_1
 puts "Seed complete"
