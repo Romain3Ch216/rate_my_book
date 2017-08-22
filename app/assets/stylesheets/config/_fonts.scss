@@ -2,15 +2,31 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: MarkPro, "Helvetica", "sans-serif";
+$headers-font: MarkPro, "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+
+@font-face {
+  font-family: "MarkPro";
+  src: font-url('MarkPro/MarkPro-Book.eot');
+  src: font-url('arkPro/MarkPro-Book?#iefix') format('embedded-opentype'),
+       font-url('MarkPro/MarkPro-Book.woff') format('woff'),
+       font-url('MarkPro/MarkPro-Book.ttf') format('truetype'),
+       font-url('MarkPro/MarkPro-Book.svg') format('svg');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "MarkPro";
+  src: font-url('MarkPro/MarkPro-Bold.eot');
+  src: font-url('MarkPro/MarkPro-Bold?#iefix') format('embedded-opentype'),
+       font-url('MarkPro/MarkPro-Bold.woff') format('woff'),
+       font-url('MarkPro/MarkPro-Bold.ttf') format('truetype'),
+       font-url('MarkPro/MarkPro-Bold.svg') format('svg');
+  font-weight: bold;
+}
+
+$my-font: "MarkPro";
+$base-font: $my-font;
+$header-font: $my-font;

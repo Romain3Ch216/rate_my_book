@@ -20,7 +20,7 @@ pierre.save!
 
 tendre_est_la_nuit = Book.new ({
   title: 'Tendre est la nuit',
-  summary: "Romance sur la côte d'azur pendant les années folles",
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
   category: 'Romance'
   })
 

@@ -1,0 +1,30 @@
+<div class="container margin-top">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-large-level-3">
+        <div class="card-large-level-2">
+          <div class="card-large-level-1">
+            <div class="card-large-content">
+              <h1><%= @book.title %></h1>
+              <p><%= @book.category %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="book-description-header">
+        <h1><strong><%= @book.title %></strong></h1>
+        <h2>de <%= @book.user.first_name %> <%= @book.user.last_name %></h2>
+      </div>
+      <div class="book-descriptionbody">
+        <p><%= @book.summary %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contents">
+
+  </div>
+
+</div>

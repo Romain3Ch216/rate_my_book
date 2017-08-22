@@ -1,0 +1,64 @@
+.margin-top {
+  margin-top: 30px;
+}
+
+.card-large-level-3 {
+  background-color: #fff;
+  height: 580px;
+  width: 450px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+.card-large-level-2 {
+  border: 1px solid #B69FBF;
+  background-color: #fff;
+  height: 580px;
+  width: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.card-large-level-1 {
+  border: 1px solid #B69FBF;
+  background-color: #fff;
+  height: 580px;
+  width: 430px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.card-large-content {
+  position: absolute;
+  top: 25%;
+  h1 {
+    font-weight: bold;
+  }
+  p {
+  color: #B69FBF;
+  margin-top: 20px;
+  }
+}
+
+.book-description-header h1 {
+  font-size: 50px;
+}
+
+.book-description-header h2 {
+  font-size: 35px;
+  margin-top: 10px;
+  font-weight: lighter;
+}
+
+.book-descriptionbody {
+  font-weight: lighter;
+  margin-top: 40px;
+}
