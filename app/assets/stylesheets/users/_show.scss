@@ -66,7 +66,6 @@
   grid-row: 1 / span 4;
   grid-column: 2 / span 3;
   margin: 20px;
-  position: relative;
 }
 
 .news {
@@ -75,6 +74,7 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   height: 90%;
   padding: 20px;
+  position: relative;
 }
 
 #news {
@@ -123,4 +123,28 @@
   margin: 30px;
   padding: 20px;
   border-bottom: solid 1px rgba(136, 136, 136, 1);
+}
+
+
+.become-writer{
+  border-radius: 1.5px;
+  background-color: #607b7d;
+  border: solid 0.5px #607b7d;
+  color: #fff;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.become-writer:hover {
+  p {
+    text-decoration: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }

@@ -19,14 +19,22 @@
 
   <div class="view">
     <div class="news">
-      <div class="tabs">
-        <a class="tab active" data-target="#news">
-          <p>Chapitres Suivis</p>
-        </a>
-        <a class="tab" data-target="#reviews">
-          <p>Mes Commentaires</p>
-        </a>
+      <div class="header">
+        <div class="tabs">
+          <a class="tab active" data-target="#news">
+            <p>Chapitres Suivis</p>
+          </a>
+          <a class="tab" data-target="#reviews">
+            <p>Mes Commentaires</p>
+          </a>
+        </div>
+        <%= link_to  '#' do %>
+          <div class="become-writer">
+            <p>Devenez Ecrivain</p>
+          </div>
+        <% end %>
       </div>
+
       <% current_user.follows.each do |follow| %>
         <div class="tab-content" id="news">
             <%= follow.chapter.book.chapters.all.last.title %>,
