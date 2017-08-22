@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :books, only: [:index,:show, :new, :edit] do
     resources :chapters, only: [:show, :new]
   end
-
+  resources :users do
+    collection do
+      get 'dashboard', to: "users#dashboard"
+    end
+  end
 end
