@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-xs-12 col-md-2 col-lg-4">
+      <%= render 'book_cards', book: book %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
