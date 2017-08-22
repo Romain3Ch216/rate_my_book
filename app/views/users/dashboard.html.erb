@@ -6,6 +6,11 @@
 
   </div>
   <div class="library">
+    <% current_user.follows.each do |follow| %>
+      <p>
+        <%= follow.chapter.book.title %>
+      </p>
+    <% end  %>
 
   </div>
 
