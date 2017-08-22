@@ -91,4 +91,5 @@ review_1 = Review.new
 review_1.content = "Incroyable, c'est une révélation."
 review_1.user = pierre
 review_1.chapter = ecume_chapter_1
+review_1.save!
 puts "Seed complete"
