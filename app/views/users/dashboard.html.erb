@@ -47,9 +47,14 @@
 
       <% current_user.follows.each do |follow| %>
         <div class="tab-content" id="news">
+          <div class="news-content">
             <span id="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></span>
             <span id="book-title"><%= follow.chapter.book.title %></span>
             <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
+          </div>
+          <div class="book-button dashboard-button">
+            <%= link_to "Reprendre la lecture", "#", class: "button" %>
+          </div>
         </div>
       <% end %>
 
@@ -57,7 +62,7 @@
         <div class="tab-content hidden" id="reviews">
           <span id="review-chapter-title"><%= review.chapter.title %></span>
           <span id="review-author"><%= review.chapter.book.user.first_name %> <%= review.chapter.book.user.last_name %></span>
-          <span id="review-content"><%= review.content.chars.first(100).join('') + '...' %></span>
+          <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
 
         </div>
       <% end %>
