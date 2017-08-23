@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :books, shallow: true, only: [:index,:show, :new, :edit] do
     resources :chapters, only: [:show, :new] do
       resources :reviews, only: [:new, :create]
+      resources :follows, only: [:new, :create, :destroy]
     end
   end
   resources :users do

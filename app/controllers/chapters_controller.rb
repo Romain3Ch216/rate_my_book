@@ -5,6 +5,7 @@ class ChaptersController < ApplicationController
   def show
     @chapter = Chapter.find(params[:id])
     @review = Review.new
+    @follow = Follow.new
   end
 
   def new
