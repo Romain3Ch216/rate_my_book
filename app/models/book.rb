@@ -7,12 +7,12 @@ class Book < ApplicationRecord
 
   def hex_for_category
     case category
-    when "Policier" then '#91A7D0'
-    when "Science-fiction" then '#B69FBF'
-    when "Fantastique" then '#87C6B8'
-    when "Romance" then '#FFE56C'
-    when "Historique" then '#969696'
-    when "Biographie" then '#F6C9C9'
+    when "Policier" then 'rgba(145, 167, 208, 0)'
+    when "Science-fiction" then 'rgba(182, 159, 191, 0)'
+    when "Fantastique" then 'rgba(135, 198, 184, 0)'
+    when "Romance" then 'rgba(255, 229, 108, 0)'
+    when "Historique" then 'rgba(150, 150, 150, 0)'
+    when "Biographie" then 'rgba(246, 201, 201, 0)'
     end
   end
 end
