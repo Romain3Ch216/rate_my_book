@@ -20,6 +20,7 @@ pierre = User.new ({
 
 pierre.save!
 
+
 boris = User.new ({
   first_name: 'Boris',
   last_name: 'Durand',
@@ -48,9 +49,10 @@ ecume_chapter_1 = Chapter.new({
 ecume_chapter_1.book = ecume
 ecume_chapter_1.save!
 
+
 tendre_est_la_nuit = Book.new ({
   title: 'Tendre est la nuit',
-  summary: "Romance sur la côte d'azur pendant les années folles",
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
   category: 'Romance'
   })
 
@@ -59,28 +61,30 @@ tendre_est_la_nuit.user = pierre
 tendre_est_la_nuit.save!
 
 chapter_1 = Chapter.new({
-  title: 'Chapter 1',
+  title: 'Chapter 1: Début de la fin',
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   })
-
 chapter_1.book = tendre_est_la_nuit
+
+chapter_1.read_count = 768
 chapter_1.save!
 
 chapter_2 = Chapter.new({
-  title: 'Chapter 2',
+  title: 'Chapter 2: Retour vers le futur',
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   })
-
 chapter_2.book = tendre_est_la_nuit
+chapter_2.read_count = 468
 chapter_2.save!
 
 chapter_3 = Chapter.new({
-  title: 'Chapter 3',
+  title: 'Chapter 3: Bien le bonjour!',
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   })
-
 chapter_3.book = tendre_est_la_nuit
+chapter_3.read_count = 168
 chapter_3.save!
+
 
 follow_1 = Follow.new
 follow_1.user = pierre
@@ -92,4 +96,5 @@ review_1.content = "Incroyable, c'est une révélation."
 review_1.user = pierre
 review_1.chapter = ecume_chapter_1
 review_1.save!
+
 puts "Seed complete"
