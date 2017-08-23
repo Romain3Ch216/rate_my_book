@@ -4,11 +4,11 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    if search_params.present?
-      @books = Book.where('category LIKE ?', search_params[:category])
-    else
+    # if search_params.present?
+    #  @books = Book.where('category LIKE ?', search_params[:category])
+    # else
       @books = Book.all
-    end
+    # end
   end
 
   def show
