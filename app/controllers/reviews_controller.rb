@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.chapter = @chapter
     if @review.save
-      redirect_to @chapter
+      redirect_to dashboard_users_path
     else
       render :new
     end
