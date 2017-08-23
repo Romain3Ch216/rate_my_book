@@ -53,7 +53,7 @@
             <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
           </div>
           <div class="book-button dashboard-button">
-            <%= link_to "Reprendre la lecture", book_chapter_path(follow.chapter.book, follow.chapter), class: "button" %>
+            <%= link_to "Reprendre la lecture", chapter_path(follow.chapter), class: "button" %>
           </div>
         </div>
       <% end %>
