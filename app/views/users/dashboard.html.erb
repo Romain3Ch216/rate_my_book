@@ -58,14 +58,16 @@
         </div>
       <% end %>
 
-      <% current_user.reviews.each do |review| %>
-        <div class="tab-content hidden" id="reviews">
-          <span id="review-chapter-title"><%= review.chapter.title %></span>
-          <span id="review-author"><%= review.chapter.book.user.first_name %> <%= review.chapter.book.user.last_name %></span>
-          <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
 
-        </div>
-      <% end %>
+      <div class="tab-content hidden" id="reviews">
+        <% current_user.reviews.all.each do |review| %>
+          <div class="review">
+            <span id="review-chapter-title"><%= review.chapter.title %></span>
+            <span id="review-author"><%= review.chapter.book.user.first_name %> <%= review.chapter.book.user.last_name %></span>
+            <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
