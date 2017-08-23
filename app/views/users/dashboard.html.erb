@@ -2,7 +2,7 @@
   <div class="profile-details">
     <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
     <p><%= current_user.description %></p>
-    <%= link_to 'Editer mon profil', '#', class: 'edit-button' %>
+    <%= link_to 'Editer mon profil', edit_user_path(current_user), class: 'edit-button' %>
 
   </div>
   <div class="library">
