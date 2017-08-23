@@ -20,6 +20,7 @@
   width: 250px;
   height: 370px;
   border: solid 0.5px #b69fbf;
+  padding: 10px;
 }
 
 .rectangle-2 {
@@ -48,10 +49,6 @@
   left: 35px;
   color: #A6A6AE;
   text-align: center;
-  text-overflow: ellipsis;
-  /* Required for text-overflow to do anything */
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .card-stats {
