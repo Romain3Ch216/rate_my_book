@@ -1,9 +1,11 @@
 class ChaptersController < ApplicationController
-
+  layout "reader"
   before_action :set_book, only: [:new, :create]
 
   def show
     @chapter = Chapter.find(params[:id])
+    @review = Review.new
+    @follow = Follow.new
   end
 
   def new

@@ -33,6 +33,21 @@
   position: relative;
 }
 
+.card-small-level-3 {
+  height: 173px;
+  width: 123px;
+}
+
+.card-small-level-2 {
+  height: 161px;
+  width: 111px;
+}
+
+.card-small-level-1 {
+  height: 157px;
+  width: 107px;
+}
+
 .card-large-content {
   position: absolute;
   top: 25%;
@@ -44,6 +59,17 @@
   }
   p {
   margin-top: 20px;
+  }
+}
+
+.card-small-content {
+  h2 {
+    padding: 0px 20px;
+    font-size: 18px;
+  }
+  p {
+  margin-top: 15px;
+  font-size: 14px;
   }
 }
 
@@ -63,9 +89,9 @@
   margin-bottom: 20px;
 }
 
-.button {
+.resume-reading-button {
   color: #fff;
-  background-color: #B69FBF;
+  // background-color: #B69FBF;
   border: 1px solid #B69FBF;
   border-radius: 2px;
   padding: 10px 15px;
@@ -95,10 +121,10 @@
   justify-content: space-between;
   align-items: center;
   border-left: 2px solid rgba(0, 0, 0, 0);
-  &:hover {
-    border-left: 2px solid #B69FBF;
-    background-color: rgba(182, 159, 191, 0.1);
-  }
+  // &:hover {
+  //   border-left: 2px solid #B69FBF;
+  //   background-color: rgba(182, 159, 191, 0.1);
+  // }
 }
 
 .chapter-stats {
@@ -150,38 +176,96 @@ margin: 30px 0;
   pointer-events: auto;
 }
 
-.modal-window>div {
-  width: 600px;
+.modal-window > div {
+  width: 1000px;
   position: relative;
   margin: 10% auto;
-  padding: 2rem;
+  padding: 20px 25px;
   background: #fff;
   color: #444;
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   border-radius: 4px;
 }
 
-.modal-window header {
-  font-weight: bold;
+
+.header-of-modal {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    margin: 0;
+    color: #a6a6ae;
+  }
+  .modal-close {
+    color: #aaa;
+  }
 }
 
-.modal-close {
-  color: #aaa;
-  line-height: 50px;
-  font-size: 80%;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 70px;
-  text-decoration: none;
+.modal-body {
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: auto;
+  padding: 25px 20px;
 }
 
 .modal-close:hover {
   color: #000;
 }
 
-.modal-window h1 {
-  font-size: 150%;
-  margin: 0 0 15px;
+.review-content {
+  position: relative;
+  background-color: #fbfaf2;
+  padding: 70px 50px 20px 50px;
+  border-radius: 3px;
+  margin-bottom: 80px;
+}
+
+.review-user-avatar {
+  position: absolute;
+  width: 75px;
+  top: -25px;
+  left: -25px;
+}
+
+.review-user-name {
+  position: absolute;
+  font-weight: bold;
+  top: 30px;
+  left: 90px;
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-upvotes {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-quotes {
+  width: 65px;
+  position: absolute;
+  top: -25px;
+  right: 30px;
+}
+
+.review-date {
+  position: absolute;
+  color: #a6a6ae;
+  font-size: 13px;
+  right: 5px;
+  bottom: -35px;
+}
+
+.review-upvote-icon {
+  width: 30px;
+  margin-bottom: 10px;
 }
