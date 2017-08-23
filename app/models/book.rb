@@ -10,7 +10,7 @@ class Book < ApplicationRecord
     when "Policier" then '#91A7D0'
     when "Science-fiction" then '#B69FBF'
     when "Fantastique" then '#87C6B8'
-    when "Romance" then '#FFE56C'
+    when "Romance" then 'rgba(255, 229, 108, 1)'
     when "Historique" then '#969696'
     when "Biographie" then '#F6C9C9'
     end
