@@ -6,5 +6,9 @@ Rails.application.routes.draw do
       resources :reviews, only: [:new, :create]
     end
   end
-
+  resources :users do
+    collection do
+      get 'dashboard', to: "users#dashboard"
+    end
+  end
 end

@@ -1,0 +1,71 @@
+<div class="dashboard">
+  <div class="profile-details">
+    <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    <p><%= current_user.description %></p>
+    <%= link_to 'Editer mon profil', edit_user_path(current_user), class: 'edit-button' %>
+
+  </div>
+  <div class="library">
+    <h2>Ma Bibliothèque</h2>
+    <div class="library-content">
+      <% current_user.follows.each do |follow| %>
+        <% @book =  follow.chapter.book %>
+        <%= link_to book_path(@book) do %>
+          <div class="col-xs-6">
+            <div class="card-large-level-3 card-small-level-3">
+              <div class="card-large-level-2 card-small-level-2" style="border: 1px solid <%= @book.hex_for_category %>;">
+                <div class="card-large-level-1 card-small-level-1" style="border: 1px solid <%= @book.hex_for_category %>;">
+                  <div class="card-large-content card-small-content">
+                    <h2><%= @book.title %></h2>
+                    <p style="color: <%= @book.hex_for_category %>;"><%= @book.category %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end  %>
+    </div>
+  </div>
+
+
+  <div class="view">
+    <div class="news">
+      <div class="header">
+        <div class="tabs">
+          <a class="tab active" data-target="#news">
+            <p>Chapitres Suivis</p>
+          </a>
+          <a class="tab" data-target="#reviews">
+            <p>Mes Commentaires</p>
+          </a>
+        </div>
+        <%= link_to  '#', class:'become-writer' do %>
+          Devenez Ecrivain
+        <% end %>
+      </div>
+
+      <% current_user.follows.each do |follow| %>
+        <div class="tab-content" id="news">
+          <div class="news-content">
+            <span id="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></span>
+            <span id="book-title"><%= follow.chapter.book.title %></span>
+            <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
+          </div>
+          <div class="book-button dashboard-button">
+            <%= link_to "Reprendre la lecture", chapter_path(follow.chapter), class: "button" %>
+          </div>
+        </div>
+      <% end %>
+
+      <% current_user.reviews.each do |review| %>
+        <div class="tab-content hidden" id="reviews">
+          <span id="review-chapter-title"><%= review.chapter.title %></span>
+          <span id="review-author"><%= review.chapter.book.user.first_name %> <%= review.chapter.book.user.last_name %></span>
+          <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

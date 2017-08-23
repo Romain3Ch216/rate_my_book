@@ -33,6 +33,21 @@
   position: relative;
 }
 
+.card-small-level-3 {
+  height: 173px;
+  width: 123px;
+}
+
+.card-small-level-2 {
+  height: 161px;
+  width: 111px;
+}
+
+.card-small-level-1 {
+  height: 157px;
+  width: 107px;
+}
+
 .card-large-content {
   position: absolute;
   top: 25%;
@@ -44,6 +59,17 @@
   }
   p {
   margin-top: 20px;
+  }
+}
+
+.card-small-content {
+  h2 {
+    padding: 0px 20px;
+    font-size: 18px;
+  }
+  p {
+  margin-top: 15px;
+  font-size: 14px;
   }
 }
 

@@ -6,8 +6,6 @@ Chapter.destroy_all
 Book.destroy_all
 User.destroy_all
 
-
-
 puts "Generating seed"
 
 pierre = User.new ({
@@ -22,17 +20,34 @@ pierre = User.new ({
 
 pierre.save!
 
-leo = User.new ({
-  first_name: 'leo',
-  last_name: 'Toto',
+
+boris = User.new ({
+  first_name: 'Boris',
+  last_name: 'Durand',
   sex: 'Homme',
-  age: 253,
-  description: 'Jeune homme curieux qui aime lire et décourvrir de nouvelles oeuvres',
-  email: 'lp@gmail.com',
+  age: 29,
+  description: 'Ecrivain engagé',
+  email: 'boris.durand@gmail.com',
   password: '123soleil'
   })
 
-leo.save!
+boris.save!
+
+ecume = Book.new ({
+  title: "L'écume des nuits",
+  summary: "The Dark Side of l'écume des jours",
+  category: 'Fantastique'
+  })
+ecume.user = boris
+ecume.save!
+
+ecume_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  })
+
+ecume_chapter_1.book = ecume
+ecume_chapter_1.save!
 
 tendre_est_la_nuit = Book.new ({
   title: 'Tendre est la nuit',
@@ -70,13 +85,16 @@ chapter_3.read_count = 168
 chapter_3.save!
 
 
-# review_1 = Review.new ({
-#   content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite!",
-#   })
-# review_1.user = leo
-# review_1.chapter = chapter_1
-# review_1.save!
+follow_1 = Follow.new
+follow_1.user = pierre
+follow_1.chapter = ecume_chapter_1
+follow_1.save!
 
+review_1 = Review.new
+review_1.content = "Incroyable, c'est une révélation."
+review_1.user = pierre
+review_1.chapter = ecume_chapter_1
+review_1.save!
 
 ida = User.new ({
   first_name: 'Ida',
