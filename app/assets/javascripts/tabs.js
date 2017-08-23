@@ -5,4 +5,5 @@ $(document).ready(function () {
     $('.tab-content').addClass('hidden');
     $($(this).data("target")).removeClass('hidden');
   });
+
 });

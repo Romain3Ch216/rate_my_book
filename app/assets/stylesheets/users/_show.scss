@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   background-color: #fff;
+  height: 90vh;
 }
 
 .profile-details {
@@ -48,13 +49,11 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   margin: 20px;
   margin-top: 5px;
-  min-height: 90%;
   padding: 5px 10px;
   h2 {
     font-size: 18px;
     color: rgba(136, 136, 136, 1);
     margin: 5px 10px;
-
   }
 }
 
@@ -66,13 +65,12 @@
   grid-row: 1 / span 4;
   grid-column: 2 / span 3;
   margin: 20px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .news {
   border-radius: 1.5px;
   background-color: #ffffff;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-  height: 90%;
   padding: 20px;
   position: relative;
 }
@@ -147,4 +145,30 @@
 .header {
   display: flex;
   justify-content: space-between;
+}
+
+#chapter-title {
+  margin-right: 20px;
+}
+
+#book-title {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#book-author {
+  color: rgba(136, 136, 136, 1)
+}
+
+#review-chapter-title {
+  margin-right: 20px;
+}
+
+#review-author {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+#review-content {
+  color: rgba(136, 136, 136, 1)
 }
