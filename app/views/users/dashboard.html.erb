@@ -10,18 +10,20 @@
     <div class="library-content">
       <% current_user.follows.each do |follow| %>
         <% @book =  follow.chapter.book %>
-        <div class="col-xs-6">
-          <div class="card-large-level-3 card-small-level-3">
-            <div class="card-large-level-2 card-small-level-2" style="border: 1px solid <%= @book.hex_for_category %>;">
-              <div class="card-large-level-1 card-small-level-1" style="border: 1px solid <%= @book.hex_for_category %>;">
-                <div class="card-large-content card-small-content">
-                  <h2><%= @book.title %></h2>
-                  <p style="color: <%= @book.hex_for_category %>;"><%= @book.category %></p>
+        <%= link_to book_path(@book) do %>
+          <div class="col-xs-6">
+            <div class="card-large-level-3 card-small-level-3">
+              <div class="card-large-level-2 card-small-level-2" style="border: 1px solid <%= @book.hex_for_category %>;">
+                <div class="card-large-level-1 card-small-level-1" style="border: 1px solid <%= @book.hex_for_category %>;">
+                  <div class="card-large-content card-small-content">
+                    <h2><%= @book.title %></h2>
+                    <p style="color: <%= @book.hex_for_category %>;"><%= @book.category %></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end  %>
     </div>
   </div>
