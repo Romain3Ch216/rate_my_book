@@ -3,6 +3,7 @@
   width: 100%;
   padding-top: 70px;
   background-color: $reader;
+  min-height: calc(100vh - 70px);
 }
 
 .chapter-navbar {
@@ -82,6 +83,7 @@
   margin-bottom: 100px;
   border-top: solid 1px rgba(136, 136, 136, 1);
   padding-top: 15px;
+  position: relative;
 }
 
 
@@ -130,11 +132,12 @@
 }
 
 #comment {
-  position: relative;
-  left: -580px;
+  position: absolute;
+  left: 3px;
 }
 
 #follow {
-  position: relative;
-  top: 154px;
+  position: absolute;
+  bottom: -37px;
+  right: 10px;
 }
