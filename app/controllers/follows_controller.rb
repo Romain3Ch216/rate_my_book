@@ -13,7 +13,7 @@ class FollowsController < ApplicationController
     @follow.chapter = @chapter
     @follow.user = current_user
     if @follow.save
-      redirect_to user_path(current_user)
+      redirect_to dashboard_users_path
     else
       render :new
     end
