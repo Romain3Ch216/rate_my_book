@@ -38,11 +38,9 @@
       <% end %>
 
       <% if current_user.follows.all.map{ |follow| follow.chapter}.include?(@chapter) %>
-        <%= simple_form_for [@chapter, @follow] do |f| %>
-          <%= f.button :submit, class: "send comment", id: "follow", value: "Ne plus suivre le livre" %>
-        <% end %>
+        <%= link_to "Ne plus suivre le livre", follow_path(current_user.follows.all.find{|follow| follow.chapter == @chapter}), method: :delete, class: "send comment", id: "follow" %>
       <% else %>
-        <%= simple_form_for follow_path(current_user.follows.all.find{|follow| follow.chapter == @chapter}), method: :delete do |f| %>
+        <%= simple_form_for [@chapter, @follow] do |f| %>
           <%= f.button :submit, class: "send comment", id: "follow", value: "Demander le prochain chapitre" %>
         <% end %>
       <% end %>
