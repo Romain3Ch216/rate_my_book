@@ -1,0 +1,184 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  background-color: #fff;
+  height: 90vh;
+}
+
+.profile-details {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  border-radius: 1.5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    color: rgba(136, 136, 136, 1);
+    font-size: 12px;
+  }
+}
+
+.edit-button {
+  color: rgba(136, 136, 136, 1);
+  border: solid 1px rgba(136, 136, 136, 1);
+  padding: 5px 10px;
+  border-radius: 1.5px;
+  font-size: 13px;
+  margin: 10px 85px;
+}
+
+.edit-button:hover {
+  text-decoration: none;
+  color: rgba(136, 136, 136, 1);
+}
+
+.library {
+  grid-row: 2 / span 3;
+  grid-column: 1 / span 1;
+  border-radius: 1.5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  h2 {
+    font-size: 18px;
+    color: rgba(136, 136, 136, 1);
+    margin: 5px 10px;
+  }
+}
+
+.library-content{
+  margin: 15px 10px;
+}
+
+.view {
+  grid-row: 1 / span 4;
+  grid-column: 2 / span 3;
+  margin: 20px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.news {
+  border-radius: 1.5px;
+  background-color: #ffffff;
+  padding: 20px;
+  position: relative;
+}
+
+#news {
+  margin: 30px;
+  padding: 20px;
+  border-bottom: solid 1px rgba(136, 136, 136, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new:first-child {
+  margin-top: 0;
+}
+
+.tabs {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.tab {
+  flex: 1 1 auto;
+  text-align: center;
+  justify-content: space-around;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.tab p {
+  color: rgba(136, 136, 136, 1);
+}
+
+.active  {
+  border-bottom: solid 3px rgb(5,5,5);
+}
+
+.active p {
+  color: rgb(5,5,5);
+}
+
+.tabs a:hover {
+  text-decoration: none;
+}
+
+#reviews {
+  margin: 30px;
+}
+
+.review {
+  padding: 28px;
+  border-bottom: solid 1px rgba(136, 136, 136, 1);
+}
+
+
+.become-writer{
+  border-radius: 3px;
+  background-color: #5F9EA0;
+  border: solid 0.5px #5F9EA0;
+  color: #fff;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.become-writer:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#chapter-title {
+  margin-right: 20px;
+}
+
+#book-title {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#book-author {
+  color: rgba(136, 136, 136, 1)
+}
+
+#review-chapter-title {
+  margin-right: 20px;
+}
+
+#review-author {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+#review-content {
+  color: rgba(136, 136, 136, 1)
+}
+
+.dashboard-button {
+  padding: 0 !important;
+}

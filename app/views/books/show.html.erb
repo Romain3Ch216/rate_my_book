@@ -1,0 +1,103 @@
+<div class="container margin-top">
+
+  <div class="row">
+
+  <!-- Book cover -->
+    <div class="col-xs-12 col-sm-5">
+      <div class="card-large-level-3">
+        <div class="card-large-level-2" style="border: 1px solid <%= @book.hex_for_category %>;">
+          <div class="card-large-level-1" style="border: 1px solid <%= @book.hex_for_category %>;">
+            <div class="card-large-content">
+              <h2><%= @book.title %></h2>
+              <p style="color: <%= @book.hex_for_category %>;"><%= @book.category %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book info -->
+    <div class="col-xs-12 col-sm-7">
+      <div class="book-description-header">
+        <h1><strong><%= @book.title %></strong></h1>
+        <h2>de <%= @book.user.first_name %> <%= @book.user.last_name %></h2>
+      </div>
+      <div class="book-description-body">
+        <p><%= @book.summary %></p>
+      </div>
+      <div class="book-button">
+      <%= link_to "Reprendre la lecture", "#", class: "resume-reading-button" %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter list -->
+  <div class="contents">
+    <h2>Sommaire</h2>
+    <% @book.chapters.each do |chapter| %>
+    <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
+      <div class="chapter-title">
+        <%= chapter.title %>
+      </div>
+      <div class="chapter-stats">
+        <div class="stats views">
+          <%= link_to "#" do %>
+            <%= image_tag "eye.svg", class: "stat-icon" %>
+          <% end %>
+          <p>234</p>
+        </div>
+        <div class="stats upvotes">
+          <%= link_to "#" do %>
+            <%= image_tag "flag.svg", class: "stat-icon" %>
+          <% end %>
+          <p>234</p>
+        </div>
+        <div class="stats comments">
+          <%= link_to "#open-modal" do %>
+            <%= image_tag "comment.svg", class: "stat-icon" %>
+          <% end %>
+          <p>234</p>
+        </div>
+       <!-- Modal content start -->
+        <div id="open-modal" class="modal-window">
+          <div>
+            <div class="header-of-modal">
+              <p>Notes (<%= chapter.reviews.count %>)</p>
+              <h1 class="modal-title"><%= chapter.title %></h1>
+              <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <div class="modal-body">
+            <% chapter.reviews.each do |review| %>
+              <div class="review">
+                <div class="review-upvotes">
+                  <%= link_to "#" do %>
+                    <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+                  <% end %>
+                  <p>234</p>
+                </div>
+                <div class="review-content">
+                  <%= link_to "#", class: "review-user-avatar" do %>
+                    <%= image_tag "user.svg" %>
+                  <% end %>
+                  <%= image_tag "quotes.svg", class: "review-quotes" %>
+                  <p class="review-user-name"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></p>
+                  <p><%= review.content %></p>
+                  <p class="review-date">Posté le <%= review.created_at %></p>
+                </div>
+              </div>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+        <!-- Modal content end-->
+      </div>
+    </div>
+    <% end %>
+
+    <div class="to-be-continued">
+      <p>To be continued...</p>
+    </div>
+  </div>
+
+</div>
