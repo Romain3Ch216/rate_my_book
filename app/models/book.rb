@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   validates :category, inclusion: { in: %w(Policier Science-fiction Fantastique Romance Historique Biographie) }
   has_many :chapters
 
+
   def hex_for_category
     case category
     when "Policier" then '#91A7D0'
