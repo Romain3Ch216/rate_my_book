@@ -26,7 +26,7 @@
         <p><%= @book.summary %></p>
       </div>
       <div class="book-button">
-      <%= link_to "Reprendre la lecture", "#", class: "button" %>
+      <%= link_to "Reprendre la lecture", "#", class: "resume-reading-button" %>
       </div>
     </div>
   </div>
@@ -35,26 +35,26 @@
   <div class="contents">
     <h2>Sommaire</h2>
     <% @book.chapters.each do |chapter| %>
-    <div class="chapter-info">
+    <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
       <div class="chapter-title">
         <%= chapter.title %>
       </div>
       <div class="chapter-stats">
         <div class="stats views">
           <%= link_to "#" do %>
-            <%= image_tag "eye.svg" %>
+            <%= image_tag "eye.svg", class: "stat-icon" %>
           <% end %>
           <p>234</p>
         </div>
         <div class="stats upvotes">
           <%= link_to "#" do %>
-            <%= image_tag "flag.svg" %>
+            <%= image_tag "flag.svg", class: "stat-icon" %>
           <% end %>
           <p>234</p>
         </div>
         <div class="stats comments">
           <%= link_to "#open-modal" do %>
-            <%= image_tag "comment.svg" %>
+            <%= image_tag "comment.svg", class: "stat-icon" %>
           <% end %>
           <p>234</p>
         </div>

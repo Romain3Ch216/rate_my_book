@@ -89,9 +89,9 @@
   margin-bottom: 20px;
 }
 
-.button {
+.resume-reading-button {
   color: #fff;
-  background-color: #B69FBF;
+  // background-color: #B69FBF;
   border: 1px solid #B69FBF;
   border-radius: 2px;
   padding: 10px 15px;
@@ -121,10 +121,10 @@
   justify-content: space-between;
   align-items: center;
   border-left: 2px solid rgba(0, 0, 0, 0);
-  &:hover {
-    border-left: 2px solid #B69FBF;
-    background-color: rgba(182, 159, 191, 0.1);
-  }
+  // &:hover {
+  //   border-left: 2px solid #B69FBF;
+  //   background-color: rgba(182, 159, 191, 0.1);
+  // }
 }
 
 .chapter-stats {
