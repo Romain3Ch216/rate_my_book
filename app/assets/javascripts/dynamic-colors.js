@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
   })
 
-  var color = $(".news-content").data("color");
+  var color = $(".book-button").data("color");
 
   $(".resume-reading-button").css({
     "background-color": color,

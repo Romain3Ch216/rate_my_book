@@ -47,13 +47,13 @@
 
       <% current_user.follows.each do |follow| %>
         <div class="tab-content" id="news">
-          <div class="news-content" data-color="<%= follow.chapter.book.hex_for_category %>">
+          <div class="news-content">
             <span id="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></span>
             <span id="book-title"><%= follow.chapter.book.title %></span>
             <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
           </div>
-          <div class="book-button dashboard-button">
-            <%= link_to "Reprendre la lecture", chapter_path(follow.chapter), class: "resume-reading-button" %>
+          <div class="resume-reading-button dashboard-button">
+            <%= link_to "Reprendre la lecture", chapter_path(follow.chapter) %>
           </div>
         </div>
       <% end %>
