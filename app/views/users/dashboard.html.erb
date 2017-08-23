@@ -47,7 +47,7 @@
 
       <% current_user.follows.each do |follow| %>
         <div class="tab-content" id="news">
-          <div class="news-content">
+          <div class="news-content" data-color="<%= follow.chapter.book.hex_for_category %>">
             <span id="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></span>
             <span id="book-title"><%= follow.chapter.book.title %></span>
             <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
@@ -71,3 +71,4 @@
     </div>
   </div>
 </div>
+
