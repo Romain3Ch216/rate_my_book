@@ -1,0 +1,44 @@
+<div class="chapter-navbar">
+  <div class="title">
+    <h1>
+      <%= @chapter.title %>
+    </h1>
+  </div>
+  <div class="exit">
+    <%= link_to "&times;".html_safe, '#' %>
+  </div>
+</div>
+
+
+<div class="content">
+
+  <div class="overview">
+    <a href="">Sommaire  ></a>
+    <div class="chapters hidden">
+      <% @chapter.book.chapters.all.each do |chapter| %>
+        <p>
+          <%= link_to chapter_path(chapter) do %>
+            <%= chapter.title %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="text-content">
+    <p>
+      <%= @chapter.content %>
+    </p>
+
+    <div class="review">
+      <%= simple_form_for [@chapter, @review] do |f| %>
+        <%= f.input :content, label: false, placeholder: "Donnez votre avis à l'auteur..." %>
+        <%= f.button :submit, value: "Commenter", class: "send comment" %>
+      <% end %>
+
+      <%= link_to 'Demander le prochain chapitre', '#', class: "send", id: "follow" %>
+    </div>
+  </div>
+</div>
+
+
