@@ -1,0 +1,33 @@
+<div class="book-card">
+  <%= link_to book_path(book) do %>
+  <div class="rectangle-1">
+    <div class="rectangle-2">
+      <div class="card-title">
+        <h2><strong><%= book.title %></strong></h2>
+        <h3 style="color: <%= book.hex_for_category %>;"><%= book.category %></h3>
+      </div>
+      <div class="summary">
+        <p><%= book.summary %></p>
+      </div>
+      <div class="card-stats">
+        <div>
+            <%= image_tag "eye.svg" %>
+          <p>#</p>
+        </div>
+        <div>
+            <%= image_tag "flag.svg" %>
+          <p>...</p>
+        </div>
+        <div>
+            <%= image_tag "comment.svg" %>
+          <p>...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%end%>
+</div>
+
+
+
+
