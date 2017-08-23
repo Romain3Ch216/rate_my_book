@@ -1,6 +1,8 @@
 class FollowsController < ApplicationController
 
-  before_action :set_chapter
+  before_action :set_chapter, only: [:new, :create]
+  before_action :set_follow, only: :destroy
+
 
   def new
     @follow = Follow.new
@@ -19,9 +21,18 @@ class FollowsController < ApplicationController
     end
   end
 
+  def destroy
+    @follow.destroy
+    redirect_to dashboard_users_path
+  end
+
   private
 
   def set_chapter
     @chapter = Chapter.find(params[:chapter_id])
+  end
+
+  def set_follow
+    @follow = Follow.find(params[:id])
   end
 end
