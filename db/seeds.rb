@@ -1,5 +1,6 @@
 puts "Cleaning seed"
 
+Review.destroy_all
 Chapter.destroy_all
 Book.destroy_all
 User.destroy_all
@@ -24,7 +25,7 @@ leo = User.new ({
   first_name: 'leo',
   last_name: 'Toto',
   sex: 'Homme',
-  age: 253,
+  age: 25,
   description: 'Jeune homme curieux qui aime lire et décourvrir de nouvelles oeuvres',
   email: 'lp@gmail.com',
   password: '123soleil'
@@ -32,6 +33,17 @@ leo = User.new ({
 
 leo.save!
 
+bob = User.new ({
+  first_name: 'Bob',
+  last_name: 'Dupont',
+  sex: 'Homme',
+  age: 45,
+  description: 'Homme en quête de découvertes. ',
+  email: 'bd@gmail.com',
+  password: '123soleil'
+  })
+
+bob.save!
 
 
 tendre_est_la_nuit = Book.new ({
@@ -69,12 +81,18 @@ chapter_3.book = tendre_est_la_nuit
 chapter_3.read_count = 168
 chapter_3.save!
 
-# review_1 = Review.new ({
-#   content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite!",
-#   })
-# review_1.user = leo
-# review_1.chapter = chapter_1
-# review_1.save!
+review_1 = Review.new ({
+  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  })
+review_1.user = leo
+review_1.chapter = chapter_1
+review_1.save!
 
+review_2 = Review.new ({
+  content: "J'ai détesté, pourquoi avoir tué le personnage principal dès la troisième ligne ? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  })
+review_2.user = bob
+review_2.chapter = chapter_1
+review_2.save!
 
 puts "Seed complete"

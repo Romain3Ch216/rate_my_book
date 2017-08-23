@@ -61,9 +61,33 @@
        <!-- Modal content start -->
         <div id="open-modal" class="modal-window">
           <div>
-            <a href="#modal-close" title="Close" class="modal-close">Close</a>
-            <h1>Voilà!</h1>
-            <p>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</p>
+            <div class="header-of-modal">
+              <p>Notes (<%= chapter.reviews.count %>)</p>
+              <h1 class="modal-title"><%= chapter.title %></h1>
+              <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <div class="modal-body">
+            <% chapter.reviews.each do |review| %>
+              <div class="review">
+                <div class="review-upvotes">
+                  <%= link_to "#" do %>
+                    <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+                  <% end %>
+                  <p>234</p>
+                </div>
+                <div class="review-content">
+                  <%= link_to "#", class: "review-user-avatar" do %>
+                    <%= image_tag "user.svg" %>
+                  <% end %>
+                  <%= image_tag "quotes.svg", class: "review-quotes" %>
+                  <p class="review-user-name"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></p>
+                  <p><%= review.content %></p>
+                  <p class="review-date">Posté le <%= review.created_at %></p>
+                </div>
+              </div>
+              <% end %>
+            </div>
+
           </div>
         </div>
         <!-- Modal content end-->
