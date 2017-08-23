@@ -40,10 +40,8 @@
             <p>Mes Commentaires</p>
           </a>
         </div>
-        <%= link_to  '#' do %>
-          <div class="become-writer">
-            <p>Devenez Ecrivain</p>
-          </div>
+        <%= link_to  '#', class:'become-writer' do %>
+          Devenez Ecrivain
         <% end %>
       </div>
 
@@ -55,7 +53,7 @@
             <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
           </div>
           <div class="book-button dashboard-button">
-            <%= link_to "Reprendre la lecture", "#", class: "button" %>
+            <%= link_to "Reprendre la lecture", book_chapter_path(follow.chapter.book, follow.chapter), class: "button" %>
           </div>
         </div>
       <% end %>
