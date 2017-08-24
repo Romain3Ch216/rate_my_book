@@ -1,7 +1,7 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #455bfb;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -12,7 +12,7 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 40px;
 }
 
 /* User Avatar */
@@ -74,4 +74,10 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+/* category menu */
+.fa {
+  display: flex;
+  justify-content: center;
 }

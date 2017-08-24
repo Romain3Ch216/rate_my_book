@@ -1,11 +1,33 @@
 <!-- <!-- <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logo.svg" %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-search">
+    <div class="dropdown">
+      <h1><%= @category %></h1>
+      <i class="fa fa-angle-down" aria-hidden="true" data-toggle="dropdown"></i>
+
+
+    <ul class="dropdown-menu">
+      <% Book.category.each do |category| %>
+        <%= link_to books_path(category: category) do %>
+          <li><%= category %></li>
+        <%end%>
+      <%end%>
+    </ul>
+    </div>
+  </div>
+
+
+
 
     <% if user_signed_in? %>
 
@@ -48,9 +70,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Connexion</a></li>
+        <li><a href="#">Inscription</a></li>
+        <li><a href="#">Devenir écrivain</a></li>
       </ul>
     </div>
   </div>
