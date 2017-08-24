@@ -121,10 +121,6 @@
   justify-content: space-between;
   align-items: center;
   border-left: 2px solid rgba(0, 0, 0, 0);
-  // &:hover {
-  //   border-left: 2px solid #B69FBF;
-  //   background-color: rgba(182, 159, 191, 0.1);
-  // }
 }
 
 .chapter-stats {
@@ -222,6 +218,8 @@ margin: 30px 0;
   padding: 70px 50px 20px 50px;
   border-radius: 3px;
   margin-bottom: 80px;
+  width: 800px;
+  min-height: 150px;
 }
 
 .review-user-avatar {
@@ -241,7 +239,7 @@ margin: 30px 0;
 .review {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .review-upvotes {
