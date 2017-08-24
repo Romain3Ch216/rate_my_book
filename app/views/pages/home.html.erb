@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: url(<%= image_url('group-2.png') %>);">
 
   <div class="banner-content">
-    <h1>  Lisez. Commentez. Notez. <br>Le livre le plus plébiscité est édité !  </br></h1>
+    <h1>  Lisez. Commentez. Votez. <br>Le livre le plus plébiscité est édité !  </br></h1>
   </div>
 
   <div class="btn btn-cta">
@@ -31,7 +31,7 @@
         <p>Historique</p>
       </a>
     </div>
-    <div class="tabs">
+   <div class="tabs">
       <a class="tab" data-target="#toutafficher">
         <h2>Tout afficher</h2>
       </a>
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-<div class="container" style="background-color: #E1F1EE;"">
+<div class="container-fluid" style="background-color: #E1F1EE;">
   <div class="card-container">
     <% @books.each do |book| %>
       <%= render 'books/book_cards', book: book %>
@@ -66,9 +66,51 @@
   </div>
 </div>
 
-<div class="banner-quote" style="background-color: white;">
-    <div class="quote-content">
-      <h1> There is nothing more powerful than an idea whose time has come </h1>
-      <p> Victor Hugo </p>
-    </div>
+<div class="container-animation" style="background-color: white;">
+      <h1 class="item-1">“L’art n’est pas d’arriver avec des idées neuves mais d’interpréter ces idées qui nous entourent depuis toujours.”<strong> George Lucas </strong></h1>
+      <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
+      <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
 </div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs" style="font-weight: bold">
+        <p>Nouveautés</p>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #EDE8F0;">
+  <div class="card-container">
+    <% @books.each do |book| %>
+      <%= render 'books/book_cards', book: book %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs" style="font-weight: bold">
+        <p>Les Plus Populaires</p>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #E3E9F3;">
+  <div class="card-container">
+    <% @books.each do |book| %>
+      <%= render 'books/book_cards', book: book %>
+    <% end %>
+  </div>
+</div>
+

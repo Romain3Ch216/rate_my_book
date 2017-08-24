@@ -53,8 +53,6 @@
  }
 
 .container {
-    margin-right: auto;
-    margin-left: auto;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -69,7 +67,6 @@
     margin-top: 30.5px;
     margin-right: 0px;
     margin-right: 0px;
-    border-bottom: 1px solid #C0C0C0;
   p {
     font-size: 16px;
     margin: 0px 11px 11px;
@@ -108,10 +105,10 @@
   margin-left: 0;
   margin-right: 5px;
   h2 {
-  font-weight: bold;
   font-family: MarkPro;
   font-size: 16px;
   margin-top: 0;
+  font-color: #C0C0C0
   }
 }
 
@@ -138,7 +135,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
+  margin-top: 55px;
+  margin-bottom: 10px
 }
 
 .quote-content {
@@ -162,12 +160,74 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 30.5px;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: 40px;
+  margin-left: 40px;
   margin-bottom: 30.5px;
 }
+
 
 a:focus {
   text-decoration: none;
 }
+
+.container-animation {
+  width: 100%;
+  position: relative;
+  height: 170px;
+  h1 {
+  font-family: MarkPro;
+  font-size: 25px;
+  color: #fcd265;
+  }
+  p {
+    margin-right: 10px;
+    font-size: 12px;
+    color: #fcd265;
+  }
+}
+
+.item-1,
+.item-2,
+.item-3 {
+  position: absolute;
+  display: block;
+  top: 2em;
+  width: 60%;
+  font-size: 2em;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.item-1{
+  animation-name: anim-1;
+}
+
+.item-2{
+  animation-name: anim-2;
+}
+
+.item-3{
+  animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+  0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 20%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+  0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 20%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+  0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 20%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+
 
