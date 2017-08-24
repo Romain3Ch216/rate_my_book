@@ -7,6 +7,28 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-search">
+    <div class="dropdown">
+      <h1><%= @category %></h1>
+      <i class="fa fa-angle-down" aria-hidden="true" data-toggle="dropdown"></i>
+
+
+    <ul class="dropdown-menu">
+      <% Book.category.each do |category| %>
+        <%= link_to books_path(category: category) do %>
+          <li><%= category %></li>
+        <%end%>
+      <%end%>
+    </ul>
+    </div>
+  </div>
+
+
+
+
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
