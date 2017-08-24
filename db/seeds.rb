@@ -1,6 +1,6 @@
 puts "Cleaning seed"
 
-
+Upvote.destroy_all
 Follow.destroy_all
 Review.destroy_all
 Chapter.destroy_all
