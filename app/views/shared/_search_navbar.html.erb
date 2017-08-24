@@ -25,9 +25,13 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% if current_user.photo? %>
-            <%= cl_image_tag(current_user.photo,  width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face)%>
+            <div class="avatar-user" data-toggle="dropdown">
+              <%= cl_image_tag(current_user.photo,  width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face)%>
+            </div>
           <% else %>
-            <%= cl_image_tag("avatar-placeholder.png", width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face) %>
+            <div class="avatar-user" data-toggle="dropdown">
+              <%= cl_image_tag("avatar-placeholder.png", width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face) %>
+            </div>
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -37,16 +41,17 @@
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "Acceuil") %>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se Déconnecter") %>
               <% end %>
             </li>
           </ul>
         </div>
+
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
