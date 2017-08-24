@@ -55,8 +55,8 @@
 .container {
     margin-right: auto;
     margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .master-tab {
@@ -154,22 +154,17 @@
   }
 }
 
-.cards-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-size: cover;
-  background-position: center;
-  color: white;
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: align;
-  padding: 30px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-top: 30.5px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 30.5px;
 }
 
-.card-container a {
 
-}
