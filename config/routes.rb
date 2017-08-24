@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'dashboard', to: "users#dashboard"
+      get 'become_writer', to: "users#become_writer"
     end
   end
   mount Attachinary::Engine => "/attachinary"

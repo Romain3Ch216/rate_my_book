@@ -1,0 +1,17 @@
+<div class="image-banner">
+  <h1>Devenez érivain</h1>
+</div>
+
+<%= simple_form_for @book do |f| %>
+  <div class="summary">
+    <%= f.input :summary, label: false, placeholder: "Ecrivez le résumé de votre livre" %>
+  </div>
+  <div class="category-choice">
+    <%= f.input :category, label: false, placeholder: "Policier" %>
+  </div>
+  <%= f.button :submit, value: "Commenter", class: "summary-button" %>
+<% end %>
+
+<div class="category-choice">
+  <h2>Choisir la catégorie du livre</h2>
+</div>

@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   end
 
   def become_writer
-    current_user.update(writer: true)
+    @disable_nav = true
+    @book = Book.new
   end
 
   def update

@@ -1,0 +1,35 @@
+.image-banner {
+  height: 50vh;
+  width: 100%;
+  background-image: url('Bitmap.png');
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-position: center center;
+  h1 {
+    font-weight: bold;
+  }
+}
+
+#book_summary {
+  border: none;
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+    border: none;
+  }
+  &:focus {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+.summary {
+  margin: 50px 20px;
+}
+
+.category-choice {
+  height: 300px;
+  background-color: #FCD265;
+}
