@@ -73,7 +73,7 @@
                   <%= link_to review_upvotes_path(review), method: :post  do %>
                     <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
                   <% end %>
-                  <p>234</p>
+                  <p><%= review.upvotes.size %></p>
                 </div>
                 <div class="review-content">
                   <%= link_to "#", class: "review-user-avatar" do %>

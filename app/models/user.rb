@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :follows
   has_many :reviews
+  has_many :upvotes
   validates :email, presence: true, uniqueness: true
   validates :first_name, :last_name, presence: true
   validates :age, :sex, :description, presence: true
