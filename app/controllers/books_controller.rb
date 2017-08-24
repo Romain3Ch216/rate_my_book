@@ -1,14 +1,16 @@
 class BooksController < ApplicationController
-
+  layout "index"
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    # if search_params.present?
-    #  @books = Book.where('category LIKE ?', search_params[:category])
-    # else
+    if params[:category].present?
+      @category = params[:category]
+      @books = Book.where('category LIKE ?', @category)
+    else
+      @category = "Coco"
       @books = Book.all
-    # end
+    end
   end
 
   def show

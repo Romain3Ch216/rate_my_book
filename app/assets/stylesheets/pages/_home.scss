@@ -1,1 +1,170 @@
 // Specific CSS for your home-page
+.banner {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-cta {
+  border-radius: 3px;
+  border: solid 2px black;
+  font-family: MarkPro;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 138px;
+  &:hover {
+  font-family: MarkPro;
+  font-size: 16px;
+  color: black;
+  }
+}
+
+.banner-cta {
+  width: 270px;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 2px #ffffff;
+  text-align: center;
+  font-family: MarkPro;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.banner-content {
+    font-family: MarkPro;
+    font-size: 54px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 172px;
+  h1 {
+  font-family: MarkPro;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  }
+ }
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.master-tab {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 30.5px;
+    margin-right: 0px;
+    margin-right: 0px;
+    border-bottom: 1px solid #C0C0C0;
+  p {
+    font-size: 16px;
+    margin: 0px 11px 11px;
+  }
+}
+
+.tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 5px 0px 0 0px;
+    text-align: left;
+}
+
+.tabs a {
+  color: #8b8b8b;
+  margin-right: 0;
+}
+.tabs a:hover {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.tabs p {
+  margin-bottom: 0;
+}
+.tab {
+  //flex: 20 0 26%;
+  padding: 4px 0;
+  margin: 0 15px;
+  margin-left: 0;
+  margin-right: 5px;
+  h2 {
+  font-weight: bold;
+  font-family: MarkPro;
+  font-size: 16px;
+  margin-top: 0;
+  }
+}
+
+.active {
+  color: black;
+  border-bottom: solid 0.5px #000000;
+  margin-left: 0;
+  p {
+    color: black;
+  }
+}
+
+.active a {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.banner-quote {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.quote-content {
+  h1 {
+  font-family: MarkPro;
+  font-size: 25px;
+  color: #fcd265;
+  }
+  p {
+    justify-content: left;
+    font-size: 15px;
+    color: #fcd265;
+  }
+}
+
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 30.5px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 30.5px;
+}
+
+

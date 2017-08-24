@@ -1,17 +1,24 @@
-<div class="home-navbar">
-  <%= link_to  '#', class:'become-writer' do %>
-    Devenez Ecrivain
-  <% end %>
-
-  <div class="logo">
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "logo.svg" %>
-    <% end %>
-    <h1>RateMyBook</h1>
+<div class="search-navbar">
+  <div class="category-name">
+    <h1><%= @category %></h1>
+    <div class="dropdown">
+      <i class="fa fa-angle-down dropdown-arrow" aria-hidden="true" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu">
+        <% Book.category.each do |category| %>
+          <%= link_to books_path(category: category) do %>
+            <li><%= category %></li>
+          <%end%>
+        <%end%>
+      </ul>
+    </div>
   </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+
+
+  <!-- Dropdown list appearing on mobile only -->
 
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
@@ -42,7 +49,8 @@
         </div>
       </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "S'inscrire / Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 

@@ -14,6 +14,8 @@ Rails.application.config.assets.precompile += %w( profile.js )
 Rails.application.config.assets.precompile += %w( reader.scss )
 Rails.application.config.assets.precompile += %w( reader.js )
 
+Rails.application.config.assets.precompile += %w( index.scss )
+Rails.application.config.assets.precompile += %w( index.js )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
