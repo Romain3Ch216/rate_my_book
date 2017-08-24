@@ -77,6 +77,9 @@
 }
 
 #news {
+}
+
+.news-feed {
   margin: 30px;
   padding: 20px;
   border-bottom: solid 1px rgba(136, 136, 136, 1);
@@ -125,7 +128,7 @@
   margin: 30px;
 }
 
-.review {
+.dashboard-review {
   padding: 28px;
   border-bottom: solid 1px rgba(136, 136, 136, 1);
 }
@@ -181,5 +184,22 @@
 }
 
 .dashboard-button {
-  padding: 0 !important;
+  color: #fff;
+  background-color: #B69FBF;
+  border: 1px solid #B69FBF;
+  border-radius: 2px;
+  padding: 10px 15px;
+  &:hover {
+    text-decoration: none;
+    color: #B69FBF;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.dashboard-link {
+  color: #fff;
+  &:hover {
+    text-decoration: none;
+    color: #B69FBF;
+  }
 }

@@ -1,5 +1,5 @@
 <div class="home-navbar">
-  <!-- Logo -->
+
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.svg" %>
   <% end %>
@@ -8,9 +8,6 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-
-
-
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -39,7 +36,6 @@
         </div>
       </div>
     <% else %>
-      <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
