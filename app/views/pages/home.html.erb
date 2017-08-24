@@ -1,3 +1,79 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>test</p>
+<div class="banner" style="background-image: url(<%= image_url('group-2.png') %>);">
+
+  <div class="banner-content">
+    <h1>  Lisez. Commentez. Notez. <br>Le livre le plus plébiscité est édité !  </br></h1>
+  </div>
+
+  <div class="btn btn-cta">
+    Parcourir la Bibliothèque
+  </div>
+</div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs">
+      <a class="tab active" href="#">
+        <p>Science Fiction</p>
+      </a>
+      <a class="tab" data-target="#policier">
+        <p>Policier</p>
+      </a>
+      <a class="tab" data-target="#romance">
+        <p>Romance</p>
+      </a>
+      <a class="tab" data-target="#biographie">
+        <p>Biographie</p>
+      </a>
+      <a class="tab" data-target="#fantastique">
+        <p>Fantastique</p>
+      </a>
+      <a class="tab" data-target="#historique">
+        <p>Historique</p>
+      </a>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+      <div class="tab-content hidden" id="romance">
+        <p>Here are my projects.</p>
+      </div>
+      <div class="tab-content hidden" id="romance">
+        <p>Contact me if you want.</p>
+      </div>
+      <div class="tab-content hidden" id="biographie">
+        <p>Contact me if you want.</p>
+      </div>
+      <div class="tab-content hidden" id="fantastique">
+        <p>Contact me if you want.</p>
+      </div>
+      <div class="tab-content hidden" id="historique">
+        <p>Contact me if you want.</p>
+      </div>
+    </div>
+
+
+<div class="cards-container">
+  <div class="card-container">
+    <div class="row">
+      <% @books.each do |book| %>
+          <div class="col-xs-12 col-md-4 col-lg-3">
+          <%= render 'books/book_cards', book: book %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="banner-quote" style="background-color: white;">
+    <div class="quote-content">
+      <h1> There is nothing more powerful than an idea whose time has come </h1>
+      <p> Victor Hugo </p>
+    </div>
+</div>
