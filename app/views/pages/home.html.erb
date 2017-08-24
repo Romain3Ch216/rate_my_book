@@ -9,54 +9,26 @@
   </div>
 </div>
 
+
 <div class="container">
-  <div class="master-tab">
-    <div class="tabs">
-      <a class="tab active" href="#">
-        <p>Science Fiction</p>
-      </a>
-      <a class="tab" data-target="#policier">
-        <p>Policier</p>
-      </a>
-      <a class="tab" data-target="#romance">
-        <p>Romance</p>
-      </a>
-      <a class="tab" data-target="#biographie">
-        <p>Biographie</p>
-      </a>
-      <a class="tab" data-target="#fantastique">
-        <p>Fantastique</p>
-      </a>
-      <a class="tab" data-target="#historique">
-        <p>Historique</p>
-      </a>
-    </div>
-    <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
-        <h2>Tout afficher</h2>
-      </a>
-    </div>
-  </div>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <% Book.category.each do |category| %>
+      <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
+    <%end%>
+  </ul>
+
+  <div class="tab-content">
+    <% Book.category.each do |category| %>
+      <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">
+        <% dynamic_category(category).each do |book| %>
+          <%= render "books/book_cards", book: book %>
+        <% end %>
+      </div>
+    <%end%>
+ </div>
+
 </div>
-
-
-
-      <div class="tab-content hidden" id="romance">
-        <p>Here are my projects.</p>
-      </div>
-      <div class="tab-content hidden" id="romance">
-        <p>Contact me if you want.</p>
-      </div>
-      <div class="tab-content hidden" id="biographie">
-        <p>Contact me if you want.</p>
-      </div>
-      <div class="tab-content hidden" id="fantastique">
-        <p>Contact me if you want.</p>
-      </div>
-      <div class="tab-content hidden" id="historique">
-        <p>Contact me if you want.</p>
-      </div>
-    </div>
 
 
 <div class="cards-container">

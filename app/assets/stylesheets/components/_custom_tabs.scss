@@ -1,0 +1,9 @@
+.nav-tabs > li.active {
+  border: none;
+  background-color: red;
+}
+
+.nav-tabs > li.active > a {
+  border: none;
+  background-color: transparent;
+}

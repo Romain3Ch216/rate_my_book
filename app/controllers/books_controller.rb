@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       @category = params[:category]
       @books = Book.where('category LIKE ?', @category)
     else
-      @category = "Coco"
+      @category = "Policier"
       @books = Book.all
     end
   end
