@@ -76,61 +76,6 @@
   }
 }
 
-.tabs {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 5px 0px 0 0px;
-    text-align: left;
-}
-
-.tabs a {
-  color: #8b8b8b;
-  margin-right: 0;
-}
-.tabs a:hover {
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.tabs p {
-  margin-bottom: 0;
-}
-.tab {
-  //flex: 20 0 26%;
-  padding: 4px 0;
-  margin: 0 15px;
-  margin-left: 0;
-  margin-right: 5px;
-  h2 {
-  font-weight: bold;
-  font-family: MarkPro;
-  font-size: 16px;
-  margin-top: 0;
-  }
-}
-
-.active {
-  color: black;
-  border-bottom: solid 0.5px #000000;
-  margin-left: 0;
-  p {
-    color: black;
-  }
-}
-
-
-.active a {
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .banner-quote {
   background-size: cover;
   background-position: center;

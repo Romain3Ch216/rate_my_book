@@ -6,8 +6,8 @@ class PagesController < ApplicationController
       @category = params[:category]
       @books = Book.where('category LIKE ?', @category)
     else
-    @category = "Science Fiction"
-    @books= Book.all.sample(3)
+    @category = params[category: "Science-Fiction"]
+    @books = Book.where('category LIKE ?', @category).sample(3)
     end
   end
 end

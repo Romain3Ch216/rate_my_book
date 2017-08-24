@@ -1,9 +1,22 @@
-.nav-tabs > li.active {
+.nav-tabs > li.active a {
   border: none;
-  background-color: red;
+  border-bottom: 1px solid #000000;
+  color: black;
 }
 
-.nav-tabs > li.active > a {
+
+.nav-tabs > li > a {
   border: none;
   background-color: transparent;
+  color: black;
 }
+
+.nav-tabs > li {
+  border: none;
+  background-color: transparent;
+  color: black;
+  opacity: 0.6;
+}
+
+
+
