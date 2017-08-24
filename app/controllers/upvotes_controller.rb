@@ -9,10 +9,7 @@ class UpvotesController < ApplicationController
         format.html { redirect_to book_path(@review.chapter.book, anchor: "modal-open") }
         format.js # render views/reviews/create.js.erb
       end
-    else
-
     end
-
   end
 
 

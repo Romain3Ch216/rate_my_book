@@ -3,7 +3,7 @@
     <% if current_user.upvoted_reviews.include? review %>
       <% upvote = current_user.upvotes.find_by(review: review) %>
       <%= link_to upvote_path(upvote), method: :delete, remote: true  do %>
-        <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+        <%= image_tag "review-upvote-active.svg", class: "review-upvote-icon" %>
       <% end %>
     <% else %>
       <%= link_to review_upvotes_path(review), method: :post, remote: true  do %>
