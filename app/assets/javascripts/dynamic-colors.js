@@ -21,11 +21,11 @@ $(document).ready(function() {
     });
   })
 
-  var color = $(".book-button").data("color");
+  var color_2 = $(".book-button").data("color");
 
   $(".resume-reading-button").css({
-    "background-color": color,
-    "border-color": color,
+    "background-color": color_2,
+    "border-color": color_2,
   });
 
 });
