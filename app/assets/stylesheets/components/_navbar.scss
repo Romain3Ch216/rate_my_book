@@ -1,5 +1,5 @@
 /* Main navbar */
-.navbar-wagon {
+.home-navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: #455bfb;
   transition: all 0.3s ease;
@@ -8,15 +8,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  opacity: 0.1;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.home-navbar-brand img {
   height: 40px;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
+.home-navbar .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
