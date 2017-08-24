@@ -70,10 +70,12 @@
             <% chapter.reviews.each do |review| %>
               <div class="review">
                 <div class="review-upvotes">
-                  <%= link_to review_upvotes_path(review), method: :post  do %>
+
+                  <%= link_to review_upvotes_path(review), method: :post, remote: true  do %>
                     <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
                   <% end %>
-                  <p><%= review.upvotes.size %></p>
+
+                  <p class="reviews_count" ><%= review.upvotes.size %></p>
                 </div>
                 <div class="review-content">
                   <%= link_to "#", class: "review-user-avatar" do %>
@@ -82,7 +84,7 @@
                   <%= image_tag "quotes.svg", class: "review-quotes" %>
                   <p class="review-user-name"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></p>
                   <p><%= review.content %></p>
-                  <p class="review-date">Posté le <%= review.created_at %></p>
+                  <p class="review-date">Posté le <%= review.created_at.strftime('%m/%d/%Y') %></p>
                 </div>
               </div>
               <% end %>

@@ -1,3 +1,16 @@
-  // update reviews count
-  $("#reviews_count").text('<% @review.upvotes.size %>')
+$(document).ready(function() {
+
+  // down reviews count
+  // up reviews count
+  $(".reviews_count").text('<%= @review.upvotes.size %>');
+
+
+
+});
+
+
+
+  // $(".path").css({ fill: "#455BFB" });
+
+
 
