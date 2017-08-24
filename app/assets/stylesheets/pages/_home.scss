@@ -9,18 +9,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-cta {
   border-radius: 3px;
-  border: solid 2px #ffffff;
+  border: solid 2px black;
   font-family: MarkPro;
   font-size: 16px;
-  color: white;
+  color: black;
+  margin-bottom: 138px;
   &:hover {
   font-family: MarkPro;
   font-size: 16px;
-  color: white;
+  color: black;
   }
 }
 
@@ -36,21 +40,16 @@
 }
 
 .banner-content {
-  width: 510.5px;
-  height: 133px;
-  font-family: MarkPro;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  color: #ffffff;
+    font-family: MarkPro;
+    font-size: 54px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 172px;
   h1 {
-  width: 510.5px;
-  height: 133px;
   font-family: MarkPro;
-  font-size: 32px;
   font-weight: bold;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
   }
  }
 
@@ -73,7 +72,8 @@
     margin-right: 0px;
     border-bottom: 1px solid #C0C0C0;
   p {
-    font-size: 16px
+    font-size: 16px;
+    margin: 0px 11px 11px;
   }
 }
 
@@ -106,11 +106,12 @@
   //flex: 20 0 26%;
   padding: 4px 0;
   margin: 0 15px;
+  margin-left: 0;
+  margin-right: 5px;
   h2 {
   font-weight: bold;
   font-family: MarkPro;
   font-size: 16px;
-  font-weight: bold;
   margin-top: 0;
   }
 }
@@ -121,7 +122,6 @@
   margin-left: 0;
   p {
     color: black;
-
   }
 }
 
@@ -131,3 +131,27 @@
   font-weight: bold;
 }
 
+.banner-quote {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.quote-content {
+  h1 {
+  font-family: MarkPro;
+  font-size: 25px;
+  color: #fcd265;
+  }
+  p {
+    justify-content: left;
+    font-size: 15px;
+    color: #fcd265;
+  }
+}
