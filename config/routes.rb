@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       get 'dashboard', to: "users#dashboard"
     end
   end
+  mount Attachinary::Engine => "/attachinary"
 end
