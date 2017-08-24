@@ -71,22 +71,25 @@
             <% chapter.reviews.each do |review| %>
               <div class="review">
                 <div class="review-upvotes">
-
-                  <%= link_to review_upvotes_path(review), method: :post, remote: true  do %>
-                    <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+                  <% if current_user.upvotes.map { |upvote| upvote.review}.include?(review) %>
+                    <%= link_to review_upvotes_path(review), method: :post, remote: true  do %>
+                      <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to review_upvotes_path(review), method: :delete, remote: true  do %>
+                      <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+                    <% end %>
                   <% end %>
-
                   <p class="reviews_count" ><%= review.upvotes.size %></p>
                 </div>
                 <div class="review-content">
-
                   <% if current_user.photo? %>
-                    <%= link_to dashboard_user_path, class: "review-user-avatar" do %>
+                    <%= link_to dashboard_users_path, class: "review-user-avatar" do %>
                       <%= cl_image_tag(current_user.photo,  width: 75, height: 75, radius: :max, crop: :fill,  gravity: :face)%>
                     <% end %>
                   <% else %>
-                    <%= link_to "#", class: "review-user-avatar" do %>
-                      <%= image_tag "user.svg" %>
+                    <%= link_to link_to dashboard_users_path, class: "review-user-avatar" do %>
+                      <%= image_tag "user.svg", width: "75" %>
                     <% end %>
                   <% end %>
 
