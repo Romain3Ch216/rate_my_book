@@ -1,8 +1,14 @@
 <div class="home-navbar">
-
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.svg" %>
+  <%= link_to  '#', class:'become-writer' do %>
+    Devenez Ecrivain
   <% end %>
+
+  <div class="logo">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
+    <h1>RateMyBook</h1>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -36,7 +42,7 @@
         </div>
       </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "S'inscrire / Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
