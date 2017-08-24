@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'upvotes/create'
+
   devise_for :users
   root to: 'pages#home'
   resources :books, shallow: true, only: [:index,:show, :new, :edit] do
