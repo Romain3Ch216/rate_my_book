@@ -5,8 +5,10 @@ class BooksController < ApplicationController
 
   def index
     if params[:category].present?
-      @books = Book.where('category LIKE ?', params[:category])
+      @category = params[:category]
+      @books = Book.where('category LIKE ?', @category)
     else
+      @category = "Coco"
       @books = Book.all
     end
   end
