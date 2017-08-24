@@ -1,0 +1,31 @@
+<div class="review" id="review-<%= review.id %>">
+  <div class="review-upvotes">
+    <% if current_user.upvoted_reviews.include? review %>
+      <% upvote = current_user.upvotes.find_by(review: review) %>
+      <%= link_to upvote_path(upvote), method: :delete, remote: true  do %>
+        <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+      <% end %>
+    <% else %>
+      <%= link_to review_upvotes_path(review), method: :post, remote: true  do %>
+        <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
+      <% end %>
+    <% end %>
+    <p class="reviews_count_<%= review.id %>" ><%= review.upvotes.size %></p>
+  </div>
+  <div class="review-content">
+    <% if current_user.photo? %>
+      <%= link_to dashboard_users_path, class: "review-user-avatar" do %>
+        <%= cl_image_tag(current_user.photo,  width: 75, height: 75, radius: :max, crop: :fill,  gravity: :face)%>
+      <% end %>
+    <% else %>
+      <%= link_to dashboard_users_path do %>
+        <%= image_tag "user.svg", width: "75", class: "review-user-avatar" %>
+      <% end %>
+    <% end %>
+
+    <%= image_tag "quotes.svg", class: "review-quotes" %>
+    <p class="review-user-name"><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></p>
+    <p><%= review.content %></p>
+    <p class="review-date">Posté le <%= review.created_at.strftime('%m/%d/%Y') %></p>
+  </div>
+</div>

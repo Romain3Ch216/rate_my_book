@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
-   resources :reviews, only: [] do
-      resources :upvotes, only: [:create]
-   end
+  resources :reviews, only: [] do
+    resources :upvotes, only: [:create, :destroy], shallow: true
+  end
 
 
   resources :users do

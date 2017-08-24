@@ -1,8 +1,1 @@
-$(document).ready(function() {
-  $(".reviews_count").text('<%= @review.upvotes.size %>');
-});
-
-// $(".path").css({ fill: "#455BFB" });
-
-
-
+$('#review-<%= @review.id %>').html('<%= j render "reviews/review", review: @review %>');
