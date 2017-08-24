@@ -17,4 +17,8 @@ class Book < ApplicationRecord
 
     end
   end
+
+  def self.category
+    %w(Policier Science-fiction Fantastique Romance Historique Biographie)
+  end
 end
