@@ -1,8 +1,8 @@
 <div class="search-navbar">
   <div class="category-name">
-    <h1><%= @category %></h1>
+   <h1><%= @category %></h1>
     <div class="dropdown">
-      <i class="fa fa-angle-down dropdown-arrow" aria-hidden="true" data-toggle="dropdown"></i>
+      <i class="fa fa-angle-down dropdown-arrow" aria-hidden="true" data-toggle="dropdown" id="category-arrow"></i>
       <ul class="dropdown-menu">
         <% Book.category.each do |category| %>
           <%= link_to books_path(category: category) do %>
@@ -12,6 +12,7 @@
       </ul>
     </div>
   </div>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -35,12 +36,12 @@
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to dashboard_users_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Acceuil") %>
               <% end %>
             </li>
