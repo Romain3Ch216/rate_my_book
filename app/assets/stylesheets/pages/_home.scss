@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 .banner {
   height: 500px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover;
   background-position: center;
   color: white;
@@ -132,7 +131,6 @@
 }
 
 .banner-quote {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover;
   background-position: center;
   color: white;
@@ -154,4 +152,24 @@
     font-size: 15px;
     color: #fcd265;
   }
+}
+
+.cards-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: align;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.card-container a {
+
 }
