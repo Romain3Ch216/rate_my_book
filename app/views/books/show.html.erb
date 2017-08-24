@@ -70,7 +70,7 @@
             <% chapter.reviews.each do |review| %>
               <div class="review">
                 <div class="review-upvotes">
-                  <%= link_to "#" do %>
+                  <%= link_to review_upvotes_path(review), method: :post  do %>
                     <%= image_tag "review-upvote.svg", class: "review-upvote-icon" %>
                   <% end %>
                   <p>234</p>
