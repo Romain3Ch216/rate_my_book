@@ -16,4 +16,8 @@ class Book < ApplicationRecord
     when "Biographie" then '#F6C9C9'
     end
   end
+
+  def self.category
+    %w(Policier Science-fiction Fantastique Romance Historique Biographie)
+  end
 end

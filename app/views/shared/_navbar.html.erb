@@ -8,22 +8,26 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
+
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-search">
     <div class="dropdown">
       <i class="fa fa-angle-down" aria-hidden="true" data-toggle="dropdown"></i>
 
 
-      <ul class="dropdown-menu">
-        <li><a href="#">Connexion</a></li>
-        <li><a href="#">Inscription</a></li>
-        <li><a href="#">Devenir écrivain</a></li>
-      </ul>
+
+    <ul class="dropdown-menu">
+      <% Book.category.each do |category| %>
+        <%= link_to books_path(category: category) do %>
+          <li><%= category %></li>
+        <%end%>
+      <%end%>
+    </ul>
     </div>
   </div>
 
 
-  <!-- <%= link_to book_path(category :category)%> -->
+
 
     <% if user_signed_in? %>
 
