@@ -1,22 +1,23 @@
 /* Main navbar */
-.navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #455bfb;
+.home-navbar {
+  background: rgba(0,0,0,0);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.home-navbar-brand img {
   height: 40px;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
+.home-navbar .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
