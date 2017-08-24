@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'upvotes/create'
-
   devise_for :users
   root to: 'pages#home'
   resources :books, shallow: true, only: [:index,:show, :new, :edit] do
@@ -9,6 +7,12 @@ Rails.application.routes.draw do
       resources :follows, only: [:new, :create, :destroy]
     end
   end
+
+   resources :reviews, only: [] do
+      resources :upvotes, only: [:create]
+   end
+
+
   resources :users do
     collection do
       get 'dashboard', to: "users#dashboard"
