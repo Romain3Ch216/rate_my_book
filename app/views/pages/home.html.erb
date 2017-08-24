@@ -58,7 +58,7 @@
       </div>
     </div>
 
-<div class="container" style="background-color: #E1F1EE;"">
+<div class="container" style="background-color: #E1F1EE;">
   <div class="card-container">
     <% @books.each do |book| %>
       <%= render 'books/book_cards', book: book %>
@@ -72,3 +72,46 @@
       <p> Victor Hugo </p>
     </div>
 </div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs">
+        <p>Nouveautés</p>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color: #EDE8F0;">
+  <div class="card-container">
+    <% @books.each do |book| %>
+      <%= render 'books/book_cards', book: book %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs">
+        <p>Les Plus Populaires</p>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color: #E3E9F3;">
+  <div class="card-container">
+    <% @books.each do |book| %>
+      <%= render 'books/book_cards', book: book %>
+    <% end %>
+  </div>
+</div>
+
