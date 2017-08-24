@@ -7,6 +7,12 @@ Rails.application.routes.draw do
       resources :follows, only: [:new, :create, :destroy]
     end
   end
+
+   resources :reviews, only: [] do
+      resources :upvotes, only: [:create]
+   end
+
+
   resources :users do
     collection do
       get 'dashboard', to: "users#dashboard"

@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-
+  layout "index"
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
