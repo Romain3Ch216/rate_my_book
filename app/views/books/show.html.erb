@@ -61,6 +61,8 @@
           <p><%= chapter.reviews.count %></p>
         </div>
 
+
+    <% if current_user %>
        <!-- Modal content start -->
         <div id="open-modal" class="modal-window">
           <div>
@@ -77,6 +79,7 @@
           </div>
         </div>
         <!-- Modal content end-->
+      <% end %>
 
       </div>
     </div>
