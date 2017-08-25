@@ -1,5 +1,6 @@
 puts "Cleaning seed"
 
+Scroll.destroy_all
 Upvote.destroy_all
 Follow.destroy_all
 Review.destroy_all
@@ -69,7 +70,8 @@ leo.save!
 
 ecume_chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
+
   })
 
 
@@ -88,7 +90,7 @@ tendre_est_la_nuit.save!
 
 chapter_1 = Chapter.new({
   title: 'Chapter 1: Début de la fin',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10
   })
 chapter_1.book = tendre_est_la_nuit
 
@@ -97,7 +99,7 @@ chapter_1.save!
 
 chapter_2 = Chapter.new({
   title: 'Chapter 2: Retour vers le futur',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
   })
 chapter_2.book = tendre_est_la_nuit
 chapter_2.read_count = 468
@@ -105,15 +107,7 @@ chapter_2.save!
 
 chapter_3 = Chapter.new({
   title: 'Chapter 3: Bien le bonjour!',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eleifend metus vel rhoncus efficitur. Mauris tortor lacus, sollicitudin ac orci fermentum, consectetur ornare nisl. Proin vel suscipit elit. In eget risus feugiat, vehicula magna vel, malesuada erat. Nulla egestas ante vel metus vehicula, vel sagittis mauris elementum. Duis vel bibendum lacus. Cras lobortis enim lorem, in dignissim metus gravida non. Nullam finibus dictum nibh ac commodo. Proin faucibus lacinia dolor, dapibus pellentesque odio hendrerit nec. Nam et ultrices tortor. Suspendisse eget magna augue. Sed imperdiet aliquet sagittis. Nam aliquet ac ex et iaculis. Donec eu urna tincidunt, volutpat lorem in, lacinia augue. Suspendisse ultricies suscipit feugiat. Quisque mattis pharetra vestibulum.
-
-Suspendisse potenti. Vivamus volutpat metus a elit sagittis, id molestie est maximus. Integer tempus a purus sed consectetur. Nam purus urna, malesuada nec ligula nec, mollis congue diam. Ut eget dui sodales, convallis mauris nec, sollicitudin turpis. Suspendisse ut fermentum mauris, vitae lacinia ipsum. Mauris pharetra cursus tincidunt. Duis commodo dapibus nunc, eget vestibulum nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sodales vel nisl at ultricies. Proin quis eros vitae erat efficitur varius. Proin at imperdiet odio, et aliquam felis. Aliquam molestie lacus in turpis pulvinar feugiat.
-
-Donec consequat tellus sed est accumsan elementum. Fusce pharetra facilisis sem ut cursus. Morbi dictum placerat est, in lacinia enim porttitor non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vestibulum volutpat ipsum, ut suscipit nisi porttitor non. Vivamus blandit tortor leo, vitae feugiat tellus lobortis vel. Vestibulum consectetur arcu odio, quis facilisis nisl vehicula non. Suspendisse condimentum massa quis sapien facilisis finibus. Cras urna lectus, molestie ac blandit id, blandit quis felis. In hac habitasse platea dictumst. In ac ante et leo tristique porttitor. Aliquam eleifend justo sed magna egestas, eu egestas magna euismod. Praesent quis dolor fermentum, laoreet enim a, porttitor felis. Mauris id est bibendum, cursus arcu in, commodo magna. Aliquam erat volutpat.
-
-In tristique urna nunc, non varius augue mollis ut. Donec dolor velit, molestie vel aliquet id, viverra in augue. Nulla fermentum sodales ornare. Integer rhoncus scelerisque mi vitae maximus. Sed nec nunc et diam mattis interdum. Nullam pretium purus vel tortor pharetra, non bibendum erat ornare. Morbi ornare ipsum dui, et fermentum dui facilisis et. Nam convallis vestibulum nibh ut dictum. Quisque hendrerit arcu eu porta venenatis. Mauris lectus est, sodales non eleifend at, fringilla ac erat. Morbi lacinia suscipit fermentum. Duis gravida hendrerit enim, vel mollis ipsum pharetra et. Sed sit amet lectus in orci convallis varius.
-
-Praesent ullamcorper purus eget lacus fermentum feugiat. Mauris eleifend dictum enim vel lobortis. Aliquam erat volutpat. Proin sed placerat nulla. Phasellus congue neque felis, aliquet suscipit mauris tristique vel. Mauris dui nibh, euismod volutpat ipsum ac, molestie scelerisque ipsum. Aenean ultricies fermentum urna, in molestie orci feugiat non. Nunc a convallis turpis.'
+  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
   })
 chapter_3.book = tendre_est_la_nuit
 chapter_3.read_count = 168
@@ -121,14 +115,14 @@ chapter_3.save!
 
 
 review_1 = Review.new ({
-  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
   })
 review_1.user = leo
 review_1.chapter = chapter_1
 review_1.save!
 
 review_2 = Review.new ({
-  content: "J'ai détesté, pourquoi avoir tué le personnage principal dès la troisième ligne ? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  content: "J'ai détesté, pourquoi avoir tué le personnage principal dès la troisième ligne ? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
   })
 review_2.user = bob
 review_2.chapter = chapter_1
@@ -170,7 +164,7 @@ comment_perdre_sa_tete.save!
 
 chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
   })
 
 chapter_1.book = comment_perdre_sa_tete
@@ -178,7 +172,7 @@ chapter_1.save!
 
 chapter_2 = Chapter.new({
   title: 'Chapter 2',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10,
   })
 
 chapter_2.book = comment_perdre_sa_tete
@@ -186,7 +180,7 @@ chapter_2.save!
 
 chapter_3 = Chapter.new({
   title: 'Chapter 3',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10
   })
 
 chapter_3.book = comment_perdre_sa_tete
@@ -218,7 +212,7 @@ comment_perdre_sa_tete.save!
 
 chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10
   })
 
 chapter_1.book = comment_perdre_sa_tete
@@ -226,7 +220,7 @@ chapter_1.save!
 
 chapter_2 = Chapter.new({
   title: 'Chapter 2',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10
   })
 
 chapter_2.book = comment_perdre_sa_tete
@@ -234,7 +228,7 @@ chapter_2.save!
 
 chapter_3 = Chapter.new({
   title: 'Chapter 3',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10
   })
 
 chapter_3.book = comment_perdre_sa_tete
