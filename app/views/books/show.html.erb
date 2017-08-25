@@ -25,9 +25,11 @@
       <div class="book-description-body">
         <p><%= @book.summary %></p>
       </div>
-      <div class="book-button">
-      <%= link_to "Reprendre la lecture", chapter_path(@book.chapters.last), class: "resume-reading-button" %>
-      </div>
+      <% if @book.chapters.first.present? %>
+        <div class="book-button">
+        <%= link_to "Reprendre la lecture", chapter_path(@book.chapters.last), class: "resume-reading-button" %>
+        </div>
+      <% end %>
     </div>
   </div>
 
