@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :chapters, only: [:show, :new] do
       resources :reviews, only: [:new, :create]
       resources :follows, only: [:new, :create, :destroy]
+      resources :scrolls, only: [:new, :create, :update]
     end
   end
 

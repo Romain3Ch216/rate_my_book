@@ -36,3 +36,4 @@ module RateMyBook
     config.generators.system_tests = nil
   end
 end
+
