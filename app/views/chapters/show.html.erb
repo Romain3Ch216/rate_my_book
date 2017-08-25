@@ -28,6 +28,10 @@
     </div>
   </div>
 
+  <div class="bookmark">
+    <%= link_to "Déposer un marque-page", scroll_path(@scroll, {scroll_value: 200}), method: :patch %>
+  </div>
+
   <div class="text-content">
     <p>
       <%= @chapter.content %>

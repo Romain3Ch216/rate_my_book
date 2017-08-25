@@ -6,14 +6,15 @@ class ScrollsController < ApplicationController
   end
 
   def create
-    @scroll = Scroll.new(scroll_params)
+    @scroll = Scroll.new
     @scroll.user = current_user
     @scroll.chapter = @chapter
+    @scroll.scroll_value = params[:scroll_value]
     @scroll.save
   end
 
   def update
-    Scroll.find(params[:id]).update(scroll_params)
+    Scroll.find(params[:id]).update(scroll_value: params[:scroll_value])
   end
 
   private
