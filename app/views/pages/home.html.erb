@@ -1,7 +1,8 @@
+
 <div class="banner" style="background-image: url(<%= image_url('group-2.png') %>);">
 
   <div class="banner-content">
-    <h1>  Lisez. Commentez. Votez. <br>Le livre le plus plébiscité est édité !  </br></h1>
+    <h1>  Lisez. Commentez. Notez. <br>Le livre le plus plébiscité est édité !  </br></h1>
   </div>
 
   <div class="btn btn-cta">
@@ -9,108 +10,33 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs">
-      <a class="tab active" href="#">
-        <p>Science Fiction</p>
-      </a>
-      <a class="tab" data-target="#policier">
-        <p>Policier</p>
-      </a>
-      <a class="tab" data-target="#romance">
-        <p>Romance</p>
-      </a>
-      <a class="tab" data-target="#biographie">
-        <p>Biographie</p>
-      </a>
-      <a class="tab" data-target="#fantastique">
-        <p>Fantastique</p>
-      </a>
-      <a class="tab" data-target="#historique">
-        <p>Historique</p>
-      </a>
-    </div>
-   <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
-        <h2>Tout afficher</h2>
-      </a>
-    </div>
-  </div>
-</div>
 
+<div class="container-fluid">
+  <ul class="nav nav-tabs" role="tablist">
+    <% Book.category.each do |category| %>
+      <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
+    <%end%>
+  </ul>
 
-
-      <div class="tab-content hidden" id="romance">
-        <p>Here are my projects.</p>
+  <div class="tab-content">
+    <% Book.category.each do |category| %>
+      <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">
+        <div class="row">
+          <% dynamic_category(category).each do |book| %>
+              <div class="col-xs-12 col-sm-6 col-lg-4">
+                <%= render "books/book_cards", book: book %>
+              </div>
+            <% end %>
+        </div>
       </div>
-      <div class="tab-content hidden" id="romance">
-        <p>Contact me if you want.</p>
-      </div>
-      <div class="tab-content hidden" id="biographie">
-        <p>Contact me if you want.</p>
-      </div>
-      <div class="tab-content hidden" id="fantastique">
-        <p>Contact me if you want.</p>
-      </div>
-      <div class="tab-content hidden" id="historique">
-        <p>Contact me if you want.</p>
-      </div>
-    </div>
-
-<div class="container-fluid" style="background-color: #E1F1EE;">
-  <div class="card-container">
-    <% @books.each do |book| %>
-      <%= render 'books/book_cards', book: book %>
-    <% end %>
+    <%end%>
   </div>
 </div>
 
-<div class="container-animation" style="background-color: white;">
-      <h1 class="item-1">“L’art n’est pas d’arriver avec des idées neuves mais d’interpréter ces idées qui nous entourent depuis toujours.”<strong> George Lucas </strong></h1>
-      <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
-      <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
-</div>
 
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs" style="font-weight: bold">
-        <p>Nouveautés</p>
+<div class="banner-quote" style="background-color: white;">
+    <div class="quote-content">
+      <h1> There is nothing more powerful than an idea whose time has come </h1>
+      <p> Victor Hugo </p>
     </div>
-    <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
-        <h2>Tout afficher</h2>
-      </a>
-    </div>
-  </div>
 </div>
-
-<div class="container-fluid" style="background-color: #EDE8F0;">
-  <div class="card-container">
-    <% @books.each do |book| %>
-      <%= render 'books/book_cards', book: book %>
-    <% end %>
-  </div>
-</div>
-
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs" style="font-weight: bold">
-        <p>Les Plus Populaires</p>
-    </div>
-    <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
-        <h2>Tout afficher</h2>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid" style="background-color: #E3E9F3;">
-  <div class="card-container">
-    <% @books.each do |book| %>
-      <%= render 'books/book_cards', book: book %>
-    <% end %>
-  </div>
-</div>
-
