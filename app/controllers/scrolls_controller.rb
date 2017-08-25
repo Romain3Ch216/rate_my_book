@@ -14,7 +14,7 @@ class ScrollsController < ApplicationController
   end
 
   def update
-    Scroll.find(params[:id]).update(scroll_value: params[:scroll_value])
+    Scroll.find(params[:id]).update(scroll_params)
   end
 
   private

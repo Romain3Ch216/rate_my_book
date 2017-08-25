@@ -29,7 +29,10 @@
   </div>
 
   <div class="bookmark">
-    <%= link_to "Déposer un marque-page", scroll_path(@scroll, {scroll_value: 200}), remote: true, method: :put %>
+    <%= simple_form_for @scroll do |f| %>
+      <%= f.input :scroll_value, input_html: {id: "scroll-value"}, as: :hidden%>
+      <%= f.button :submit, value: "Déposer un marque-page" %>
+    <% end %>
   </div>
 
   <div class="text-content">
