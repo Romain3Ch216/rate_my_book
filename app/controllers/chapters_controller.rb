@@ -6,7 +6,11 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     @review = Review.new
     @follow = Follow.new
-    @scroll = Scroll.create(user: current_user, chapter: @chapter, scroll_value: 0)
+    if @chapter.scrolls.where(user: current_user).empty?
+      @scroll = Scroll.create(user: current_user, chapter: @chapter, scroll_value: 0)
+    else
+      @scroll = @chapter.scrolls.first
+    end
     respond_to do |format|
       format.html
       format.js

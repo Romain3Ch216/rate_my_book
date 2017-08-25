@@ -13,5 +13,6 @@
     <%= yield %>
     <%= javascript_include_tag 'reader' %>
     <%= cloudinary_js_config %>
+    <%= yield(:after_js) %>
   </body>
 </html>
