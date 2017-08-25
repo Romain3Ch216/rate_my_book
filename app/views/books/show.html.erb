@@ -83,11 +83,9 @@
 
           <div id="open-modal" class="modal-window">
             <div>
-              <div class="modal-header">
+              <div class="header-of-modal">
                 <h2 class="modal-title">Sign up</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
               </div>
               <%= simple_form_for(:user, url: registration_path(:user)) do |f| %>
               <%= f.error_notification %>
@@ -103,9 +101,6 @@
               <%= f.button :submit, "Sign up" %>
               </div>
 
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
               <% end %>
             </div>
           </div>
