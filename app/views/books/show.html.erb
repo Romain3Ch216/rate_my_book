@@ -63,7 +63,7 @@
 
 
     <% if current_user %>
-       <!-- Modal content start -->
+       <!-- Modal content start review -->
         <div id="open-modal" class="modal-window">
           <div>
             <div class="header-of-modal">
@@ -79,6 +79,40 @@
           </div>
         </div>
         <!-- Modal content end-->
+        <% else %>
+
+        <div id="open-modal" class="modal-window">
+          <div>
+            <div class="modal-header">
+              <h2 class="modal-title">Sign up</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <%= simple_form_for(:user, url: registration_path(:user)) do |f| %>
+                <%= f.error_notification %>
+
+
+                <div class="form-inputs">
+                  <%= f.input :email, required: true, autofocus: true %>
+                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                  <%= f.input :password_confirmation, required: true %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Sign up" %>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+
       <% end %>
 
       </div>

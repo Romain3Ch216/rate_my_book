@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
   root to: 'pages#home'
   resources :books, shallow: true, only: [:index,:show, :new, :edit, :create] do
     resources :chapters, only: [:show, :new] do
