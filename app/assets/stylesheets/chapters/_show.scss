@@ -1,7 +1,7 @@
 .content {
   display: flex;
   width: 100%;
-  padding-top: 70px;
+  padding-top: 40px;
   background-color: $reader;
   min-height: calc(100vh - 70px);
 }
@@ -27,8 +27,8 @@
 }
 
 .exit  {
-    position: absolute;
-    right: 20px;
+  position: absolute;
+  right: 25px;
 }
 
 .exit > a:hover {

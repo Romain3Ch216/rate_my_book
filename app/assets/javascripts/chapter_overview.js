@@ -7,8 +7,9 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-    if (scroll >= 115) {
+    if (scroll >= 80) {
       $('.overview').addClass('sticky');
+      $('.exit').addClass('sticky');
     } else {
       $('.overview').removeClass('sticky');
     }
