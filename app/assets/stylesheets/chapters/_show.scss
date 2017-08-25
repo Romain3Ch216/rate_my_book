@@ -47,6 +47,11 @@
   }
 }
 
+.bookmark {
+  position: absolute;
+  right: 50px;
+}
+
 .sticky {
   position: fixed;
   top: 20px;
@@ -139,7 +144,9 @@
   right: 10px;
 }
 
-.bookmark {
-  position: fixed;
-  top: 200px;
+#bookmark {
+  background-color: $reader;
+  border: none;
+  color: rgba(136, 136, 136, 1);
+  font-size: 14px;
 }
