@@ -62,17 +62,23 @@
   padding: 5px 10px;
 }
 
-.library-content{
-  margin: 15px 10px;
-}
+
 
 .view {
   grid-row: 1 / span 4;
   grid-column: 2 / span 3;
   margin: 20px;
-  padding: 20px 40px;
   border: 1px solid #e0e3e9;
   background-color: #fff;
+}
+
+.view-header {
+  padding-left: 30px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+  }
 }
 
 .news {
@@ -80,12 +86,52 @@
   position: relative;
 }
 
-.news-feed {
-  padding: 20px;
-  border-bottom: solid 1px rgba(136, 136, 136, 1);
+.chapter-feed {
+  padding: 30px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  height: 200px;
+}
+
+.feed-book-info {
+  position: relative;
+  margin: 0 20px;
+}
+
+.book-author {
+  width: 100px;
+}
+
+.book-title {
+  font-size: 14px;
+}
+
+.chapter-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.chapter-content {
+  text-align: justify;
+  color: #a6a6ae;
+}
+
+.chapter-date {
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  font-size: 14px;
+  color: #C0C0C0;
+}
+
+
+.feed-icon {
+  img {
+    width: 20px;
+    margin: 30px;
+  }
 }
 
 .new:first-child {
@@ -200,3 +246,4 @@
     color: #B69FBF;
   }
 }
+

@@ -15,10 +15,10 @@
       <p>Lecteur</p>
       <div class="tabs">
         <a class="tab active" data-target="#news">
-          <p>Chapitres Suivis ></p>
+          <p>Dernières sorties ></p>
         </a>
         <a class="tab" data-target="#follows">
-          <p>Livres suivis ></p>
+          <p>Ma Bibliothèque ></p>
         </a>
         <a class="tab" data-target="#reviews">
           <p>Mes Commentaires ></p>
@@ -47,18 +47,27 @@
 
   <div class="view">
     <div class="news">
-
-
+      <div class="view-header">
+        <h1>Dernières sorties</h1>
+      </div>
       <div class="tab-content" id="news">
         <% current_user.follows.each do |follow| %>
-          <div class="news-feed">
-            <div class="news-content">
-              <span id="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></span>
-              <span id="book-title"><%= follow.chapter.book.title %></span>
-              <span id="book-author">de <%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></span>
+          <div class="chapter-feed">
+            <div class="feed-book-cover">
+              <p id="book-author"><%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></p>
             </div>
-            <div class="dashboard-button">
-              <%= link_to "Reprendre la lecture", chapter_path(follow.chapter), class: "dashboard-link" %>
+            <div class="feed-book-info">
+              <p class="book-title"><%= follow.chapter.book.title %></p>
+              <p class="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></p>
+              <p class="chapter-content"><%= follow.chapter.content.truncate(300, separator: ' ') %></p>
+              <p class="chapter-date"><%= follow.chapter.created_at.strftime('%m/%d/%Y') %></p>
+            </div>
+            <div class="feed-icon">
+              <% if 1 == 1 %>
+                <%= image_tag "circle-empty.svg"%>
+              <% else %>
+                <%= image_tag "circle-empty.svg" %>
+              <% end %>
             </div>
           </div>
         <% end %>
