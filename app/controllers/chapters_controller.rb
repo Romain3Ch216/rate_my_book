@@ -7,6 +7,10 @@ class ChaptersController < ApplicationController
     @review = Review.new
     @follow = Follow.new
     @scroll = Scroll.create(user: current_user, chapter: @chapter, scroll_value: 0)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
