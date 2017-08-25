@@ -166,6 +166,7 @@
 }
 
 .container-animation {
+  overflow: hidden;
   width: 100%;
   position: relative;
   height: 170px;
@@ -223,5 +224,6 @@
   74.96%, 91.62% { left: 20%; opacity: 1; }
   100% { left: 110%; opacity: 0; }
 }
+
 
 
