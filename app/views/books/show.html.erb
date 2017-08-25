@@ -47,19 +47,19 @@
           <%= link_to "#" do %>
             <%= image_tag "eye.svg", class: "stat-icon" %>
           <% end %>
-          <p>234</p>
+          <p><%= chapter.read_count %></p>
         </div>
         <div class="stats upvotes">
           <%= link_to "#" do %>
             <%= image_tag "flag.svg", class: "stat-icon" %>
           <% end %>
-          <p>234</p>
+          <p><%= chapter.follows.count %></p>
         </div>
         <div class="stats comments">
           <%= link_to "#open-modal" do %>
             <%= image_tag "comment.svg", class: "stat-icon" %>
           <% end %>
-          <p>234</p>
+          <p><%= chapter.reviews.count %></p>
         </div>
        <!-- Modal content start -->
         <div id="open-modal" class="modal-window">
