@@ -12,6 +12,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def become_writer
+    @disable_nav = true
+    @book = Book.new
+  end
+
   def update
     if current_user.update(user_params)
       redirect_to user_path(current_user)

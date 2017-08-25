@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag 'profile', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/profile_navbar' %>
+    <%= render 'shared/profile_navbar' unless @disable_nav %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'profile' %>
