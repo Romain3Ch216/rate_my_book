@@ -5,9 +5,12 @@
     </h1>
   </div>
   <div class="exit">
-    <%= link_to "&times;".html_safe, book_path(@chapter.book) %>
+    <%= link_to book_path(@chapter.book) do %>
+      <%= image_tag "close.svg" %>
+    <% end %>
   </div>
 </div>
+
 
 
 <div class="content">

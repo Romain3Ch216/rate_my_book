@@ -9,8 +9,11 @@
 .chapter-navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   transition: all 0.3s ease;
-  height: 70px;
+  height: 60px;
   padding: 0px 30px;
+  display: flex;
+  position: relative;
+  justify-content: center;
   align-items: center;
   background-color: #f11f11f11;
   h1 {
@@ -18,18 +21,14 @@
     color: rgb(5,5,5);
     margin: 0;
   }
+  img {
+    width: 20px;
+  }
 }
 
-.title {
-  text-align: center;
-  padding: 20px;
-}
-
-.exit >  a {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: rgba(5,5,5,1);
+.exit  {
+    position: absolute;
+    right: 20px;
 }
 
 .exit > a:hover {
