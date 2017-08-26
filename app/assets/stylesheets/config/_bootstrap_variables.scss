@@ -23,3 +23,9 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+a {
+  text-decoration: none;
+  &:focus {
+    text-decoration: none;
+  }
+}

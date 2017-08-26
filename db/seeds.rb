@@ -92,6 +92,14 @@ comment_perdre_sa_tete = Book.new ({
 comment_perdre_sa_tete.user = ida
 comment_perdre_sa_tete.save!
 
+coder_ou_respirer = Book.new ({
+  title: 'Coder ou respirer',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit.",
+  category: 'Romance'
+  })
+coder_ou_respirer.user = leo
+coder_ou_respirer.save!
+
 # -----------------------    CHAPTERS
 
 ecume_chapter_1 = Chapter.new({

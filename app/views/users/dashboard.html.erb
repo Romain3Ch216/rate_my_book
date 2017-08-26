@@ -15,46 +15,63 @@
       <p>Lecteur</p>
       <div class="tabs">
         <a class="tab active" data-target="#news">
-          <p>Dernières sorties ></p>
+          <p>Dernières sorties</p>
+          <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
         <a class="tab" data-target="#follows">
-          <p>Ma Bibliothèque ></p>
+          <p>Ma Bibliothèque</p>
+          <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
         <a class="tab" data-target="#reviews">
-          <p>Mes Commentaires ></p>
+          <p>Mes Commentaires</p>
+          <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
       </div>
   </div>
 
-  <% if current_user.books %>
+  <% if current_user.books.any? %>
     <div class="writer">
       <p>Ecrivain</p>
       <div class="tabs">
         <a class="tab" data-target="#drafts">
-          <p>Mes ébauches ></p>
+          <p>Mes ébauches</p>
+          <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
       </div>
-
     </div>
   <% else %>
-    <%= link_to  become_writer_users_path, class:'become-writer' do %>
+  <div class="writer">
+    <%= link_to  become_writer_users_path, class: "become-writer" do %>
       Devenir Ecrivain
     <% end %>
+  </div>
   <% end %>
+
 
 
 
 
   <div class="view">
     <div class="news">
-      <div class="view-header">
-        <h1>Dernières sorties</h1>
-      </div>
+
       <div class="tab-content" id="news">
+        <div class="view-header">
+          <h1>Dernières sorties</h1>
+        </div>
+        <div class="view-body">
         <% current_user.follows.each do |follow| %>
           <div class="chapter-feed">
             <div class="feed-book-cover">
-              <p id="book-author"><%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></p>
+              <div class="card-tiny-level-3">
+                <div class="card-tiny-level-2" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
+                  <div class="card-tiny-level-1" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
+                    <div class="card-tiny-content">
+                      <h2><%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></h2>
+                      <p style="color: <%= follow.chapter.book.hex_for_category %>;"><%= follow.chapter.book.category %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="feed-book-info">
               <p class="book-title"><%= follow.chapter.book.title %></p>
@@ -63,7 +80,7 @@
               <p class="chapter-date"><%= follow.chapter.created_at.strftime('%m/%d/%Y') %></p>
             </div>
             <div class="feed-icon">
-              <% if 1 == 1 %>
+              <% if 1 == 0 %>
                 <%= image_tag "circle-empty.svg"%>
               <% else %>
                 <%= image_tag "circle-empty.svg" %>
@@ -71,23 +88,36 @@
             </div>
           </div>
         <% end %>
+        </div>
       </div>
 
-
-
-
        <div class="tab-content hidden" id="follows">
-        <div class="row">
+        <div class="view-header">
+          <h1>Ma bibliothèque</h1>
+        </div>
+        <div class="view-body">
           <% current_user.follows.each do |follow| %>
             <% @book =  follow.chapter.book %>
-            <%= link_to book_path(@book) do %>
-              <div class="col-xs-12 col-md-4 col-lg-3">
-                <%= render 'books/book_cards', book: follow.chapter.book %>
+              <div class="col-xs-12 col-md-4 col-lg-4">
+                <div class="book-card">
+                  <%= link_to book_path(@book) do %>
+                  <div class="rectangle-1" style="border: 1px solid <%= @book.hex_for_category %>;">
+                    <div class="rectangle-2" style="border: 1px solid <%= @book.hex_for_category %>;">
+                      <h2><strong><%= @book.title %></strong></h2>
+                      <h3 style="color: <%= @book.hex_for_category %>;"><%= @book.category %></h3>
+                      <div class="card-summary">
+                        <p><%= @book.summary[0..100].truncate(100, separator: ' ') %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <%end%>
+                </div>
               </div>
-            <% end %>
           <% end  %>
         </div>
       </div>
+
+
 
       <div class="tab-content hidden" id="reviews">
         <% current_user.reviews.all.each do |review| %>
@@ -99,8 +129,19 @@
         <% end %>
       </div>
 
-    </div>
+
+
+      <div class="tab-content hidden" id="drafts">
+        <% current_user.reviews.all.each do |review| %>
+          <div class="dashboard-review">
+            <span id="review-chapter-title"><%= review.chapter.title %></span>
+            <span id="review-author"><%= review.chapter.book.user.first_name %> <%= review.chapter.book.user.last_name %></span>
+            <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
+          </div>
+        <% end %>
+      </div>
+
   </div>
 
+  </div>
 </div>
-
