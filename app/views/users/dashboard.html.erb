@@ -1,41 +1,44 @@
 <div class="dashboard">
+
+
   <div class="profile-details">
     <% if current_user.photo? %>
-        <%= cl_image_tag(current_user.photo,  width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face)%>
+      <%= cl_image_tag(current_user.photo,  width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face)%>
     <% else %>
-      <%= link_to dashboard_users_path do %>
-        <%= image_tag "user.svg", width: "75"%>
-      <% end %>
+      <%= image_tag "user.svg", width: "75"%>
     <% end %>
     <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
     <p><%= current_user.description.truncate(65, separator: ' ') %></p>
-    <div class="tab" data-target="#edit">
-      <%= link_to 'Editer mon profil', "#", class: 'edit-button' %>
+    <div class="tab edit-tab" data-target="#edit">
+      <p class="edit-button">Editer mon profil</p>
     </div>
   </div>
+
+<!-- reader access -->
   <div class="reader">
-      <p>Lecteur</p>
+      <p class="tab-title">Lecteur</p>
       <div class="tabs">
-        <a class="tab active" data-target="#news">
+        <a class="tab box-tab active" data-target="#news">
           <p>Dernières sorties</p>
           <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
-        <a class="tab" data-target="#follows">
+        <a class="tab box-tab" data-target="#follows">
           <p>Ma Bibliothèque</p>
           <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
-        <a class="tab" data-target="#reviews">
+        <a class="tab box-tab" data-target="#my-reviews">
           <p>Mes Commentaires</p>
           <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
       </div>
   </div>
 
+<!-- writer access -->
   <% if current_user.books.any? %>
     <div class="writer">
-      <p>Ecrivain</p>
+      <p class="tab-title">Ecrivain</p>
       <div class="tabs">
-        <a class="tab" data-target="#drafts">
+        <a class="tab box-tab" data-target="#drafts">
           <p>Mes ébauches</p>
           <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
@@ -52,10 +55,9 @@
 
 
 
-
   <div class="view">
-    <div class="news">
 
+<!-- Dernières sorties TAB -->
       <div class="tab-content" id="news">
         <div class="view-header">
           <h1>Dernières sorties</h1>
@@ -93,6 +95,7 @@
         </div>
       </div>
 
+<!-- Ma bibliothèque TAB -->
        <div class="tab-content hidden" id="follows">
         <div class="view-header">
           <h1>Ma bibliothèque</h1>
@@ -131,8 +134,12 @@
         </div>
       </div>
 
-
-      <div class="tab-content hidden" id="reviews">
+<!-- Mes commentaires TAB -->
+      <div class="tab-content hidden" id="my-reviews">
+        <div class="view-header">
+          <h1>Mes commentaires</h1>
+        </div>
+        <div class="view-body">
         <% current_user.reviews.all.each do |review| %>
           <div class="dashboard-review">
             <span id="review-chapter-title"><%= review.chapter.title %></span>
@@ -140,10 +147,15 @@
             <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
           </div>
         <% end %>
+        </div>
       </div>
 
-
+<!-- Mes ébauches TAB -->
       <div class="tab-content hidden" id="drafts">
+        <div class="view-header">
+          <h1>Mes commentaires</h1>
+        </div>
+        <div class="view-body">
         <% current_user.reviews.all.each do |review| %>
           <div class="dashboard-review">
             <span id="review-chapter-title"><%= review.chapter.title %></span>
@@ -151,8 +163,10 @@
             <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
           </div>
         <% end %>
+        </div>
       </div>
 
+<!-- Modifier mon profil TAB -->
       <div class="tab-content hidden" id="edit">
         <div class="view-header">
           <h1>Mon Profil</h1>
@@ -164,7 +178,7 @@
               <%= f.input :last_name, label: "Last name" %>
               <%= f.input :email, label: "Email" %>
               <%= f.input :age, label: "Age" %>
-              <%= f.input :sex, label: "Sex" %>
+              <%= f.input :sex, collection: ["Homme", "Femme"], as: :radio_buttons, label: "Sex" %>
               <%= f.input :photo, as: :attachinary %>
               <%= f.button :submit %>
             <% end %>
@@ -172,7 +186,7 @@
         </div>
       </div>
 
-  </div>
+
 
   </div>
 </div>

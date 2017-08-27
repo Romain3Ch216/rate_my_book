@@ -3,21 +3,23 @@
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
   background-color: #E9EBEE;
-  height: 600px;
-  overflow: hidden;
+  // height: 600px;
+  // overflow: hidden;
 }
 
 .profile-details {
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 1;
   grid-column: 1 / span 1;
   border-radius: 3px;
   background-color: #ffffff;
   margin: 20px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-direction: column;
   text-align: center;
   padding: 20px;
+  border: 1px solid #ddd;
   h2 {
     font-size: 20px;
     margin: 10px;
@@ -35,22 +37,22 @@
   color: #a6a6ae;
   border: solid 1px #a6a6ae;
   padding: 7px 10px;
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 13px;
   margin: 10px 50px;
   &:hover {
-    color: rgba(136, 136, 136, 1);
+    background-color: #eee;
     text-decoration: none;
   }
 }
 
 .reader {
-  grid-row: 3 / span 1;
+  grid-row: 2 / span 1;
   grid-column: 1 / span 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0px 20px;
+  margin: 0px 20px 20px 20px;
   h2 {
     font-size: 18px;
     color: rgba(136, 136, 136, 1);
@@ -59,7 +61,7 @@
 }
 
 .writer {
-  grid-row: 4 / span 1;
+  grid-row: 3 / span 1;
   grid-column: 1 / span 1;
   display: flex;
   flex-direction: column;
@@ -74,11 +76,12 @@
   margin: 20px;
   background-color: #fff;
   border-radius: 3px;
+  border: 1px solid #ddd;
 }
 
 .view-header {
   padding-left: 30px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 1px #eee;
   h1 {
     font-size: 22px;
     font-weight: bold;
@@ -151,10 +154,15 @@
   width: 100%;
   background-color: #fff;
   border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.tab-title {
+  margin-left: 10px;
+  color: #a6a6ae;
 }
 
 .tab {
-  padding: 5px 25px 5px 20px;
   justify-content: space-between;
   height: 40px;
   display: flex;
@@ -164,14 +172,29 @@
     color: rgba(136, 136, 136, 1);
     margin: 0;
   }
+  img {
+    width: 5px;
+  }
 }
- .tab-icon {
-  width: 7px;
- }
 
-.active p {
+.box-tab {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 25px 5px 20px;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// .edit-tab {
+//   margin: auto;
+// }
+
+.active {
+  background-color: rgba(0, 0, 0, 0.03);
+  p {
   color: #000;
   font-weight: bold;
+  }
 }
 
 .tabs a:hover {
@@ -367,15 +390,28 @@
 //  ----------------------------------- EDIT
 
 .form-control {
-  display: inline-block;
-  width: 75%;
+  // display: inline-block;
+  // width: 500px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .control-label {
-  width: 25%;
+  // width: 150px;
   text-align: right;
+  margin-right: 15px;
+  color: #a6a6ae;
+  font-weight: normal;
 }
 
 .user-form {
-  padding: 20px 100px;
+  padding: 20px 40px;
+}
+
+label {
+  margin-right: 15px;
+}
+
+#user_sex_homme {
+  margin-right: 5px;
 }
