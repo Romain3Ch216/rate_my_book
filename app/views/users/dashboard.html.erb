@@ -9,7 +9,9 @@
     <% end %>
     <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
     <p><%= current_user.description.truncate(65, separator: ' ') %></p>
-    <%= link_to 'Editer mon profil', edit_user_path(current_user), class: 'edit-button' %>
+    <div class="tab" data-target="#edit">
+      <%= link_to 'Editer mon profil', "#", class: 'edit-button' %>
+    </div>
   </div>
   <div class="reader">
       <p>Lecteur</p>
@@ -62,10 +64,10 @@
         <% current_user.follows.each do |follow| %>
           <div class="chapter-feed">
             <div class="feed-book-cover">
-              <div class="card-tiny-level-3">
-                <div class="card-tiny-level-2" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
-                  <div class="card-tiny-level-1" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
-                    <div class="card-tiny-content">
+              <div class="book-card-tiny">
+                <div class="rectangle-1-tiny" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
+                  <div class="rectangle-2-tiny" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
+                    <div class="card-content-tiny">
                       <h2><%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></h2>
                       <p style="color: <%= follow.chapter.book.hex_for_category %>;"><%= follow.chapter.book.category %></p>
                     </div>
@@ -77,7 +79,7 @@
               <p class="book-title"><%= follow.chapter.book.title %></p>
               <p class="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></p>
               <p class="chapter-content"><%= follow.chapter.content.truncate(300, separator: ' ') %></p>
-              <p class="chapter-date"><%= follow.chapter.created_at.strftime('%m/%d/%Y') %></p>
+              <p class="chapter-date"><%= follow.chapter.created_at.strftime('%d/%m/%Y') %></p>
             </div>
             <div class="feed-icon">
               <% if 1 == 0 %>
@@ -99,15 +101,27 @@
           <% current_user.follows.each do |follow| %>
             <% @book =  follow.chapter.book %>
               <div class="col-xs-12 col-md-4 col-lg-4">
-                <div class="book-card">
+                <div class="book-card-medium">
                   <%= link_to book_path(@book) do %>
-                  <div class="rectangle-1" style="border: 1px solid <%= @book.hex_for_category %>;">
-                    <div class="rectangle-2" style="border: 1px solid <%= @book.hex_for_category %>;">
+                  <div class="rectangle-1-medium" style="border: 1px solid <%= @book.hex_for_category %>;">
+                    <div class="rectangle-2-medium" style="border: 1px solid <%= @book.hex_for_category %>;">
+                    <div class="card-title">
                       <h2><strong><%= @book.title %></strong></h2>
                       <h3 style="color: <%= @book.hex_for_category %>;"><%= @book.category %></h3>
-                      <div class="card-summary">
-                        <p><%= @book.summary[0..100].truncate(100, separator: ' ') %></p>
+                    </div>
+                    <div class="card-summary">
+                      <p><%= @book.summary[0..100].truncate(100, separator: ' ') %></p>
+                    </div>
+                    <div class="card-stats">
+                      <div>
+                          <%= image_tag "eye.svg" %>
+                        <p>...</p>
                       </div>
+                      <div>
+                          <%= image_tag "comment.svg" %>
+                        <p>...</p>
+                      </div>
+                    </div>
                     </div>
                   </div>
                   <%end%>
@@ -116,7 +130,6 @@
           <% end  %>
         </div>
       </div>
-
 
 
       <div class="tab-content hidden" id="reviews">
@@ -130,7 +143,6 @@
       </div>
 
 
-
       <div class="tab-content hidden" id="drafts">
         <% current_user.reviews.all.each do |review| %>
           <div class="dashboard-review">
@@ -139,6 +151,25 @@
             <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
           </div>
         <% end %>
+      </div>
+
+      <div class="tab-content hidden" id="edit">
+        <div class="view-header">
+          <h1>Mon Profil</h1>
+        </div>
+        <div class="view-body">
+          <div class="user-form">
+            <%= simple_form_for current_user do |f| %>
+              <%= f.input :first_name, label: "First name" %>
+              <%= f.input :last_name, label: "Last name" %>
+              <%= f.input :email, label: "Email" %>
+              <%= f.input :age, label: "Age" %>
+              <%= f.input :sex, label: "Sex" %>
+              <%= f.input :photo, as: :attachinary %>
+              <%= f.button :submit %>
+            <% end %>
+          </div>
+        </div>
       </div>
 
   </div>

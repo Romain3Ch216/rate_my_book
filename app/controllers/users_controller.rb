@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   layout "profile"
-  before_action :user_params, only: :update
+  before_action :user_params, only: [:edit , :update]
 
   def dashboard
   end

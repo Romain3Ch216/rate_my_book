@@ -34,10 +34,10 @@
 .edit-button {
   color: #a6a6ae;
   border: solid 1px #a6a6ae;
-  padding: 5px 10px;
-  border-radius: 2px;
+  padding: 7px 10px;
+  border-radius: 3px;
   font-size: 13px;
-  margin: 10px 30px;
+  margin: 10px 50px;
   &:hover {
     color: rgba(136, 136, 136, 1);
     text-decoration: none;
@@ -264,7 +264,7 @@
 
 // ------------------------------ CARD TINY
 
-.card-tiny-level-3 {
+.book-card-tiny {
   background-color: #fff;
   height: 180px;
   width: 140px;
@@ -276,7 +276,7 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
-.card-tiny-level-2 {
+.rectangle-1-tiny {
   background-color: #fff;
   height: 165px;
   width: 125px;
@@ -286,7 +286,7 @@
   margin: auto;
 }
 
-.card-tiny-level-1 {
+.rectangle-2-tiny {
   background-color: #fff;
   height: 159px;
   width: 119px;
@@ -295,7 +295,7 @@
   position: relative;
 }
 
-.card-tiny-content {
+.card-content-tiny {
   position: absolute;
   top: 5%;
   text-align: center;
@@ -311,7 +311,7 @@
 
 // -------------- CARD MEDIUM
 
-.book-card {
+.book-card-medium {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,33 +321,31 @@
   background-color: #ffffff;
   margin: 15px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
   a {
     text-decoration: none;
     color: inherit;
   }
 }
 
-.rectangle-1 {
+.rectangle-1-medium {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 250px;
   height: 370px;
-  border: solid 0.5px #b69fbf;
+  border: solid 1px #b69fbf;
 }
 
-.rectangle-2 {
+.rectangle-2-medium {
   display: flex;
   flex-direction: column;
   width: 240px;
   height: 360px;
-  border: solid 0.5px #b69fbf;
+  border: solid 1px #b69fbf;
   padding: 10px;
-
-}
-
-.rectangle-2 {
   text-align: center;
+  justify-content: space-between;
   h2 {
   font-size: 23px;
   }
@@ -359,15 +357,25 @@
 .card-summary {
   color: #A6A6AE;
   text-align: center;
-  margin-top: 40px;
 }
 
-// .card-stats {
-//   display: flex;
-//   justify-content: space-around;
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+}
 
-//   div {
-//     align-items: stretch;
-//     text-align: center;
-//   }
-// }
+//  ----------------------------------- EDIT
+
+.form-control {
+  display: inline-block;
+  width: 75%;
+}
+
+.control-label {
+  width: 25%;
+  text-align: right;
+}
+
+.user-form {
+  padding: 20px 100px;
+}
