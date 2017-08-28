@@ -2,7 +2,9 @@
   margin-top: 30px;
 }
 
-.card-large-level-3 {
+// -------------- CARD LARGE
+
+.book-card-large {
   background-color: #fff;
   height: 450px;
   width: 320px;
@@ -14,7 +16,7 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
 
-.card-large-level-2 {
+.rectangle-1-large {
   background-color: #fff;
   height: 420px;
   width: 290px;
@@ -24,7 +26,7 @@
   margin: auto;
 }
 
-.card-large-level-1 {
+.rectangle-2-large {
   background-color: #fff;
   height: 410px;
   width: 280px;
@@ -73,14 +75,15 @@
   }
 }
 
-.book-description-header h1 {
+.book-description-header {
+  h1 {
   font-size: 50px;
-}
-
-.book-description-header h2 {
+  }
+  h2 {
   font-size: 25px;
   margin-top: 10px;
   font-weight: lighter;
+  }
 }
 
 .book-description-body {
@@ -91,7 +94,6 @@
 
 .resume-reading-button {
   color: #fff;
-  // background-color: #B69FBF;
   border: 1px solid #B69FBF;
   border-radius: 2px;
   padding: 10px 15px;
@@ -113,6 +115,8 @@
     font-weight: bold;
   }
 }
+
+// --------------------------------------- CHAPTER
 
 .chapter-info {
   padding: 25px 5px;
@@ -150,8 +154,7 @@
   margin: 30px 0;
 }
 
-
-// MODAL
+// --------------------------------------- MODAL
 
 .modal-window {
   position: fixed;
@@ -186,7 +189,6 @@
   border-radius: 4px;
 }
 
-
 .header-of-modal {
   display: flex;
   justify-content: space-between;
@@ -214,9 +216,7 @@
   }
 }
 
-.modal-close:hover {
-  color: #000;
-}
+// --------------------------------------- REVIEW
 
 .review-content {
   position: relative;

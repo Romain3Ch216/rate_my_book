@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   layout "profile"
-  before_action :user_params, only: :update
+  before_action :user_params, only: [:edit , :update]
 
   def dashboard
   end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to user_path(current_user)
+      redirect_to dashboard_users
     else
       render :edit
     end

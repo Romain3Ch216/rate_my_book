@@ -6,8 +6,9 @@
         <h2><strong><%= book.title %></strong></h2>
         <h3 style="color: <%= book.hex_for_category %>;"><%= book.category %></h3>
       </div>
-      <div class="summary">
-        <div><%= book.summary[0..100].gsub(/\s\w+\s*$/,'...') %></div>
+
+      <div class="card-summary">
+        <p><%= book.summary[0..100].gsub(/\s\w+\s*$/,'...') %></p>
       </div>
       <div class="card-stats">
         <div>
