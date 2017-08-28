@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 .banner {
   height: 500px;
   background-size: cover;
@@ -53,6 +52,8 @@
  }
 
 .container {
+    margin-right: auto;
+    margin-left: auto;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -114,7 +115,6 @@
 
 .active {
   color: black;
-  border-bottom: solid 0.5px #000000;
   margin-left: 0;
   p {
     color: black;
@@ -153,21 +153,12 @@
 }
 
 .card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 30.5px;
   margin-right: 40px;
   margin-left: 40px;
   margin-bottom: 30.5px;
-}
-
-
-a:focus {
-  text-decoration: none;
 }
 
 .container-animation {
@@ -228,6 +219,3 @@ a:focus {
   74.96%, 91.62% { left: 20%; opacity: 1; }
   100% { left: 110%; opacity: 0; }
 }
-
-
-
