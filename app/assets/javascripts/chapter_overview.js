@@ -7,10 +7,12 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-    if (scroll >= 115) {
+    if (scroll >= 75) {
       $('.overview').addClass('sticky');
+      $('.exit').css({position: 'fixed'});
     } else {
       $('.overview').removeClass('sticky');
+      $('.exit').css({position: 'absolute'});
     }
   });
 });

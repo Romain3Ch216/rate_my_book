@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824092710) do
+ActiveRecord::Schema.define(version: 20170825122351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 20170824092710) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "scrolls", force: :cascade do |t|
+    t.integer "scroll_value"
+    t.bigint "user_id"
+    t.bigint "chapter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chapter_id"], name: "index_scrolls_on_chapter_id"
+    t.index ["user_id"], name: "index_scrolls_on_user_id"
+  end
+
   create_table "upvotes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "review_id"
@@ -106,6 +116,8 @@ ActiveRecord::Schema.define(version: 20170824092710) do
   add_foreign_key "follows", "users"
   add_foreign_key "reviews", "chapters"
   add_foreign_key "reviews", "users"
+  add_foreign_key "scrolls", "chapters"
+  add_foreign_key "scrolls", "users"
   add_foreign_key "upvotes", "reviews"
   add_foreign_key "upvotes", "users"
 end
