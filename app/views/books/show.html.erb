@@ -63,56 +63,57 @@
 
 
         <% if current_user %>
-          <!-- Modal content start review -->
-          <div id="open-modal" class="modal-window">
-            <div>
-              <div class="header-of-modal">
-                <p>Notes (<%= chapter.reviews.count %>)</p>
-                <h1 class="modal-title"><%= chapter.title %></h1>
-                <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <div class="modal-body">
-                <% chapter.reviews.each do |review| %>
-                <%= render "reviews/review", review: review %>
-                <% end %>
-              </div>
+        <!-- Modal content start review -->
+        <div id="open-modal" class="modal-window">
+          <div>
+            <div class="header-of-modal">
+              <p>Notes (<%= chapter.reviews.count %>)</p>
+              <h1 class="modal-title"><%= chapter.title %></h1>
+              <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
             </div>
-          </div>
-          <!-- Modal content end-->
-        <% else %>
-
-          <div id="open-modal" class="modal-window">
-            <div>
-              <div class="header-of-modal">
-                <h2 class="modal-title">Sign up</h2>
-                <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <%= simple_form_for(:user, url: registration_path(:user)) do |f| %>
-              <%= f.error_notification %>
-
-
-              <div class="form-inputs">
-                <%= f.input :email, required: true, autofocus: true %>
-                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-                <%= f.input :password_confirmation, required: true %>
-              </div>
-
-              <div class="form-actions">
-              <%= f.button :submit, "Sign up" %>
-              </div>
-
+            <div class="modal-body">
+              <% chapter.reviews.each do |review| %>
+              <%= render "reviews/review", review: review %>
               <% end %>
             </div>
           </div>
-      <% end %>
+        </div>
+        <!-- Modal content end-->
+        <% else %>
 
+        <div id="open-modal" class="modal-window">
+          <div>
+            <div class="header-of-modal">
+              <h2 class="modal-title">Log in</h2>
+              <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <%= simple_form_for(:user, url: session_path(:user)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email, required: false, autofocus: true %>
+              <%= f.input :password, required: false %>
+              <%= f.input :remember_me, as: :boolean %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Log in" %>
+            </div>
+
+            <%= link_to "Create Profile", new_user_registration_path  %>
+
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+    <% end %>
+
+    <div class="to-be-continued">
+      <p>To be continued...</p>
     </div>
   </div>
-  <% end %>
-
-  <div class="to-be-continued">
-    <p>To be continued...</p>
-  </div>
-</div>
 
 </div>
