@@ -11,6 +11,11 @@ class ChaptersController < ApplicationController
     else
       @scroll = @chapter.scrolls.first
     end
+    if @chapter.reads.empty?
+      @read = Read.create(user: current_user, chapter: @chapter)
+    else
+      @read = @chapter.reads.first
+    end
   end
 
   def new

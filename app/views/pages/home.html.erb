@@ -1,14 +1,61 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-<div class="banner" style="background-image: url(<%= image_url('group-2.png') %>);">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div class="banner" style="background-image: url(<%= image_url('Group-1.png') %>);">
+        <div class="banner-content">
+          <h1> RateMyBook <br>Influencez l'écriture d'un Best Seller!</br></h1>
+        </div>
 
-  <div class="banner-content">
-    <h1>  Lisez. Commentez. Notez. <br>Le livre le plus plébiscité est édité !  </br></h1>
+        <div class="btn btn-cta">
+          En savoir plus
+        </div>
+      </div>
+    </div>
+      <div class="item">
+        <div class="banner" style="background-image: url(<%= image_url('group-2.png') %>);">
+        <div class="banner-content">
+          <h1> Lecteurs curieux ? <br>Lisez. Commentez. Upvotez.</br></h1>
+        </div>
+
+        <div class="btn btn-cta">
+          Parcourir la Bibliothèque
+        </div>
+      </div>
+      </div>
+
+          <div class="item">
+        <div class="banner" style="background-image: url(<%= image_url('Group-3.png') %>);">
+        <div class="banner-content" style="justify-content: left;">
+          <h1> Vous avez du talent? <br>Le livre le plus plébiscité est édité !</br></h1>
+        </div>
+
+        <div class="btn btn-cta">
+          Devenir Écrivain
+        </div>
+      </div>
+      </div>
+
   </div>
 
-  <div class="btn btn-cta">
-    Parcourir la Bibliothèque
-  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
 
 
 <div class="container">
@@ -17,7 +64,9 @@
       <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
     <%end%>
   </ul>
+</div>
 
+<div class="container-fluid">
   <div class="tab-content">
     <% Book.category.each do |category| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">
@@ -81,10 +130,11 @@
 
 <div class="container-fluid" style="background-color: #E4E9F4;">
   <div class="card-container">
-    <% @books.each do |book| %>
+    <% @popular_books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
       <%= render 'books/book_cards', book: book %>
       </div>
     <% end %>
   </div>
 </div>
+
