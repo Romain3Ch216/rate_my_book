@@ -1,41 +1,56 @@
-.new-chapter-navbar {
-  background-color: transparent;
+.new-chapter-banner {
+  height: 50vh;
+  width: 100%;
+  background-image: url('Bitmap.png');
+  background-size: cover;
   position: relative;
-  height: 60px;
-  padding: 0 30px;
-  img {
-    width: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-position: center;
+  margin-bottom: 10px;
+  h1 {
+    font-weight: bold;
   }
 }
 
-.new-chapter-content {
-  background-color: #eee;
-  height: 100vh;
+.new-chapter-step1 {
+  background-color: #FCD265;
+  padding: 20px;
+  padding: 40px 200px 20px 200px;
+  margin-bottom: 10px;
 }
 
-.paper {
-  background-color: #fff;
-  margin: 0px 200px;
-  padding: 80px 80px 10px 80px;
-  // height: 100%;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
+.chapter-new-step2 {
+  background-color: #607B7D;
+  padding: 20px;
+  padding: 40px 200px 20px 200px;
+  margin-bottom: 10px;
 }
 
 .chapter-new-form .form-control {
-  // border: none;
-  border-color: rgba(0, 0, 0, 0.1);
+  border: none;
   -webkit-box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .chapter-new-title {
   text-align: center;
-  font-family: times,
 }
 
-.chapter-new-content {
-  margin-top: 20px;
-  font-family: times;
-  height: 400px;
+#chapter-content {
+  margin-top: 10px;
+  min-height: 250px;
 }
 
+.publish-chapter-button {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FBFAF2;
+}
+
+.writer-button {
+  padding: 15px 30px;
+}
