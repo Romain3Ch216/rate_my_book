@@ -69,7 +69,9 @@
             <div class="header-of-modal">
               <p>Notes (<%= chapter.reviews.count %>)</p>
               <h1 class="modal-title"><%= chapter.title %></h1>
-              <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+              <%= link_to "#modal-close", title: "Close", class: "modal-close" do %>
+                <%= image_tag "close.svg" %>
+              <% end %>
             </div>
             <div class="modal-body">
               <% chapter.reviews.each do |review| %>
@@ -89,19 +91,15 @@
             </div>
             <%= simple_form_for(:user, url: session_path(:user)) do |f| %>
             <%= f.error_notification %>
-
             <div class="form-inputs">
               <%= f.input :email, required: false, autofocus: true %>
               <%= f.input :password, required: false %>
               <%= f.input :remember_me, as: :boolean %>
             </div>
-
             <div class="form-actions">
               <%= f.button :submit, "Log in" %>
             </div>
-
             <%= link_to "Create Profile", new_user_registration_path  %>
-
             <% end %>
           </div>
         </div>
