@@ -276,7 +276,7 @@ follow_1 = Follow.new
 follow_1.user = ida
 follow_1.chapter = ecume_chapter_1
 follow_1.save!
-migration
+
 follow_2 = Follow.new
 follow_2.user = leo
 follow_2.chapter = ecume_chapter_1
