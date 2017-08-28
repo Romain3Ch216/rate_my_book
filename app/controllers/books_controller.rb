@@ -13,6 +13,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book.chapters.all.each do |chapter|
+      chapter.reads.create(user: current_user)
+    end
   end
 
   def new
@@ -60,3 +63,4 @@ class BooksController < ApplicationController
   end
 
 end
+

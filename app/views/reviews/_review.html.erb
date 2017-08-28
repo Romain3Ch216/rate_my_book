@@ -1,4 +1,5 @@
 <div class="review" id="review-<%= review.id %>">
+
   <div class="review-upvotes">
     <% if current_user.upvoted_reviews.include? review %>
       <% upvote = current_user.upvotes.find_by(review: review) %>
@@ -28,4 +29,5 @@
     <p><%= review.content %></p>
     <p class="review-date">Posté le <%= review.created_at.strftime('%m/%d/%Y') %></p>
   </div>
+
 </div>
