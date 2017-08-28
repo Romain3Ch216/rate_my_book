@@ -30,7 +30,7 @@
           <div class="book-button">
             <%= link_to "Commencer la lecture", chapter_path(@book.chapters.first), class: "resume-reading-button" %>
           </div>
-        <% elsif @book.chapters.first.reads.where(user: current_user).first.is_read == true %>
+        <% elsif @book.chapters.first.reads.where(user: current_user).first.is_read == true || !@book.chapters.first.scrolls.where(user: current_user).empty? %>
           <% if @book.chapters.find { |chapter| [nil, false].include?(chapter.reads.where(user: current_user).first)}.nil? %>
             <p style="color: <%= @book.hex_for_category %>; font-weight: bold">La suite arrive bientôt...</p>
           <% else %>
