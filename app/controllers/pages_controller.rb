@@ -6,8 +6,8 @@ class PagesController < ApplicationController
       @category = params[:category]
       @books = Book.where('category LIKE ?', @category)
     else
-    @category = params[category: "Science-Fiction"]
-    @books = Book.where('category LIKE ?', @category).sample(3)
+      @books = Book.all.sample(3)
     end
+    @new_books = Book.all.sort_by{ |book| book.created_at }.first(3)
   end
 end
