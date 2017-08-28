@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :upvotes
   has_many :scrolls
+  has_many :reads
   has_many :upvoted_reviews, through: :upvotes, source: :review
 
   validates :email, presence: true, uniqueness: true
