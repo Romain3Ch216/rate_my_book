@@ -26,9 +26,15 @@
         <p><%= @book.summary %></p>
       </div>
       <% if @book.chapters.first.present? %>
-      <div class="book-button">
-        <%= link_to "Reprendre la lecture", chapter_path(@book.chapters.last), class: "resume-reading-button" %>
-      </div>
+        <% if @book.chapters.first.scrolls.where(user: current_user).empty? %>
+          <div class="book-button">
+            <%= link_to "Commencer la lecture", chapter_path(@book.chapters.first), class: "resume-reading-button" %>
+          </div>
+        <% elsif @book.chapters.first.reads.where(user: current_user) == true %>
+          <div class="book-button">
+            <%= link_to "Poursuivre la lecture", chapter_path(@book.chapters.find_by { |chapter| chapter.reads.where(user: current_user) == false}), class: "resume-reading-button" %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

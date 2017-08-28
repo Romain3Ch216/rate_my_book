@@ -1,5 +1,6 @@
 puts "Cleaning seed"
 
+Read.destroy_all
 Scroll.destroy_all
 Upvote.destroy_all
 Follow.destroy_all
