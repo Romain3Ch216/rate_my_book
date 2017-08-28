@@ -5,8 +5,11 @@
     </h1>
   </div>
   <div class="exit">
-    <%= link_to book_path(@chapter.book) do %>
-      <%= image_tag "close.svg" %>
+    <%= simple_form_for @read do |f| %>
+      <%= f.input :is_read?, label: false, input_html: {id: "is-read"}, as: :hidden%>
+      <%= button_tag(type: 'submit', class: 'exit-tag') do %>
+        <%= image_tag "close.svg" %>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -33,10 +36,11 @@
       <%= f.input :scroll_value, input_html: {id: "scroll-value"}, as: :hidden%>
       <%= f.button :submit, value: "Déposer un marque-page", id: "bookmark" %>
     <% end %>
+
   </div>
 
   <div class="text-content">
-    <p>
+    <p id="text">
       <%= @chapter.content %>
     </p>
 
@@ -57,6 +61,10 @@
 
     </div>
   </div>
+
+
+
+
 </div>
 
 <% content_for :after_js do %>
