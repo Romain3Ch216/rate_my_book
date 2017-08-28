@@ -9,9 +9,11 @@ $(document).ready(function() {
     var scroll = $(window).scrollTop();
     if (scroll >= 75) {
       $('.overview').addClass('sticky');
+      $('.bookmark').addClass('sticky');
       $('.exit').css({position: 'fixed'});
     } else {
       $('.overview').removeClass('sticky');
+      $('.bookmark').removeClass('sticky');
       $('.exit').css({position: 'absolute'});
     }
   });

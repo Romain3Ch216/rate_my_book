@@ -30,8 +30,8 @@
 
   <div class="bookmark", data-scroll="<%= @scroll.scroll_value %>">
     <%= simple_form_for @scroll do |f| %>
-      <%= f.input :scroll_value, input_html: {id: "scroll-value"}%>
-      <%= f.button :submit, value: "Déposer un marque-page" %>
+      <%= f.input :scroll_value, input_html: {id: "scroll-value"}, as: :hidden%>
+      <%= f.button :submit, value: "Déposer un marque-page", id: "bookmark" %>
     <% end %>
   </div>
 
