@@ -234,5 +234,74 @@ chapter_3 = Chapter.new({
 chapter_3.book = comment_perdre_sa_tete
 chapter_3.save!
 
+#-------
+
+lana = User.new ({
+  first_name: 'Lana',
+  last_name: 'Fornebu',
+  sex: 'Femme',
+  age: 27,
+  description: 'Jeune écrivain talentueux',
+  email: 'lana@gmail.com',
+  password: '123soleil'
+  })
+
+lana.save!
+
+
+les_hemorroides_de_napoleon = Book.new ({
+  title: 'Les Hemorroides de Napoleon',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
+  category: 'Fantastique'
+  })
+
+les_hemorroides_de_napoleon.user = lana
+les_hemorroides_de_napoleon.save!
+
+#-------
+
+arnaud = User.new ({
+  first_name: 'Arnaud',
+  last_name: 'Boba',
+  sex: 'Homme',
+  age: 23,
+  description: 'Jeune écrivain talentueux',
+  email: 'arnaud@gmail.com',
+  password: '123soleil'
+  })
+
+arnaud.save!
+
+zorro = Book.new ({
+  title: 'Zorro',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
+  category: 'Fantastique'
+  })
+
+zorro.user = arnaud
+zorro.save!
+
+#-------
+
+jojo = User.new ({
+  first_name: 'Jojo',
+  last_name: 'Jojo',
+  sex: 'Homme',
+  age: 23,
+  description: 'Jeune écrivain talentueux',
+  email: 'jojo@gmail.com',
+  password: '123soleil'
+  })
+
+jojo.save!
+
+hey_hey = Book.new ({
+  title: 'Hey Hey',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
+  category: 'Science-fiction'
+  })
+
+hey_hey.user = jojo
+hey_hey.save!
 
 puts "Seed complete"
