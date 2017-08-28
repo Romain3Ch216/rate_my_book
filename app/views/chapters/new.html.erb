@@ -1,0 +1,27 @@
+<div class="new-chapter-content">
+  <div class="new-chapter-navbar">
+    <div class="exit">
+      <%= link_to book_path(@chapter.book) do %>
+        <%= image_tag "close.svg" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="chapter-new-form">
+      <%= simple_form_for [@book, @chapter] do |f| %>
+
+          <%= f.input :title, label: false, placeholder: "Titre de mon chapitre", :input_html => { class: "chapter-new-title" } %>
+
+
+          <%= f.input :content, label: false, placeholder: "Il était une fois...", :input_html => { class: "chapter-new-content", id: "chapter-content", rows: 15 } %>
+
+          <%= f.file_field :file %>
+
+        <div class="create-chapter-button">
+          <%= f.button :submit, value: "Publier", class: "chapter-new-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+.new-chapter-navbar {
+  background-color: transparent;
+  position: relative;
+  height: 60px;
+  padding: 0 30px;
+  img {
+    width: 20px;
+  }
+}
+
+.new-chapter-content {
+  background-color: #eee;
+  height: 100vh;
+}
+
+.paper {
+  background-color: #fff;
+  margin: 0px 200px;
+  padding: 80px 80px 10px 80px;
+  // height: 100%;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.chapter-new-form .form-control {
+  // border: none;
+  border-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: none;
+}
+
+.chapter-new-title {
+  text-align: center;
+  font-family: times,
+}
+
+.chapter-new-content {
+  margin-top: 20px;
+  font-family: times;
+  height: 400px;
+}
+
