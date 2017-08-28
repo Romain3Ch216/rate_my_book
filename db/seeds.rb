@@ -70,7 +70,7 @@ ida.save!
 ecume_chapter_1 = Chapter.new({
   title: 'Chapter 1',
   content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
-
+})
 
 
 # -----------------------    BOOKS
@@ -113,6 +113,7 @@ coder_ou_respirer.save!
 ecume_chapter_1 = Chapter.new({
   title: 'Chapter 1',
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  })
 
 chapter_1 = Chapter.new({
   title: 'Chapter 1: Début de la fin',
@@ -129,6 +130,9 @@ chapter_1_tendre_est_la_nuit = Chapter.new({
 chapter_1_tendre_est_la_nuit.book = tendre_est_la_nuit
 chapter_1_tendre_est_la_nuit.read_count = 768
 chapter_1_tendre_est_la_nuit.save!
+chapter_1_tendre_est_la_nuit.follows.create!(user: pierre)
+chapter_1_tendre_est_la_nuit.follows.create!(user: boris)
+chapter_1_tendre_est_la_nuit.follows.create!(user: bob)
 
 chapter_2_tendre_est_la_nuit = Chapter.new({
   title: 'Chapter 2: Retour vers le futur',
@@ -225,10 +229,10 @@ review_3.save!
 
 # -----------------------    FOLLOWS
 
-follow_1 = Follow.new
-follow_1.user = pierre
-follow_1.chapter = ecume_chapter_1
-follow_1.save!
+# follow_1 = Follow.new
+# follow_1.user = pierre
+# follow_1.chapter = ecume_chapter_1
+# follow_1.save!
 
 chapter_1 = Chapter.new({
   title: 'Chapter 1',
