@@ -41,7 +41,7 @@
   font-size: 13px;
   margin: 10px 50px;
   &:hover {
-    background-color: #eee;
+    background-color: rgba(0, 0, 0, 0.03);
     text-decoration: none;
   }
 }
@@ -390,14 +390,11 @@
 //  ----------------------------------- EDIT
 
 .form-control {
-  // display: inline-block;
-  // width: 500px;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 .control-label {
-  // width: 150px;
   text-align: right;
   margin-right: 15px;
   color: #a6a6ae;
@@ -414,4 +411,8 @@ label {
 
 #user_sex_homme {
   margin-right: 5px;
+}
+
+.form-group {
+  margin-bottom: 10px;
 }

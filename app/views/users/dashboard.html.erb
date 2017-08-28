@@ -174,11 +174,11 @@
         <div class="view-body">
           <div class="user-form">
             <%= simple_form_for current_user do |f| %>
-              <%= f.input :first_name, label: "First name" %>
-              <%= f.input :last_name, label: "Last name" %>
+              <%= f.input :first_name, label: "Prénom" %>
+              <%= f.input :last_name, label: "Nom" %>
               <%= f.input :email, label: "Email" %>
               <%= f.input :age, label: "Age" %>
-              <%= f.input :sex, collection: ["Homme", "Femme"], as: :radio_buttons, label: "Sex" %>
+              <%= f.input :sex, collection: ["Homme", "Femme"], as: :radio_buttons, label: "Sexe" %>
               <%= f.input :photo, as: :attachinary %>
               <%= f.button :submit %>
             <% end %>
