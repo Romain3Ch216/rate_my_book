@@ -22,6 +22,10 @@ class Book < ApplicationRecord
   end
 
   def score
-    follows.size/chapters.size.to_f
+    if follows.size == 0
+      return 0
+    else
+      follows.size/chapters.size.to_f
+    end
   end
 end

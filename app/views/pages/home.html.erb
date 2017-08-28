@@ -17,7 +17,9 @@
       <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
     <%end%>
   </ul>
+</div>
 
+<div class="container-fluid">
   <div class="tab-content">
     <% Book.category.each do |category| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">
@@ -81,7 +83,7 @@
 
 <div class="container-fluid" style="background-color: #E4E9F4;">
   <div class="card-container">
-    <% @books.each do |book| %>
+    <% @popular_books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
       <%= render 'books/book_cards', book: book %>
       </div>
