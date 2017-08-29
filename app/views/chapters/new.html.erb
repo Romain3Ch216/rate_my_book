@@ -1,0 +1,18 @@
+
+  <div class="new-chapter-banner">
+    <h1>Ecrivez un nouveau chapitre</h1>
+  </div>
+
+  <div class="chapter-new-form">
+    <div class="new-chapter-step1">
+      <%= simple_form_for [@book, @chapter] do |f| %>
+          <%= f.input :title, label: false, placeholder: "Titre de mon chapitre", :input_html => { class: "chapter-new-title" } %>
+    </div>
+    <div class="chapter-new-step2">
+      <%= f.input :content, label: false, placeholder: "Il était une fois...", :input_html => { class: "chapter-new-content", id: "chapter-content", rows: 60, onkeyup: "auto_grow(this)" } %>
+    </div>
+    <div class="publish-chapter-button">
+      <%= f.button :submit, value: "Publier ", class: "writer-button" %>
+    </div>
+  </div>
+  <% end %>

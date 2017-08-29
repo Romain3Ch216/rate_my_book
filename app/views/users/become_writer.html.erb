@@ -4,29 +4,30 @@
 
 <%= simple_form_for @book do |f| %>
   <div class="category-choice">
-    <h2>Choisissez la catégorie du livre</h2>
+    <h2>Choisissez le genre littéraire de votre livre</h2>
     <%= f.input :category, label: false, class: "category-collection", collection: Book.category %>
     <div class="step">
       1
     </div>
   </div>
   <div class="title-choice">
-    <h2>Choisissez le titre du livre</h2>
+    <h2>Choisissez le titre de votre livre</h2>
     <%= f.input :title, label: false, placeholder: "L'Ecume des Jours" %>
     <div class="step" id="step-2">
       2
     </div>
   </div>
   <div class="summary">
-    <h2>Ecrivez le résumé du livre</h2>
-    <%= f.input :summary, label: false, placeholder: "Dans un univers mêlant quotidien et onirisme, ce premier roman conte les aventures de Colin, de Chick, d’Alise et de la belle Chloé. Deux histoires d’amour s’entremêlent : Colin est un jeune homme élégant, rentier, qui met fin à son célibat en épousant Chloé, rencontrée à une fête, tandis que son ami Chick, fanatique transi du philosophe vedette Jean-Sol Partre, entretient une relation avec Alise" %>
+    <h2>Ecrivez un bref résumé de votre livre</h2>
+    <%= f.input :summary, label: false, placeholder: "Dans un univers mêlant quotidien et onirisme, ce premier roman conte les aventures de Colin, de Chick, d’Alise et de la belle Chloé. Deux histoires d’amour s’entremêlent : Colin est un jeune homme élégant, rentier, qui met fin à son célibat en épousant Chloé, rencontrée à une fête, tandis que son ami Chick, fanatique transi du philosophe vedette Jean-Sol Partre, entretient une relation avec Alise.", class: "summary-input" %>
     <div class="step">
       3
     </div>
+    <div class="become-writer-button">
+      <%= f.button :submit, value: "Publiez votre premier chapitre !", class: "writer-button" %>
+    </div>
   </div>
-  <div class="become-writer-button">
-    <%= f.button :submit, value: "Publiez votre premier chapitre !", class: "book-button" %>
-  </div>
+
 
 <% end %>
 
