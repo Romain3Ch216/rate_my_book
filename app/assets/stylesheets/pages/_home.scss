@@ -219,3 +219,13 @@
   74.96%, 91.62% { left: 20%; opacity: 1; }
   100% { left: 110%; opacity: 0; }
 }
+
+.tab-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+#category-link {
+  align-self: end;
+  padding: 10px 0;
+}

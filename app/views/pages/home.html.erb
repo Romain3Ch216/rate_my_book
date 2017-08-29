@@ -13,15 +13,17 @@
 
 
 <div class="container">
-  <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
-    <% Book.category.each do |category| %>
-      <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
-    <%end%>
-  </ul>
-  <div class="tabs">
-    <%= link_to books_path(category: 'Biographie'), id: 'category-link' do %>
-      <h2>Tout afficher</h2>
-    <% end %>
+  <div class="tab-menu">
+    <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
+      <% Book.category.each do |category| %>
+        <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
+      <%end%>
+    </ul>
+      <div class="tabs">
+        <%= link_to books_path(category: 'Biographie'), id: 'category-link', class: 'tab' do %>
+          Tout afficher
+        <% end %>
+      </div>
   </div>
 </div>
 
