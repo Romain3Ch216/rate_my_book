@@ -41,11 +41,11 @@
 
   <div class="text-content">
     <p id="text">
-      <%= simple_format @chapter.content %>
+      <%= @chapter.content %>
     </p>
 
 
-    <div class="write-a-review">    
+    <div class="write-a-review">
       <div class="comment-rollback"></div>
       <div class="reviewing">
         <%= render "chapters/comment", chapter: @chapter, review: @review %>
