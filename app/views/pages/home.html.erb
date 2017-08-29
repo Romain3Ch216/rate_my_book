@@ -19,11 +19,25 @@
     <%end%>
   </ul>
   <div class="tabs">
-    <%= link_to books_path(category: category) do %>
+    <%= link_to books_path(category: 'Biographie'), id: 'category-link' do %>
       <h2>Tout afficher</h2>
     <% end %>
   </div>
 </div>
+
+<%= content_for :after_js do %>
+  <script>
+    $(document).ready(function() {
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var category = e.target.href;
+        var category = category.substring(23);
+        console.log(category);
+        e.relatedTarget // previous active tab
+        $('#category-link').attr('href', '/books?category=' + category);
+      });
+    });
+  </script>
+<% end %>
 
 <div class="container-fluid">
   <div class="tab-content">
