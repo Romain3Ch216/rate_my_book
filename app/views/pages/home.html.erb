@@ -59,12 +59,33 @@
 
 
 <div class="container">
-  <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
-    <% Book.category.each do |category| %>
-      <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
-    <%end%>
-  </ul>
+  <div class="tab-menu">
+    <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
+      <% Book.category.each do |category| %>
+        <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
+      <%end%>
+    </ul>
+      <div class="tabs">
+        <%= link_to books_path(category: 'Biographie'), id: 'category-link', class: 'tab' do %>
+          Tout afficher
+        <% end %>
+      </div>
+  </div>
 </div>
+
+<%= content_for :after_js do %>
+  <script>
+    $(document).ready(function() {
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var category = e.target.href;
+        var category = category.substring(23);
+        console.log(category);
+        e.relatedTarget // previous active tab
+        $('#category-link').attr('href', '/books?category=' + category);
+      });
+    });
+  </script>
+<% end %>
 
 <div class="container-fluid">
   <div class="tab-content">
@@ -121,9 +142,9 @@
         <p>Les Plus Populaires</p>
     </div>
     <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
+      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
         <h2>Tout afficher</h2>
-      </a>
+      <% end %>
     </div>
   </div>
 </div>
