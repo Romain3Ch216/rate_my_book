@@ -168,12 +168,12 @@
   h1 {
   font-family: MarkPro;
   font-size: 25px;
-  color: #fcd265;
+  color: rgb(5,5,5);
   }
   p {
     margin-right: 10px;
     font-size: 12px;
-    color: #fcd265;
+    color: rgb(5,5,5);
   }
 }
 
@@ -185,7 +185,7 @@
   top: 2em;
   width: 60%;
   font-size: 2em;
-  animation-duration: 20s;
+  animation-duration: 10s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -228,4 +228,10 @@
 #category-link {
   align-self: end;
   padding: 10px 0;
+}
+
+#writer-catch-phrase {
+  text-align: left;
+  position: relative;
+  left: 3em;
 }

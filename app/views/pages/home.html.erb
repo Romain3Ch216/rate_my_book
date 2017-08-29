@@ -34,7 +34,7 @@
           <div class="item">
         <div class="banner" style="background-image: url(<%= image_url('Group-3.png') %>);">
         <div class="banner-content" style="justify-content: left;">
-          <h1> Vous avez du talent? <br>Le livre le plus plébiscité est édité !</br></h1>
+          <h1 id="writer-catch-phrase"> Vous avez du talent? <br>Le livre le plus plébiscité est édité !</br></h1>
         </div>
 
         <div class="btn btn-cta">
@@ -87,12 +87,12 @@
   </script>
 <% end %>
 
-<div class="container-fluid" style="background-color: #E1F1EE;
+<div class="container-fluid" style="background-color: #FCD265;
 ">
   <div class="tab-content">
     <% Book.category.each do |category| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">
-        <div class="container text-center" style="background-color: #E1F1EE; padding: 20px;">
+        <div class="container text-center" style="padding: 20px;">
           <div class="row-fluid">
             <% dynamic_category(category).each do |book| %>
               <div class="col-xs-12 col-sm-6 col-md-4 text-center">
@@ -109,7 +109,6 @@
 
 
 <div class="container-animation" style="background-color: white;">
-      <h1 class="item-1">“L’art n’est pas d’arriver avec des idées neuves mais d’interpréter ces idées qui nous entourent depuis toujours.”<strong> George Lucas </strong></h1>
       <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
       <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
 </div>
@@ -127,7 +126,7 @@
   </div>
 </div>
 
-<div class="container-fluid" style="background-color: #EDE8F0;">
+<div class="container-fluid" style="background-color: #607B7D">
   <div class="card-container">
     <% @new_books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
@@ -150,7 +149,7 @@
   </div>
 </div>
 
-<div class="container-fluid" style="background-color: #E4E9F4;">
+<div class="container-fluid" style="background-color: #FBFAF2;">
   <div class="card-container">
     <% @popular_books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
