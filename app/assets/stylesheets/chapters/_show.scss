@@ -119,6 +119,7 @@
   flex-grow: 1;
   text-align: right;
   padding-top: 20px;
+  width: 100%;
 }
 
 #new_review:hover {
@@ -134,14 +135,10 @@
 }
 
 #comment {
-  position: absolute;
-  left: 3px;
+  float: left;
 }
 
 #follow {
-  position: absolute;
-  bottom: -37px;
-  right: 10px;
 }
 
 #bookmark {
@@ -155,4 +152,12 @@
   border: none;
   background-color: transparent;
   z-index: 1;
+}
+
+.reviewing {
+  flex: 3;
+}
+
+.following {
+  align-self: end;
 }
