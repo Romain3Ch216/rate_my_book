@@ -44,9 +44,9 @@
       <%= simple_format @chapter.content %>
     </p>
 
-    <div class="comment-rollback"></div>
 
     <div class="review">
+      <div class="comment-rollback"></div>
       <div class="reviewing">
         <%= render "chapters/comment", chapter: @chapter, review: @review %>
       </div>
@@ -57,10 +57,6 @@
 
     </div>
   </div>
-
-
-
-
 </div>
 
 <% content_for :after_js do %>

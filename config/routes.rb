@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :chapters, only: :show do
+    resources :reviews, only: :update
+  end
+
   resources :reviews, only: [] do
     resources :upvotes, only: [:create, :destroy], shallow: true
   end

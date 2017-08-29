@@ -139,6 +139,8 @@
 }
 
 #follow {
+  position: relative;
+  bottom: 6px;
 }
 
 #bookmark {
@@ -160,4 +162,9 @@
 
 .following {
   align-self: end;
+}
+
+.comment-rollback {
+  position: absolute;
+  top: -30px;
 }
