@@ -44,12 +44,13 @@
       <%= simple_format @chapter.content %>
     </p>
 
-    <div class="review">
+    <div class="comment-rollback"></div>
 
-      <%= simple_form_for [@chapter, @review], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Donnez votre avis à l'auteur..." %>
-        <%= f.button :submit, value: "Commenter", class: "send comment", id: "comment" %>
-      <% end %>
+    <div class="review">
+      <div class="reviewing">
+        <%= render "chapters/comment", chapter: @chapter, review: @review %>
+      </div>
+
       <div class="following">
         <%= render "chapters/follow", chapter: @chapter, follow: @follow %>
       </div>

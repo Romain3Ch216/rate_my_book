@@ -13,7 +13,10 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.chapter = @chapter
     if @review.save
-      redirect_to dashboard_users_path
+      respond_to do |format|
+        format.html { redirect_to @chapter}
+        format.js
+      end
     else
       render :new
     end
