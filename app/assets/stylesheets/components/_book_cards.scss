@@ -1,4 +1,4 @@
-.book-card {
+.book-card-medium {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
   }
 }
 
-.card-summary {
+.rectangle-2.card-summary {
   top: 200px;
   left: 35px;
   color: #A6A6AE;
@@ -54,13 +54,20 @@
 .card-stats {
   display: flex;
   justify-content: space-around;
-
+  flex-direction: column;
   div {
     align-items: stretch;
     text-align: center;
   }
+  p {
+    color: #A6A6AE;
+  }
 }
 
 
+.card-stats .stat {
+  display: flex;
+  justify-content: space-around;
+}
 
 
