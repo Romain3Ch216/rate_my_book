@@ -1,13 +1,13 @@
 .image-banner {
   height: 50vh;
   width: 100%;
-  background-image: url('Bitmap.png');
+  background-image: url('Group-3.png');
   background-size: cover;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-position: center center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   h1 {
     font-weight: bold;
   }
@@ -20,7 +20,7 @@
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
 }
 
@@ -34,9 +34,6 @@
   }
 }
 
-.category-collection {
-
-}
 
 .title-choice {
   height: 150px;
@@ -57,6 +54,7 @@
   border: none;
   box-shadow: none;
   text-align: center;
+  width: 60em;
   &:hover, &:focus {
     border: none;
   }
@@ -90,7 +88,7 @@
   border: none;
   box-shadow: none;
   background-color: #FBFAF2;
-  width: 80em;
+  width: 60em;
   height: 6em;
   &:hover {
     box-shadow: none;
@@ -103,9 +101,9 @@
 }
 
 .summary {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background-color: #FBFAF2;
-  height: 180px;
+  height: 300px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -122,21 +120,19 @@
   border: solid 2px black;
   position: absolute;
   right: 50px;
-  top: 3em;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .become-writer-button {
-  margin: 40px;
+  margin: 20px;
   display: flex;
   justify-content: space-around;
 }
 
-.book-button {
-  width: 400px;
-  border: solid 1px black;
+.writer-button {
+  padding: 15px 30px;
 }
 
 

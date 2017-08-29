@@ -1,9 +1,9 @@
 class Book < ApplicationRecord
   belongs_to :user
   has_many :chapters
+  has_many :follows, through: :chapters
   validates :title, :summary, presence: true
   validates :category, inclusion: { in: %w(Policier Science-fiction Fantastique Romance Historique Biographie) }
-  has_many :chapters
 
 
   def hex_for_category
@@ -19,5 +19,13 @@ class Book < ApplicationRecord
 
   def self.category
     %w(Biographie Policier Science-fiction Fantastique Romance Historique)
+  end
+
+  def score
+    if follows.size == 0
+      return 0
+    else
+      follows.size/chapters.size.to_f
+    end
   end
 end

@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     else
       @books = Book.all.sample(3)
     end
-    @new_books = Book.all.sort_by{ |book| book.created_at }.first(3)
+    @new_books = Book.all.sort_by{ |book| book.created_at }.reverse.first(3)
+    @popular_books = Book.all.sort_by { |book| book.score }.reverse.first(3)
   end
 end

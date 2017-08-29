@@ -6,9 +6,10 @@
   padding: 0px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   position: fixed;
+  z-index: 1;
 }
 
 /* Logo */
@@ -135,4 +136,5 @@
   text-align: center;
   background-color: rgba(0,0,0,0);
   position: fixed;
+  z-index: 1;
 }
