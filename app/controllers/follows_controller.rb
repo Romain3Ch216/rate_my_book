@@ -14,16 +14,20 @@ class FollowsController < ApplicationController
     @follow = Follow.new
     @follow.chapter = @chapter
     @follow.user = current_user
-    if @follow.save
-      redirect_to dashboard_users_path
-    else
-      render :new
+    @follow.save
+    respond_to do |format|
+      format.html { redirect_to @chapter}
+      format.js
     end
   end
 
   def destroy
     @follow.destroy
-    redirect_to dashboard_users_path
+    @chapter = @follow.chapter
+    respond_to do |format|
+      format.html { redirect_to @chapter}
+      format.js {render :create}
+    end
   end
 
   private
