@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     window.scroll(0,$(".bookmark").data("scroll"));
-    var textEnd = $('#text').offset().top + $('#text').height()
+    var textEnd = $('#text').offset().top + $('#text').height();
     if (textEnd < $(window).height()) {
       $('#is-read').val('true');
     };
