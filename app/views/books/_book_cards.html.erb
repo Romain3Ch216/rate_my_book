@@ -1,34 +1,28 @@
-<div class="book-card">
+<div class="book-card-medium">
   <%= link_to book_path(book) do %>
-  <div class="rectangle-1">
-    <div class="rectangle-2">
+  <div class="rectangle-1" style="border: 1px solid <%= book.hex_for_category %>">
+    <div class="rectangle-2" style="border: 1px solid <%= book.hex_for_category %>">
       <div class="card-title">
         <h2><strong><%= book.title %></strong></h2>
         <h3 style="color: <%= book.hex_for_category %>;"><%= book.category %></h3>
       </div>
 
       <div class="card-summary">
-        <p><%= book.summary[0..100].gsub(/\s\w+\s*$/,'...') %></p>
+        <p><%= book.summary.truncate(100, separator: ' ') %></p>
       </div>
       <div class="card-stats">
-        <div>
-            <%= image_tag "eye.svg" %>
-          <p>#</p>
+
+        <div class="stat">
+          <%= image_tag "eye.svg" %>
+          <%= image_tag "comment.svg" %>
         </div>
-        <div>
-            <%= image_tag "flag.svg" %>
-          <p>...</p>
+        <div class="stat">
+          <p><%= book.chapters.map { |chapter| chapter.reads.count }.inject(0) { |result, element| result + element } %></p>
+          <p><%= book.chapters.map { |chapter| chapter.reviews.count }.inject(0) { |result, element| result + element } %></p>
         </div>
-        <div>
-            <%= image_tag "comment.svg" %>
-          <p>...</p>
-        </div>
+
       </div>
     </div>
   </div>
-  <%end%>
 </div>
-
-
-
-
+  <%end%>

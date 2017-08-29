@@ -4,16 +4,7 @@
 
     <!-- Book cover -->
     <div class="col-xs-12 col-sm-5">
-      <div class="book-card-large">
-        <div class="rectangle-1-large" style="border: 1px solid <%= @book.hex_for_category %>;">
-          <div class="rectangle-2-large" style="border: 1px solid <%= @book.hex_for_category %>;">
-            <div class="card-large-content">
-              <h2><%= @book.title %></h2>
-              <p style="color: <%= @book.hex_for_category %>;"><%= @book.category %></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render "book_card_large", book: @book  %>
     </div>
 
     <!-- Book info -->
@@ -35,7 +26,7 @@
             <p style="color: <%= @book.hex_for_category %>; font-weight: bold">La suite arrive bientôt...</p>
           <% else %>
             <div class="book-button">
-              <%= link_to "Poursuivre la lecture", chapter_path(@book.chapters.find { |chapter| chapter.reads.where(user: current_user).first.is_read == false}), class: "resume-reading-button" %>
+              <%= link_to "Poursuivre la lecture au Chapitre", chapter_path(@book.chapters.find { |chapter| chapter.reads.where(user: current_user).first.is_read == false}), class: "resume-reading-button" %>
             </div>
           <% end %>
         <% end %>
@@ -59,7 +50,7 @@
           <%= link_to "#" do %>
           <%= image_tag "eye.svg", class: "stat-icon" %>
           <% end %>
-          <p><%= chapter.read_count %></p>
+          <p><%= chapter.reads.count %></p>
         </div>
         <div class="stats upvotes">
           <%= link_to "#" do %>
@@ -76,7 +67,7 @@
 
 
         <% if current_user %>
-        <!-- Modal content start review -->
+        <!-- Modal content reviews -->
         <div id="open-modal" class="modal-window">
           <div>
             <div class="header-of-modal">
@@ -87,15 +78,15 @@
               <% end %>
             </div>
             <div class="modal-body">
-              <% chapter.reviews.each do |review| %>
+            <% chapter.reviews.sort_by { |review| review.upvotes.count }.reverse.each do |review| %>
               <%= render "reviews/review", review: review %>
               <% end %>
             </div>
           </div>
         </div>
-        <!-- Modal content end-->
-        <% else %>
 
+        <% else %>
+        <!-- Modal login-->
         <div id="open-modal" class="modal-window">
           <div>
             <div class="header-of-modal">

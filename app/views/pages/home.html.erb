@@ -57,7 +57,7 @@
 </div>
 
 
-
+<!-- Tabs -->
 <div class="container">
   <div class="tab-menu">
     <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
@@ -87,7 +87,8 @@
   </script>
 <% end %>
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #E1F1EE;
+">
   <div class="tab-content">
     <% Book.category.each do |category| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">

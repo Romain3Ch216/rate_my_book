@@ -1,0 +1,111 @@
+.book-card-large {
+  background-color: #fff;
+  height: 450px;
+  width: 320px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+.rectangle-1-large {
+  background-color: #fff;
+  height: 420px;
+  width: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.rectangle-2-large {
+  background-color: #fff;
+  height: 410px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.card-small-level-3 {
+  height: 173px;
+  width: 123px;
+}
+
+.card-small-level-2 {
+  height: 161px;
+  width: 111px;
+}
+
+.card-small-level-1 {
+  height: 157px;
+  width: 107px;
+}
+
+.card-large-content {
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  h2 {
+    font-weight: bold;
+    padding: 0px 20px;
+    font-size: 35px;
+  }
+  p {
+  margin-top: 20px;
+  }
+}
+
+.card-small-content {
+  h2 {
+    padding: 0px 20px;
+    font-size: 18px;
+  }
+  p {
+  margin-top: 15px;
+  font-size: 14px;
+  }
+}
+
+.book-description-header {
+  h1 {
+  font-size: 50px;
+  }
+  h2 {
+  font-size: 25px;
+  margin-top: 10px;
+  font-weight: lighter;
+  }
+}
+
+.book-description-body {
+  font-weight: lighter;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.resume-reading-button {
+  color: #fff;
+  border: 1px solid #B69FBF;
+  border-radius: 2px;
+  padding: 10px 15px;
+  &:hover {
+    text-decoration: none;
+    color: #B69FBF;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.book-button {
+  padding: 30px 0px;
+}
+
+.contents {
+  margin-top: 50px;
+  padding: 0 65px;
+  h2 {
+    font-weight: bold;
+  }
+}
