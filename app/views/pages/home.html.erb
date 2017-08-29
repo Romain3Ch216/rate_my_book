@@ -142,9 +142,9 @@
         <p>Les Plus Populaires</p>
     </div>
     <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
+      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
         <h2>Tout afficher</h2>
-      </a>
+      <% end %>
     </div>
   </div>
 </div>
