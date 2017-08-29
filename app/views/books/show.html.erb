@@ -59,7 +59,7 @@
           <p><%= chapter.follows.count %></p>
         </div>
         <div class="stats comments">
-          <%= link_to "#open-modal" do %>
+          <%= link_to "#open-modal-#{chapter.id}" do %>
           <%= image_tag "comment.svg", class: "stat-icon" %>
           <% end %>
           <p><%= chapter.reviews.count %></p>
@@ -68,7 +68,7 @@
 
         <% if current_user %>
         <!-- Modal content reviews -->
-        <div id="open-modal" class="modal-window">
+        <div id="open-modal-<%= chapter.id %>" class="modal-window">
           <div>
             <div class="header-of-modal">
               <p>Notes (<%= chapter.reviews.count %>)</p>
