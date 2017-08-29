@@ -1,3 +1,36 @@
 .index-content {
   margin: 36px;
 }
+
+.feed-book-info {
+    position: relative;
+    margin: 0 25px;
+}
+
+.ranking-book-cover {
+    padding-left: 100px;
+}
+
+.ranking-book-info {
+    padding-left: 25px;
+    h2{
+    font-size: 20px;
+    font-weight: bold;
+    }
+}
+
+.book-feed {
+    padding: 30px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    height: 210px;
+    h1{
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+
+.ranking {
+    padding-left: 30px;
+}

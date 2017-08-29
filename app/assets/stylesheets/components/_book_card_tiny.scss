@@ -1,1 +1,45 @@
+.book-card-tiny {
+  background-color: #fff;
+  height: 180px;
+  width: 140px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.rectangle-1-tiny {
+  background-color: #fff;
+  height: 165px;
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.rectangle-2-tiny {
+  background-color: #fff;
+  height: 159px;
+  width: 119px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.card-content-tiny {
+  position: absolute;
+  top: 5%;
+  text-align: center;
+  h2 {
+    font-weight: bold;
+    padding: 0px 20px;
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
 
