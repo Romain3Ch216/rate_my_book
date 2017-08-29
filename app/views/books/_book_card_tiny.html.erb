@@ -1,0 +1,10 @@
+<div class="book-card-tiny">
+  <div class="rectangle-1-tiny" style="border: 1px solid <%= book.hex_for_category %>;">
+    <div class="rectangle-2-tiny" style="border: 1px solid <%= book.hex_for_category %>;">
+      <div class="card-content-tiny">
+        <h2><%= book.user.first_name %> <%= book.user.last_name %></h2>
+        <p style="color: <%= book.hex_for_category %>;"><%= book.category %></p>
+      </div>
+    </div>
+  </div>
+</div>
