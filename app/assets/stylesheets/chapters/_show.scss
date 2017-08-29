@@ -78,7 +78,7 @@
   text-align: justify;
 }
 
-.review {
+.write-a-review {
   display: flex;
   justify-content: space-between;
   margin-top: 70px;
@@ -119,6 +119,7 @@
   flex-grow: 1;
   text-align: right;
   padding-top: 20px;
+  width: 100%;
 }
 
 #new_review:hover {
@@ -134,18 +135,16 @@
 }
 
 #comment {
-  position: absolute;
-  left: 3px;
+  float: left;
 }
 
 #follow {
-  position: absolute;
-  bottom: -37px;
-  right: 10px;
+  position: relative;
+  bottom: 6px;
 }
 
 #bookmark {
-  background-color: $reader;
+  background-color: transparent;
   border: none;
   color: rgba(136, 136, 136, 1);
   font-size: 14px;
@@ -155,4 +154,17 @@
   border: none;
   background-color: transparent;
   z-index: 1;
+}
+
+.reviewing {
+  flex: 3;
+}
+
+.following {
+  align-self: end;
+}
+
+.comment-rollback {
+  position: absolute;
+  top: -30px;
 }

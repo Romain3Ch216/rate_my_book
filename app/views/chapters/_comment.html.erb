@@ -1,0 +1,4 @@
+<%= simple_form_for [chapter, review], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Donnez votre avis à l'auteur..." %>
+  <%= f.button :submit, value: "Commenter", class: "send comment", id: "comment" %>
+<% end %>

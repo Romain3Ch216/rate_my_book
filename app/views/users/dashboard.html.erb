@@ -63,31 +63,36 @@
           <h1>Dernières sorties</h1>
         </div>
         <div class="view-body">
-        <% current_user.follows.each do |follow| %>
+          <% @follow_chapters.each do |chapter| %>
+        <% if chapter.scrolls.any? %>
           <div class="chapter-feed">
+        <% else %>
+          <div class="chapter-feed" style="background-color: rgba(89, 56, 254, 0.06);">
+        <% end %>
+            <%= link_to "", chapter_path(chapter.id), class: "chapter-link" %>
             <div class="feed-book-cover">
               <div class="book-card-tiny">
-                <div class="rectangle-1-tiny" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
-                  <div class="rectangle-2-tiny" style="border: 1px solid <%= follow.chapter.book.hex_for_category %>;">
+                <div class="rectangle-1-tiny" style="border: 1px solid <%= chapter.book.hex_for_category %>;">
+                  <div class="rectangle-2-tiny" style="border: 1px solid <%= chapter.book.hex_for_category %>;">
                     <div class="card-content-tiny">
-                      <h2><%= follow.chapter.book.user.first_name %> <%= follow.chapter.book.user.last_name %></h2>
-                      <p style="color: <%= follow.chapter.book.hex_for_category %>;"><%= follow.chapter.book.category %></p>
+                      <h2><%= chapter.book.user.first_name %> <%= chapter.book.user.last_name %></h2>
+                      <p style="color: <%= chapter.book.hex_for_category %>;"><%= chapter.book.category %></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="feed-book-info">
-              <p class="book-title"><%= follow.chapter.book.title %></p>
-              <p class="chapter-title"><%= follow.chapter.book.chapters.all.last.title %></p>
-              <p class="chapter-content"><%= follow.chapter.content.truncate(300, separator: ' ') %></p>
-              <p class="chapter-date"><%= follow.chapter.created_at.strftime('%d/%m/%Y') %></p>
+              <p class="book-title"><%= chapter.book.title %></p>
+              <p class="chapter-title"><%= chapter.book.chapters.all.last.title %></p>
+              <p class="chapter-content"><%= chapter.content.truncate(300, separator: ' ') %></p>
+              <p class="chapter-date"><%= chapter.created_at.strftime('%d/%m/%Y') %></p>
             </div>
             <div class="feed-icon">
-              <% if 1 == 0 %>
-                <%= image_tag "circle-empty.svg"%>
-              <% else %>
+              <% if chapter.scrolls.any? %>
                 <%= image_tag "circle-empty.svg" %>
+              <% else %>
+                <%= image_tag "circle-full.svg"%>
               <% end %>
             </div>
           </div>
@@ -153,16 +158,10 @@
 <!-- Mes ébauches TAB -->
       <div class="tab-content hidden" id="drafts">
         <div class="view-header">
-          <h1>Mes commentaires</h1>
+          <h1>Mes ébauches</h1>
         </div>
         <div class="view-body">
-        <% current_user.reviews.all.each do |review| %>
-          <div class="dashboard-review">
-            <span id="review-chapter-title"><%= review.chapter.title %></span>
-            <span id="review-author"><%= review.chapter.book.user.first_name %> <%= review.chapter.book.user.last_name %></span>
-            <span id="review-content"> <%= review.content.chars.first(100).join('') + '...' %></span>
-          </div>
-        <% end %>
+
         </div>
       </div>
 

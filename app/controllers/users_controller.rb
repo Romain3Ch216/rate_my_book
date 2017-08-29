@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
 
   def dashboard
+    @follow_chapters = []
+    current_user.follows.each {|follow| @follow_chapters << follow.chapter }
+    @follow_chapters.sort_by { |chapter| chapter.created_at }.reverse
   end
 
   def show

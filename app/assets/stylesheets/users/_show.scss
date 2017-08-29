@@ -2,13 +2,12 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
-  background-color: #E9EBEE;
-  // height: 600px;
-  // overflow: hidden;
+  background-color: #E6E6E7;
+  height: 90vh;
 }
 
 .profile-details {
-  grid-row: 1 / span 1;
+  grid-row: 1 / span 2;
   grid-column: 1 / span 1;
   border-radius: 3px;
   background-color: #ffffff;
@@ -47,7 +46,7 @@
 }
 
 .reader {
-  grid-row: 2 / span 1;
+  grid-row: 3 / span 1;
   grid-column: 1 / span 1;
   display: flex;
   flex-direction: column;
@@ -61,11 +60,11 @@
 }
 
 .writer {
-  grid-row: 3 / span 1;
+  grid-row: 4 / span 1;
   grid-column: 1 / span 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0px 20px;
   position: relative;
 }
@@ -77,6 +76,7 @@
   background-color: #fff;
   border-radius: 3px;
   border: 1px solid #ddd;
+  height: fit-content;
 }
 
 .view-header {
@@ -89,7 +89,7 @@
 }
 
 .view-body {
-  height: 500px;
+  height: 520px;
   overflow: auto;
 }
 
@@ -100,6 +100,17 @@
   justify-content: space-around;
   align-items: center;
   height: 210px;
+  position: relative;
+}
+
+.chapter-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }
 
 .feed-book-info {
@@ -185,7 +196,7 @@
   }
 }
 
-.active {
+.tab.active {
   background-color: rgba(0, 0, 0, 0.03);
   p {
   color: #000;

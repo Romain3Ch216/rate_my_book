@@ -5,8 +5,12 @@ class BooksController < ApplicationController
 
   def index
     if params[:category].present?
-      @category = params[:category]
-      @books = Book.where('category LIKE ?', @category)
+      if params[:category] == 'popular'
+        @books = Book.all.sort_by { |book| book.score }.reverse
+      else
+        @category = params[:category]
+        @books = Book.where('category LIKE ?', @category)
+      end
     else
       @books = Book.all
     end
@@ -26,7 +30,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     if @book.save
-      redirect_to @book
+      redirect_to chapter_new_path(@book)
     else
       render :new
     end

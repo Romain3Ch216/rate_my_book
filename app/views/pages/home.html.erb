@@ -33,8 +33,10 @@
 
           <div class="item">
         <div class="banner" style="background-image: url(<%= image_url('Group-3.png') %>);">
+
         <div class="banner-content" style="text-align: : left; padding-left: 150px;">
           <h2> Vous avez du talent? <br>Le livre le plus plébiscité est édité !</br></h2>
+
         </div>
 
         <div class="btn btn-cta">
@@ -57,20 +59,42 @@
 </div>
 
 
-
+<!-- Tabs -->
 <div class="container">
-  <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
-    <% Book.category.each do |category| %>
-      <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
-    <%end%>
-  </ul>
+  <div class="tab-menu">
+    <ul class="nav nav-tabs" role="tablist" style="margin-top: 38px">
+      <% Book.category.each do |category| %>
+        <li role="presentation" class="<%= 'active' if category == Book.category.first %>"><a href="#<%= category %>" aria-controls="<%= category %>" role="tab" data-toggle="tab"><%= category %></a></li>
+      <%end%>
+    </ul>
+      <div class="tabs">
+        <%= link_to books_path(category: 'Biographie'), id: 'category-link', class: 'tab' do %>
+          Tout afficher
+        <% end %>
+      </div>
+  </div>
 </div>
 
-<div class="container-fluid">
+<%= content_for :after_js do %>
+  <script>
+    $(document).ready(function() {
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var category = e.target.href;
+        var category = category.substring(23);
+        console.log(category);
+        e.relatedTarget // previous active tab
+        $('#category-link').attr('href', '/books?category=' + category);
+      });
+    });
+  </script>
+<% end %>
+
+<div class="container-fluid" style="background-color: #FCD265;
+">
   <div class="tab-content">
     <% Book.category.each do |category| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if category == Book.category.first %>" id="<%= category %>">
-        <div class="container text-center" style="background-color: #E1F1EE; padding: 20px;">
+        <div class="container text-center" style="padding: 20px;">
           <div class="row-fluid">
             <% dynamic_category(category).each do |book| %>
               <div class="col-xs-12 col-sm-6 col-md-4 text-center">
@@ -87,7 +111,6 @@
 
 
 <div class="container-animation" style="background-color: white;">
-      <h1 class="item-1">“L’art n’est pas d’arriver avec des idées neuves mais d’interpréter ces idées qui nous entourent depuis toujours.”<strong> George Lucas </strong></h1>
       <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
       <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
 </div>
@@ -105,7 +128,7 @@
   </div>
 </div>
 
-<div class="container-fluid" style="background-color: #EDE8F0;">
+<div class="container-fluid" style="background-color: #607B7D">
   <div class="card-container">
     <% @new_books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
@@ -121,14 +144,14 @@
         <p>Les Plus Populaires</p>
     </div>
     <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
+      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
         <h2>Tout afficher</h2>
-      </a>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class="container-fluid" style="background-color: #E4E9F4;">
+<div class="container-fluid" style="background-color: #FBFAF2;">
   <div class="card-container">
     <% @popular_books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
