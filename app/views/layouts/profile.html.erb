@@ -12,6 +12,7 @@
     <%= render 'shared/profile_navbar' unless @disable_nav %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'profile' %>
     <%= cloudinary_js_config %>
   </body>
