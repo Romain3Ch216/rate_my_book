@@ -28,4 +28,20 @@ class Book < ApplicationRecord
       follows.size/chapters.size.to_f
     end
   end
+
+  def has_chapter?
+    chapters.first.present?
+  end
+
+  def first_chapter_begun?
+    !chapters.first.scrolls.where(user: current_user).empty?
+  end
+
+  def last_chapter_read?
+    chapters.last.reads.where(user: current_user).first.is_read == true
+  end
+
+  def chapter_unread
+    chapters.find { |chapter| chapter.reads.where(user: current_user).first.is_read == false}
+  end
 end

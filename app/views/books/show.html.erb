@@ -16,23 +16,24 @@
       <div class="book-description-body">
         <p><%= @book.summary %></p>
       </div>
-      <% if @book.chapters.first.present? %>
-        <% if @book.chapters.first.scrolls.where(user: current_user).empty? %>
+      <% if @book.has_chapter?%>
+        <% if !@book.first_chapter_begun? %>
           <div class="book-button">
             <%= link_to "Commencer la lecture", chapter_path(@book.chapters.first), class: "resume-reading-button" %>
           </div>
-        <% elsif @book.chapters.first.reads.where(user: current_user).first.is_read == true || !@book.chapters.first.scrolls.where(user: current_user).empty? %>
-          <% if @book.chapters.last.reads.where(user: current_user).first.is_read == true %>
+        <% else %>
+          <% if @book.last_chapter_read? %>
             <p style="color: <%= @book.hex_for_category %>; font-weight: bold">La suite arrive bientôt...</p>
           <% else %>
             <div class="book-button">
-              <%= link_to "Poursuivre la lecture", chapter_path(@book.chapters.find { |chapter| chapter.reads.where(user: current_user).first.is_read == false}), class: "resume-reading-button" %>
+              <%= link_to "Poursuivre la lecture", chapter_path(@book.chapter_unread), class: "resume-reading-button" %>
             </div>
           <% end %>
         <% end %>
       <% else %>
-        <p style="color: <%= @book.hex_for_category %>; font-weight: bold">Aucun chapitre n'est publié pour le moment</p>
+        <p style="color: <%= @book.hex_for_category %>; font-weight: bold">Aucun chapitre n'est publié pour le moment...</p>
       <% end %>
+
 
     </div>
   </div>
