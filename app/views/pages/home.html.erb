@@ -58,21 +58,58 @@
   </a>
 </div>
 
-<div class="container-fluid first-banner" style="background-color: #FBFAF2;">
-  <div class="card-container classement-banner">
-    <h1>Top 3</h1>
-    <div class="row top-3">
-      <% @popular_books.each do |book| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-        <%= render 'books/book_cards', book: book %>
-        </div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs" style="font-weight: bold">
+        <p>Les Plus Plebiscités</p>
+    </div>
+    <div class="tabs">
+      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
+        <h2>Découvrez le classement</h2>
       <% end %>
     </div>
-    <%= link_to books_path(category: 'popular'), class: 'btn btn-cta enter-competition' do %>
-      Découvrez le classement
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FBFAF2;">
+  <div class="card-container">
+    <% @popular_books.each do |book| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+      <%= render 'books/book_cards', book: book %>
+      </div>
     <% end %>
   </div>
 </div>
+
+<div class="container-animation" style="background-color: white;">
+      <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
+      <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
+</div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs" style="font-weight: bold">
+        <p>Nouveautés</p>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FCD265">
+  <div class="card-container">
+    <% @new_books.each do |book| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+      <%= render 'books/book_cards', book: book %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 
 
@@ -125,35 +162,6 @@
   </div>
 </div>
 
-
-
-<div class="container-animation" style="background-color: white;">
-      <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
-      <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
-</div>
-
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs" style="font-weight: bold">
-        <p>Nouveautés</p>
-    </div>
-    <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
-        <h2>Tout afficher</h2>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid" style="background-color: #FCD265">
-  <div class="card-container">
-    <% @new_books.each do |book| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-      <%= render 'books/book_cards', book: book %>
-      </div>
-    <% end %>
-  </div>
-</div>
 
 
 
