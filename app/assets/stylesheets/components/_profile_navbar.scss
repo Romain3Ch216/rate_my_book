@@ -1,20 +1,45 @@
 .dashboard-navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #000040;
+  background: #fff;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   h1 {
     font-size: 20px;
-    position: absolute;
-    bottom: 10px;
-    right: 44px;
-    color : #fff;
-    border-bottom: solid 1px #fff;
+    color : rgb(5,5,5);
+    border-bottom: solid 1px rgb(5,5,5);
     padding-bottom: 3px;
   }
+  p {
+    font-size: 13px;
+  }
+}
+.navbar-wagon-item {
+  align-items: center;
+  cursor: pointer;
+  padding: 0 20px;
+  font-size: 14px;
+  p {
+    color: rgba(5,5,5,1);
+    position: relative;
+    top: 10px;
+    padding: 10px;
+  }
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+/* Navbar link */
+.navbar-wagon-link {
+  color: #616668;
+  font-size: 20px;
+}
+.navbar-wagon-link:hover {
+  color: #455bfb;
+  text-decoration: none;
 }
