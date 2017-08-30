@@ -10,7 +10,6 @@
   justify-content: space-between;
   h1 {
     text-align: center;
-    margin-right: 20px;
   }
 }
 
@@ -103,4 +102,26 @@
 
 .blank {
   flex: 3;
+}
+
+.logo {
+  margin: 0 auto;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  h1 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+
+.cadre {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0);
+  position: fixed;
+  z-index: 1;
 }
