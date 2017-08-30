@@ -7,20 +7,26 @@
         <h3 style="color: <%= book.hex_for_category %>;"><%= book.category %></h3>
       </div>
 
-      <div class="card-summary">
+      <div class="card-summary" >
         <p><%= book.summary.truncate(100, separator: ' ') %></p>
       </div>
       <div class="card-stats">
 
         <div class="stat">
-          <%= image_tag "eye.svg" %>
-          <%= image_tag "comment.svg" %>
-        </div>
-        <div class="stat">
-          <p><%= book.chapters.map { |chapter| chapter.reads.count }.inject(0) { |result, element| result + element } %></p>
-          <p><%= book.chapters.map { |chapter| chapter.reviews.count }.inject(0) { |result, element| result + element } %></p>
-        </div>
+          <div class="stats views">
+            <a>
+            <%= image_tag "eye.svg", class: "stat-icon" %>
+            </a>
+           <p><%= book.chapters.map { |chapter| chapter.reads.count }.inject(0) { |result, element| result + element } %></p>
+           </div>
 
+            <div class="stats views">
+              <a>
+              <%= image_tag "comment.svg", class: "stat-icon" %>
+             </a>
+              <p><%= book.chapters.map { |chapter| chapter.reviews.count }.inject(0) { |result, element| result + element } %></p>
+            </div>
+          </div>
       </div>
     </div>
   </div>

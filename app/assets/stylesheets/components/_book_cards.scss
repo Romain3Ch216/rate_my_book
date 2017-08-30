@@ -36,11 +36,12 @@
 .card-title {
   text-align: center;
   top: 25px;
+  padding-top: 10px;
   h2 {
-  font-size: 23px;
+  font-size: 33px;
   }
   h3 {
-  font-size: 18px;
+  font-size: 15px;
   }
 }
 
@@ -70,4 +71,15 @@
   justify-content: space-around;
 }
 
+.card-summary {
+    padding-top: 10px;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+  p{
+    font-size: 10px;
+    color: #A6A6AE;
+    font-family: MarkPro;
+  }
+}
 
