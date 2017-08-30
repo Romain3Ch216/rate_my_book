@@ -63,25 +63,43 @@
 //style des placeholders, syntaxe différente pour chaque navigateur
 
 #book_title:-moz-placeholder {
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.6);
   font-size: 20px;
 }
 
 #book_title::-moz-placeholder {
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.6);
   font-size: 20px;
 }
 
 #book_title::-webkit-input-placeholder {
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.6);
   font-size: 20px;
 }
 
 #book_title:-ms-input-placeholder {
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.6);
   font-size: 20px;
 }
 
+#book_summary:-moz-placeholder {
+  color: rgba(0,0,0,0.2);
+  font-size: 17px;
+}
+#book_summary::-moz-placeholder {
+  color: rgba(0,0,0,0.2);
+  font-size: 17px;
+}
+
+#book_summary::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.2);
+  font-size: 17px;
+}
+
+#book_summary:-ms-input-placeholder {
+  color: rgba(0,0,0,0.2);
+  font-size: 17px;
+}
 /////////////////////////////////////////////////////////
 
 #book_summary {
