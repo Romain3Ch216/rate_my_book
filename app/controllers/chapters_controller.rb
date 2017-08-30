@@ -14,7 +14,7 @@ class ChaptersController < ApplicationController
     if @chapter.reads.empty?
       @read = Read.create(user: current_user, chapter: @chapter)
     else
-      @read = @chapter.reads.first
+      @read = @chapter.reads.where(user: current_user).first
     end
   end
 

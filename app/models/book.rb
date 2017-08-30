@@ -28,4 +28,8 @@ class Book < ApplicationRecord
       follows.size/chapters.size.to_f
     end
   end
+
+  def has_chapter?
+    chapters.first.present?
+  end
 end
