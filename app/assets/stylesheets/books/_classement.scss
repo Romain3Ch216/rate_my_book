@@ -1,0 +1,47 @@
+.rank-1:hover {
+  background-color: #fad5e1;
+}
+
+.rank-2:hover {
+  background-color: #FEE0DD;
+}
+
+.rank-3:hover {
+  background-color: #FFF5F4;
+}
+
+.rank-4:hover {
+  background-color: #FFF7D3;
+}
+
+.rank-0:hover {
+  background-color: #FCE8B2;
+}
+
+.rank-1 {
+  background-color: rgba(250,211,224,0.7);
+}
+
+.rank-2 {
+  background-color: rgba(254,224,221,0.7);
+}
+
+.rank-3 {
+  background-color: rgba(255,245,244,0.7);
+}
+
+.rank-4 {
+  background-color: rgba(255,247,211,0.7);
+}
+
+.rank-0 {
+  background-color: rgba(252,232,178,0.7);
+}
+
+.count-down {
+  margin: 50px;
+  text-align: center;
+  p {
+    font-size: 40px;
+  }
+}

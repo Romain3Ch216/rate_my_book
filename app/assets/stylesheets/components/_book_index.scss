@@ -1,10 +1,20 @@
-.index-content {
-  margin: 36px;
-}
-
 .feed-book-info {
     position: relative;
     margin: 0 25px;
+}
+
+.book-feed-content{
+  color: rgb(5,5,5);
+}
+
+.book-feed-content:hover {
+  color: rgb(5,5,5);
+  text-decoration: none;
+}
+
+.book-feed-content:focus {
+  color: rgb(5,5,5);
+  text-decoration: none;
 }
 
 .ranking-book-cover {

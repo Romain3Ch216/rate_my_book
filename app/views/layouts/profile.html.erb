@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>RateMyBook | Influencez l'écriture d'un Best Seller</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'profile', media: 'all' %>
@@ -12,6 +12,7 @@
     <%= render 'shared/profile_navbar' unless @disable_nav %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'profile' %>
     <%= cloudinary_js_config %>
   </body>

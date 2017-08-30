@@ -17,6 +17,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book_show = true
     @book.chapters.all.each do |chapter|
       chapter.reads.create(user: current_user)
     end
@@ -31,7 +32,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     if @book.save
-      redirect_to chapter_new_path(@book)
+      redirect_to new_book_chapter_path(@book)
     else
       render :new
     end

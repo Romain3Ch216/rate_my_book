@@ -24,6 +24,17 @@ pierre = User.new ({
   })
 pierre.save!
 
+arnaud = User.new ({
+  first_name: 'Arnaud',
+  last_name: 'Dutronc',
+  sex: 'Homme',
+  age: 23,
+  description: 'Lecteur curieux',
+  email: 'arnaud.dutronc@gmail.com',
+  password: '123soleil'
+  })
+arnaud.save!
+
 boris = User.new ({
   first_name: 'Boris',
   last_name: 'Durand',

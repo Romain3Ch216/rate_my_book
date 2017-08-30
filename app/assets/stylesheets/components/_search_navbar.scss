@@ -1,7 +1,7 @@
 /* Main navbar */
 .search-navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #000040;
+  background: #fff;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -10,7 +10,6 @@
   justify-content: space-between;
   h1 {
     text-align: center;
-    margin-right: 20px;
   }
 }
 
@@ -20,6 +19,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 20px;
+  flex: 1;
 }
 
 .dropdown-arrow {
@@ -41,8 +41,10 @@
 /* Right section */
 .navbar-wagon-right {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex: 3;
+  align-self: end;
+  justify-content: end;
+
 }
 
 /* Basic navbar item */
@@ -98,3 +100,28 @@
   justify-content: center;
 }
 
+.blank {
+  flex: 3;
+}
+
+.logo {
+  margin: 0 auto;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  h1 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+
+.cadre {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0);
+  position: fixed;
+  z-index: 1;
+}

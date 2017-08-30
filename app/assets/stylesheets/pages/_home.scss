@@ -241,3 +241,47 @@
   position: relative;
   left: 3em;
 }
+
+.first-banner {
+  margin: 40px 0;
+}
+
+.classement-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top-3 {
+  margin: 30px 0 60px 0;
+  width: 100%;
+}
+
+.enter-competition {
+  margin-bottom: 20px;
+}
+
+.text-js{
+  opacity: 0;
+}
+.cursor{
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: white;
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
+}
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
