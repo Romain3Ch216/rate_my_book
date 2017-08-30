@@ -1,24 +1,23 @@
 <div class="index-content">
   <div class="row">
     <% @books.each do |book| %>
-          <div class="book-feed">
-
-            <div class="ranking">
-            <h1> 1 </h1>
-            </div>
-
-            <div class="ranking-book-cover">
-                <%= render 'book_card_tiny', book: book %>
-            </div>
-
-            <div class="ranking-book-info">
-              <h2 class="book-title"><%= book.title %></h2>
-              <p class="chapter-content"><%= book.summary.truncate(300, separator: ' ') %></p>
-            </div>
-
+      <%= link_to book, class: "book-feed-content" do  %>
+        <div class="book-feed rank-<%= (@books.index(book) + 1)%5 %>">
+          <div class="ranking">
+          <h1> <%= @books.index(book) + 1 %> </h1>
           </div>
 
+          <div class="ranking-book-cover">
+              <%= render 'book_card_tiny', book: book %>
+          </div>
+
+          <div class="ranking-book-info">
+            <h2 class="book-title"><%= book.title %></h2>
+            <p class="chapter-content"><%= book.summary.truncate(300, separator: ' ') %></p>
+          </div>
+        </div>
       <% end %>
+    <% end %>
   </div>
 </div>
 
