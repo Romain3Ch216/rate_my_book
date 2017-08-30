@@ -6,7 +6,7 @@
   </div>
   <div class="exit">
     <%= simple_form_for @read do |f| %>
-      <%= f.input :is_read?, label: false, input_html: {id: "is-read"}, as: :hidden%>
+      <%= f.input :is_read?, label: false, input_html: {id: "is-read"}%>
       <%= button_tag(type: 'submit', class: 'exit-tag') do %>
         <%= image_tag "close.svg" %>
       <% end %>
