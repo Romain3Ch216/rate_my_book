@@ -38,30 +38,28 @@
   </div>
 
   <!-- Chapter list -->
-  <div class="contents">
+  <div class="chapter-container">
     <h2>Sommaire</h2>
     <% @book.chapters.each do |chapter| %>
     <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
+    <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
       <div class="chapter-title">
         <%= chapter.title %>
       </div>
       <div class="chapter-stats">
-        <div class="stats views">
-          <%= link_to "#" do %>
-          <%= image_tag "eye.svg", class: "stat-icon" %>
-          <% end %>
+        <div class="stats">
+          <%= render "shared/svg/eye" %>
           <p><%= chapter.reads.count %></p>
         </div>
-        <div class="stats upvotes">
-          <%= link_to "#" do %>
-          <%= image_tag "flag.svg", class: "stat-icon" %>
-          <% end %>
+        <div class="stats">
+          <%= render "shared/svg/flag" %>
           <p><%= chapter.follows.count %></p>
         </div>
-        <div class="stats comments">
-          <%= link_to "#open-modal-#{chapter.id}" do %>
-          <%= image_tag "comment.svg", class: "stat-icon" %>
-          <% end %>
+        <div class="stats">
+        <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>
+
+            <%= render "shared/svg/comment" %>
+
           <p><%= chapter.reviews.count %></p>
         </div>
 
@@ -113,9 +111,6 @@
     </div>
     <% end %>
 
-    <div class="to-be-continued">
-      <p>To be continued...</p>
-    </div>
   </div>
 
 </div>
