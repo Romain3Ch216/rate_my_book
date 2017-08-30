@@ -46,13 +46,13 @@
 
 
     <h2>Sommaire</h2>
-    <% @ordered_chapter.each do |chapter| %>
+    <% @ordered_chapter.reverse.each do |chapter| %>
     <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
     <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
       <div class="chapter-title">
         <%= chapter.title %>
       </div>
-      <% if @ordered_chapter.index(chapter) == 0 %>
+      <% if @ordered_chapter.index(chapter) == @ordered_chapter.size-1 %>
         <div class="progress-bar">
           <div class="progress-test">
             <div class="rounded">
@@ -67,7 +67,7 @@
         </div>
       <% end %>
       <div class="chapter-stats">
-      <% unless @ordered_chapter.index(chapter) == 0 %>
+      <% unless @ordered_chapter.index(chapter) == @ordered_chapter.size-1 %>
         <div class="stats">
           <%= render "shared/svg/flag" %>
           <p><%= chapter.follows.count %></p>
