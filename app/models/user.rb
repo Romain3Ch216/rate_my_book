@@ -17,15 +17,15 @@ class User < ApplicationRecord
   has_attachment :photo
 
   def began_first_chapter?(book)
-    !scrolls.where(chapter: book.chapters.last).empty?
+    !scrolls.where(chapter: book.chapters.first).empty?
   end
 
   def read_last_chapter?(book)
-    reads.where(chapter: book.chapters.first).first.is_read == true
+    reads.where(chapter: book.chapters.last).first.is_read == true
   end
 
   def chapter_unread(book)
-    book.chapters.reverse.find{ |chapter| chapter.reads.where(user: self).first.is_read == false }
+    book.chapters.find{ |chapter| chapter.reads.where(user: self).first.is_read == false }
   end
 
 end
