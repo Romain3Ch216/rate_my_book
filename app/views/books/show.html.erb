@@ -52,13 +52,15 @@
         </div>
       <% end %>
       <div class="chapter-stats">
-        <div class="stats">
-          <%= render "shared/svg/eye" %>
-          <p><%= chapter.reads.count %></p>
-        </div>
+      <% unless @ordered_chapter.index(chapter) == 0 %>
         <div class="stats">
           <%= render "shared/svg/flag" %>
           <p><%= chapter.follows.count %></p>
+        </div>
+        <% end %>
+        <div class="stats">
+          <%= render "shared/svg/eye" %>
+          <p><%= chapter.reads.count %></p>
         </div>
         <div class="stats">
         <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>

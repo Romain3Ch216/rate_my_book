@@ -32,6 +32,11 @@
   opacity: 0;
 }
 
+.progress-bar {
+  width: 200px;
+  background-color: transparent;
+  box-shadow: none;
+}
 
 progress {
   background-color: #eee;
@@ -51,7 +56,7 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
   border-radius: 10px;
-  background-color: #000;
+  background-color: #C0C0C0;
 }
 
 // Firefox
