@@ -10,10 +10,16 @@ $(document).ready(function() {
     });
   })
 
+  // $(".comment-link").hover(function(e) {
+  //   $("#comment-icon").attr("fill", e.type === "mouseenter"?"#B2B2B2":"#C0C0C0");
+  // });
+
+
   $(".resume-reading-button").css({
       "background-color": color,
       "border-color": color,
     });
+
   $(".resume-reading-button").hover(function(e) {
     $(this).css({
       "background-color": e.type === "mouseenter"?"transparent":color,

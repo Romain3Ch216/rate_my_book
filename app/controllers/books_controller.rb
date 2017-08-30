@@ -17,10 +17,10 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book_show = true
     @book.chapters.all.each do |chapter|
       chapter.reads.create(user: current_user)
     end
+    @ordered_chapter = @book.chapters.sort_by { |chapter| chapter.created_at }
   end
 
   def new
