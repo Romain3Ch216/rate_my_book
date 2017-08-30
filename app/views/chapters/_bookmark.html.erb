@@ -8,8 +8,6 @@
     $(window).scroll(function() {
       var textEnd = $('#text').offset().top + $('#text').height()
       var scroll = $(window).scrollTop()
-      console.log(textEnd);
-      console.log(scroll);
       if (textEnd < scroll + $(window).height()) {
         $('#is-read').val('true');
       };
