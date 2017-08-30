@@ -242,15 +242,6 @@
   left: 3em;
 }
 
-.count-down {
-  width: 100%;
-  margin: 50px;
-  text-align: center;
-  p {
-    font-size: 40px;
-  }
-}
-
 .first-banner {
   margin: 40px 0;
 }
@@ -269,4 +260,28 @@
 
 .enter-competition {
   margin-bottom: 20px;
+}
+
+.text-js{
+  opacity: 0;
+}
+.cursor{
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: white;
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
+}
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
