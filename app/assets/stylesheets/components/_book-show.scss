@@ -2,6 +2,14 @@
   margin-top: 30px;
 }
 
+.chapter-container {
+  margin: 50px 60px 20px 60px;
+  h2 {
+    font-weight: bold;
+  }
+}
+
+
 // --------------------------------------- CHAPTER
 
 .chapter-info {
@@ -11,7 +19,84 @@
   justify-content: space-between;
   align-items: center;
   border-left: 2px solid rgba(0, 0, 0, 0);
+  position: relative;
 }
+
+.chapter-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+
+// progress {
+//   background-color: #eee;
+//   border: 0;
+//   height: 12px;
+//   width: 250px;
+//   border-radius: 10px;
+//   border: solid #eee 1px;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   position: relative;
+// }
+// // Chrome and Safari
+// progress::-webkit-progress-bar {
+//   background-color: transparent;
+//   border-radius: 10px;
+//   border: solid 0.1px transparent;
+// }
+// progress::-webkit-progress-value {
+//   border-radius: 10px;
+//   background-color: #C0C0C0;
+// }
+
+// // Firefox
+// progress::-moz-progress-bar {
+//   background-color: #eee;
+//   border-radius: 10px;
+// }
+
+//  ------------------------- Progress bar
+
+.progress-bar {
+  width: 250px;
+  background-color: transparent;
+  box-shadow: none;
+  position: relative;
+}
+
+.rounded {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-test {
+  position: relative;
+  width: 250px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+
+  .progress-bar-test {
+    position: relative;
+    height: 100%;
+    background-color: #C0C0C0;
+    border-radius: 10px;
+  }
+}
+
+.progress-score {
+  color: #969696;
+  position: absolute;
+  right: 0;
+}
+
+// -----------------------------------
+
 
 .chapter-stats {
   display: flex;
@@ -23,22 +108,30 @@
   display: flex;
   padding: 0 16px;
   align-items: center;
+  position: relative;
   p {
     margin: 0;
     color: #969696;
   }
-  img {
+  svg {
     padding: 0 7px;
-    svg:hover {
-      fill: #000;
-    }
   }
 }
+
+ // .comment-link:hover svg #comment-icon {
+ //  fill: #000;
+ // }
 
 .to-be-continued {
   text-align: center;
   margin: 30px 0;
 }
+
+.comment-link {
+  @extend .chapter-link;
+  z-index: 3;
+}
+
 
 // --------------------------------------- MODAL
 
@@ -54,6 +147,7 @@
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  z-index: 3;
 }
 
 .modal-window:target {
