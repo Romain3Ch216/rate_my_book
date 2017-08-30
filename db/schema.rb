@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170828121444) do
   create_table "chapters", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "read_count", default: 0
+    t.integer "read_count"
     t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
