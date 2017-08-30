@@ -1,75 +1,30 @@
 <div class="search-navbar">
+  <div class="blank"></div>
+
   <div class="category-name">
-   <h1><%= @category %></h1>
-    <div class="dropdown">
-      <i class="fa fa-angle-down dropdown-arrow" aria-hidden="true" data-toggle="dropdown" id="category-arrow"></i>
-      <ul class="dropdown-menu">
-        <% Book.category.each do |category| %>
-          <%= link_to books_path(category: category) do %>
-            <li><%= category %></li>
-          <%end%>
-        <%end%>
-      </ul>
-    </div>
+   <h1>Classement</h1>
   </div>
 
-
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
-
-  <!-- Dropdown list appearing on mobile only -->
-
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <% if current_user.photo? %>
-            <div class="avatar-user" data-toggle="dropdown">
-              <%= cl_image_tag(current_user.photo,  width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face)%>
-            </div>
-          <% else %>
-            <div class="avatar-user" data-toggle="dropdown">
-              <%= cl_image_tag("avatar-placeholder.png", width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face) %>
-            </div>
-          <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to dashboard_users_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Acceuil") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se Déconnecter") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-
+        <ul class="list-inline">
+          <li>
+            <%= link_to dashboard_users_path, class: "link" do %>
+              <p>Profile</p>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, class: "link", method: :delete do %>
+              <p>Se déconnecter</p>
+            <% end %>
+          </li>
+        </ul>
       </div>
     <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "S'inscrire / Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Connexion</a></li>
-        <li><a href="#">Inscription</a></li>
-        <li><a href="#">Devenir écrivain</a></li>
-      </ul>
-    </div>
   </div>
 </div>
 
