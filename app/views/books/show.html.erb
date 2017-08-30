@@ -16,22 +16,24 @@
       <div class="book-description-body">
         <p><%= @book.summary %></p>
       </div>
-      <% if @book.has_chapter?%>
-        <% if !@book.first_chapter_begun? %>
-          <div class="book-button">
-            <%= link_to "Commencer la lecture", chapter_path(@book.chapters.first), class: "resume-reading-button" %>
-          </div>
-        <% else %>
-          <% if @book.last_chapter_read? %>
-            <p style="color: <%= @book.hex_for_category %>; font-weight: bold">La suite arrive bientôt...</p>
-          <% else %>
+      <% if current_user %>
+        <% if @book.has_chapter?%>
+          <% if !current_user.began_first_chapter?(@book) %>
             <div class="book-button">
-              <%= link_to "Poursuivre la lecture", chapter_path(@book.chapter_unread), class: "resume-reading-button" %>
+              <%= link_to "Commencer la lecture", chapter_path(@book.chapters.first), class: "resume-reading-button" %>
             </div>
+          <% else %>
+            <% if current_user.read_last_chapter?(@book) %>
+              <p style="color: <%= @book.hex_for_category %>; font-weight: bold">La suite arrive bientôt...</p>
+            <% else %>
+              <div class="book-button">
+                <%= link_to "Poursuivre la lecture", chapter_path(current_user.chapter_unread(@book)), class: "resume-reading-button" %>
+              </div>
+            <% end %>
           <% end %>
+        <% else %>
+          <p style="color: <%= @book.hex_for_category %>; font-weight: bold">Aucun chapitre n'est publié pour le moment...</p>
         <% end %>
-      <% else %>
-        <p style="color: <%= @book.hex_for_category %>; font-weight: bold">Aucun chapitre n'est publié pour le moment...</p>
       <% end %>
 
 
@@ -40,11 +42,6 @@
 
   <!-- Chapter list -->
   <div class="chapter-container">
-
-
-
-
-
 
     <h2>Sommaire</h2>
     <% @ordered_chapter.reverse.each do |chapter| %>
