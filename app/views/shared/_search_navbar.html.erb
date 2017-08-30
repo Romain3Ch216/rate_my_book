@@ -2,7 +2,16 @@
   <div class="blank"></div>
 
   <div class="category-name">
-   <h1>Classement</h1>
+    <% if @book_show %>
+      <div class="logo">
+        <%= link_to root_path, class: "navbar-wagon-brand" do %>
+          <%= image_tag "logo.svg" %>
+        <% end %>
+        <h1>RateMyBook</h1>
+      </div>
+    <% else %>
+      <h1>Classement</h1>
+    <% end %>
   </div>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
