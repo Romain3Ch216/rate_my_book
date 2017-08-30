@@ -259,3 +259,13 @@
   width: 30px;
   margin-bottom: 10px;
 }
+
+.blocked {
+  background-color: rgba(100, 100, 100, 1);
+  &:hover {
+    background-color: rgba(100, 100, 100, 1);
+  }
+  &:focus {
+    background-color: rgba(100, 100, 100, 1);
+  }
+}

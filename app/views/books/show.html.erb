@@ -42,93 +42,181 @@
 
   <!-- Chapter list -->
   <div class="chapter-container">
-
     <h2>Sommaire</h2>
-    <% @ordered_chapter.each do |chapter| %>
-    <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
-    <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
-      <div class="chapter-title">
-        <%= chapter.title %>
-      </div>
-      <% if @ordered_chapter.index(chapter) == 0 %>
-        <div class="progress-bar">
-          <div class="progress-test">
-            <div class="rounded">
-              <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
-            </div>
-          </div>
 
-          <!-- <progress max="50" value="<%= chapter.follows.count %>">
-            <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
-          </progress> -->
-          <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
+    <% @ordered_chapter.each_with_index do |chapter, index| %>
+      <% if current_user.read_previews_chapter(@book)[index] %>
+        <%= current_user.read_previews_chapter(@book)[index] %>
+        <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
+        <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
+          <div class="chapter-title">
+            <%= chapter.title %>
+          </div>
+          <% if @ordered_chapter.index(chapter) == 0 %>
+            <div class="progress-bar">
+              <div class="progress-test">
+                <div class="rounded">
+                  <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
+                </div>
+              </div>
+
+              <!-- <progress max="50" value="<%= chapter.follows.count %>">
+                <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
+              </progress> -->
+              <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
+            </div>
+          <% end %>
+          <div class="chapter-stats">
+          <% unless @ordered_chapter.index(chapter) == 0 %>
+            <div class="stats">
+              <%= render "shared/svg/flag" %>
+              <p><%= chapter.follows.count %></p>
+            </div>
+            <% end %>
+            <div class="stats">
+              <%= render "shared/svg/eye" %>
+              <p><%= chapter.reads.count %></p>
+            </div>
+            <div class="stats">
+            <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>
+
+                <%= render "shared/svg/comment" %>
+
+              <p><%= chapter.reviews.count %></p>
+            </div>
+
+
+            <% if current_user %>
+            <!-- Modal content reviews -->
+            <div id="open-modal-<%= chapter.id %>" class="modal-window">
+              <div>
+                <div class="header-of-modal">
+                  <p>Notes (<%= chapter.reviews.count %>)</p>
+                  <h1 class="modal-title"><%= chapter.title %></h1>
+                  <%= link_to "#modal-close", title: "Close", class: "modal-close" do %>
+                    <%= image_tag "close.svg" %>
+                  <% end %>
+                </div>
+                <div class="modal-body">
+                <% chapter.reviews.sort_by { |review| review.upvotes.count }.reverse.each do |review| %>
+                  <%= render "reviews/review", review: review %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <% else %>
+            <!-- Modal login-->
+            <div id="open-modal" class="modal-window">
+              <div>
+                <div class="header-of-modal">
+                  <h2 class="modal-title">Log in</h2>
+                  <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+                <%= simple_form_for(:user, url: session_path(:user)) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :email, required: false, autofocus: true %>
+                  <%= f.input :password, required: false %>
+                  <%= f.input :remember_me, as: :boolean %>
+                </div>
+                <div class="form-actions">
+                  <%= f.button :submit, "Log in" %>
+                </div>
+                <%= link_to "Create Profile", new_user_registration_path  %>
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
+        </div>
+      <% else %>
+        <div class="chapter-info blocked" data-color="<%= @book.hex_for_category %>">
+        <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
+          <div class="chapter-title">
+            <%= chapter.title %>
+          </div>
+          <% if @ordered_chapter.index(chapter) == 0 %>
+            <div class="progress-bar">
+              <div class="progress-test">
+                <div class="rounded">
+                  <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
+                </div>
+              </div>
+
+              <!-- <progress max="50" value="<%= chapter.follows.count %>">
+                <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
+              </progress> -->
+              <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
+            </div>
+          <% end %>
+          <div class="chapter-stats">
+          <% unless @ordered_chapter.index(chapter) == 0 %>
+            <div class="stats">
+              <%= render "shared/svg/flag" %>
+              <p><%= chapter.follows.count %></p>
+            </div>
+            <% end %>
+            <div class="stats">
+              <%= render "shared/svg/eye" %>
+              <p><%= chapter.reads.count %></p>
+            </div>
+            <div class="stats">
+            <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>
+
+                <%= render "shared/svg/comment" %>
+
+              <p><%= chapter.reviews.count %></p>
+            </div>
+
+
+            <% if current_user %>
+            <!-- Modal content reviews -->
+            <div id="open-modal-<%= chapter.id %>" class="modal-window">
+              <div>
+                <div class="header-of-modal">
+                  <p>Notes (<%= chapter.reviews.count %>)</p>
+                  <h1 class="modal-title"><%= chapter.title %></h1>
+                  <%= link_to "#modal-close", title: "Close", class: "modal-close" do %>
+                    <%= image_tag "close.svg" %>
+                  <% end %>
+                </div>
+                <div class="modal-body">
+                <% chapter.reviews.sort_by { |review| review.upvotes.count }.reverse.each do |review| %>
+                  <%= render "reviews/review", review: review %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <% else %>
+            <!-- Modal login-->
+            <div id="open-modal" class="modal-window">
+              <div>
+                <div class="header-of-modal">
+                  <h2 class="modal-title">Log in</h2>
+                  <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+                <%= simple_form_for(:user, url: session_path(:user)) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :email, required: false, autofocus: true %>
+                  <%= f.input :password, required: false %>
+                  <%= f.input :remember_me, as: :boolean %>
+                </div>
+                <div class="form-actions">
+                  <%= f.button :submit, "Log in" %>
+                </div>
+                <%= link_to "Create Profile", new_user_registration_path  %>
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
         </div>
       <% end %>
-      <div class="chapter-stats">
-      <% unless @ordered_chapter.index(chapter) == 0 %>
-        <div class="stats">
-          <%= render "shared/svg/flag" %>
-          <p><%= chapter.follows.count %></p>
-        </div>
-        <% end %>
-        <div class="stats">
-          <%= render "shared/svg/eye" %>
-          <p><%= chapter.reads.count %></p>
-        </div>
-        <div class="stats">
-        <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>
-
-            <%= render "shared/svg/comment" %>
-
-          <p><%= chapter.reviews.count %></p>
-        </div>
-
-
-        <% if current_user %>
-        <!-- Modal content reviews -->
-        <div id="open-modal-<%= chapter.id %>" class="modal-window">
-          <div>
-            <div class="header-of-modal">
-              <p>Notes (<%= chapter.reviews.count %>)</p>
-              <h1 class="modal-title"><%= chapter.title %></h1>
-              <%= link_to "#modal-close", title: "Close", class: "modal-close" do %>
-                <%= image_tag "close.svg" %>
-              <% end %>
-            </div>
-            <div class="modal-body">
-            <% chapter.reviews.sort_by { |review| review.upvotes.count }.reverse.each do |review| %>
-              <%= render "reviews/review", review: review %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <% else %>
-        <!-- Modal login-->
-        <div id="open-modal" class="modal-window">
-          <div>
-            <div class="header-of-modal">
-              <h2 class="modal-title">Log in</h2>
-              <a href="#modal-close" title="Close" class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <%= simple_form_for(:user, url: session_path(:user)) do |f| %>
-            <%= f.error_notification %>
-            <div class="form-inputs">
-              <%= f.input :email, required: false, autofocus: true %>
-              <%= f.input :password, required: false %>
-              <%= f.input :remember_me, as: :boolean %>
-            </div>
-            <div class="form-actions">
-              <%= f.button :submit, "Log in" %>
-            </div>
-            <%= link_to "Create Profile", new_user_registration_path  %>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
-
-      </div>
-    </div>
     <% end %>
   </div>
 

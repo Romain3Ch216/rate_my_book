@@ -28,4 +28,17 @@ class User < ApplicationRecord
     book.chapters.find{ |chapter| chapter.reads.where(user: self).first.is_read == false }
   end
 
+  def read_previews_chapter(book)
+    @chapters = book.chapters.all
+    are_read = [true]
+    @chapters.each  do |chapter|
+      if chapter.reads.where(user: self).first.is_read == true
+       are_read << true
+      else
+        are_read << false
+      end
+    end
+    are_read[0...-1].reverse
+  end
+
 end
