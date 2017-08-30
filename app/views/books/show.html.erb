@@ -44,7 +44,7 @@
   <div class="chapter-container">
 
     <h2>Sommaire</h2>
-    <% @ordered_chapter.reverse.each do |chapter| %>
+    <% @ordered_chapter.each do |chapter| %>
     <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
     <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
       <div class="chapter-title">
