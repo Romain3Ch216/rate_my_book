@@ -102,8 +102,21 @@ lana = User.new ({
   password: '123soleil'
 })
 
-
 lana.save!
+
+100.times {
+  user = User.new({
+    first_name: Faker::Name.name,
+    last_name: Faker::Name.name,
+    sex: 'Femme',
+    age: '26',
+    description: 'lecteur',
+    email: Faker::Internet.email,
+    password: '123soleil'
+    })
+  user.save
+}
+
 
 # -----------------------    BOOKS
 
@@ -198,7 +211,8 @@ atacama_chapter_1 = Chapter.new({
 
 atacama_chapter_1.book = atacama
 62.times{Follow.create(user:leo, chapter:atacama_chapter_1)}
-105.times{Read.create(user:leo, chapter:atacama_chapter_1)}
+a = (50..99).to_a
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:atacama_chapter_1)}
 48.times{Review.create(user:boris, chapter: atacama_chapter_1, content:'')}
 
 atacama_chapter_1.save!
@@ -210,7 +224,7 @@ atacama_chapter_2 = Chapter.new({
 
 atacama_chapter_2.book = atacama
 54.times{Follow.create(user:leo, chapter:atacama_chapter_2)}
-97.times{Read.create(user:leo, chapter:atacama_chapter_2)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:atacama_chapter_2)}
 Review.create(user:lana, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Review.create(user:pierre, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 Review.create(user:ida, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
@@ -225,9 +239,10 @@ atacama_chapter_3 = Chapter.new({
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15,
 })
 
+
 atacama_chapter_3.book = atacama
 36.times{Follow.create(user:leo, chapter:atacama_chapter_3)}
-51.times{Read.create(user:leo, chapter:atacama_chapter_3)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:atacama_chapter_3)}
 12.times{Review.create(user:boris, chapter: atacama_chapter_1, content:'')}
 
 
@@ -242,7 +257,7 @@ tendre_est_la_nuit_chapter_1 = Chapter.new({
 
 tendre_est_la_nuit_chapter_1.book = tendre_est_la_nuit
 103.times{Follow.create(user:leo, chapter:tendre_est_la_nuit_chapter_1)}
-197.times{Read.create(user:leo, chapter:tendre_est_la_nuit_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:tendre_est_la_nuit_chapter_1)}
 95.times{Review.create(user:boris, chapter: tendre_est_la_nuit_chapter_1, content:'')}
 
 tendre_est_la_nuit_chapter_1.save!
@@ -256,7 +271,7 @@ racines_chapter_1 = Chapter.new({
 
 racines_chapter_1.book = racines
 306.times{Follow.create(user:leo, chapter:racines_chapter_1)}
-567.times{Read.create(user:leo, chapter:racines_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:racines_chapter_1)}
 136.times{Review.create(user:boris, chapter: racines_chapter_1, content:'')}
 
 racines_chapter_1.save!
@@ -270,7 +285,7 @@ ecume_chapter_1 = Chapter.new({
 
 ecume_chapter_1.book = ecume
 110.times{Follow.create(user:leo, chapter:ecume_chapter_1)}
-167.times{Read.create(user:leo, chapter:ecume_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter: ecume_chapter_1)}
 68.times{Review.create(user:boris, chapter: ecume_chapter_1, content:'')}
 
 ecume_chapter_1.save!
@@ -284,7 +299,7 @@ zorro_chapter_1 = Chapter.new({
 
 zorro_chapter_1.book = zorro
 221.times{Follow.create(user:leo, chapter:zorro_chapter_1)}
-300.times{Read.create(user:leo, chapter:zorro_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:zorro_chapter_1)}
 90.times{Review.create(user:boris, chapter: zorro_chapter_1, content:'')}
 
 zorro_chapter_1.save!
@@ -298,7 +313,7 @@ sylvain_chapter_1 = Chapter.new({
 
 sylvain_chapter_1.book = sylvain
 178.times{Follow.create(user:leo, chapter:sylvain_chapter_1)}
-200.times{Read.create(user:leo, chapter:sylvain_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:sylvain_chapter_1)}
 100.times{Review.create(user:boris, chapter: sylvain_chapter_1, content:'')}
 
 sylvain_chapter_1.save!
@@ -312,7 +327,7 @@ napoleon_chapter_1 = Chapter.new({
 
 napoleon_chapter_1.book = napoleon
 178.times{Follow.create(user:leo, chapter:napoleon_chapter_1)}
-200.times{Read.create(user:leo, chapter:napoleon_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:napoleon_chapter_1)}
 100.times{Review.create(user:boris, chapter: napoleon_chapter_1, content:'')}
 
 napoleon_chapter_1.save!
@@ -326,7 +341,7 @@ londres_chapter_1 = Chapter.new({
 
 londres_chapter_1.book = londres
 178.times{Follow.create(user:leo, chapter:londres_chapter_1)}
-200.times{Read.create(user:leo, chapter:londres_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:londres_chapter_1)}
 100.times{Review.create(user:boris, chapter: londres_chapter_1, content:'')}
 
 londres_chapter_1.save!
@@ -340,7 +355,7 @@ coder_ou_respirer_chapter_1 = Chapter.new({
 
 coder_ou_respirer_chapter_1.book = coder_ou_respirer
 178.times{Follow.create(user:leo, chapter:coder_ou_respirer_chapter_1)}
-200.times{Read.create(user:leo, chapter:coder_ou_respirer_chapter_1)}
+User.all[0,a.sample].each{|user| Read.create(user: user, chapter:coder_ou_respirer_chapter_1)}
 100.times{Review.create(user:boris, chapter: coder_ou_respirer_chapter_1, content:'')}
 
 coder_ou_respirer_chapter_1.save!
