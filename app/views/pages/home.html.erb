@@ -59,6 +59,57 @@
 </div>
 
 
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs" style="font-weight: bold">
+        <p>Les Plus Plebiscités</p>
+    </div>
+    <div class="tabs">
+      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
+        <h2>Découvrez le classement</h2>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FBFAF2;">
+  <div class="card-container">
+    <% @popular_books.each do |book| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+      <%= render 'books/book_cards', book: book %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="master-tab">
+    <div class="tabs" style="font-weight: bold">
+        <p>Nouveautés</p>
+    </div>
+    <div class="tabs">
+      <a class="tab" data-target="#toutafficher">
+        <h2>Tout afficher</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FCD265">
+  <div class="card-container">
+    <% @new_books.each do |book| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+      <%= render 'books/book_cards', book: book %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-animation" style="background-color: white;">
+      <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
+      <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
+</div>
+
 <!-- Tabs -->
 <div class="container">
   <div class="tab-menu">
@@ -106,58 +157,84 @@
       </div>
     <%end%>
   </div>
-</div>
+</div>innerHTML
 
+<script>
+// Set the date we're counting down to
+  var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
 
+  // Update the count down every 1 second
+  var x = setInterval(function() {
 
-<div class="container-animation" style="background-color: white;">
-      <h1 class="item-2">“La vie est la source de la littérature et la littérature doit être fidèle à la vie.” <strong>Gao Xingjian</strong></h1>
-      <h1 class="item-3">“Les mots donnent, en moyenne, autant d’idées que les idées donnent de mots.” <strong>Paul Valery</strong></h1>
-</div>
+    // Get todays date and time
+    var now = new Date().getTime();
 
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs" style="font-weight: bold">
-        <p>Nouveautés</p>
-    </div>
-    <div class="tabs">
-      <a class="tab" data-target="#toutafficher">
-        <h2>Tout afficher</h2>
-      </a>
-    </div>
-  </div>
-</div>
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
 
-<div class="container-fluid" style="background-color: #FCD265">
-  <div class="card-container">
-    <% @new_books.each do |book| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-      <%= render 'books/book_cards', book: book %>
-      </div>
-    <% end %>
-  </div>
-</div>
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs" style="font-weight: bold">
-        <p>Les Plus Populaires</p>
-    </div>
-    <div class="tabs">
-      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
-        <h2>Tout afficher</h2>
-      <% end %>
-    </div>
-  </div>
-</div>
+    // Display the result in the element with id="count-down"
+    document.getElementById("count-down").innerHTML = "Le livre le plus plebiscité est édité dans " + days + " jours. ";
 
-<div class="container-fluid" style="background-color: #FBFAF2;">
-  <div class="card-container">
-    <% @popular_books.each do |book| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-      <%= render 'books/book_cards', book: book %>
-      </div>
-    <% end %>
-  </div>
-</div>
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("count-down").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+
+  var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+        if (this.isDeleting) { delta /= 2; }
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
 
