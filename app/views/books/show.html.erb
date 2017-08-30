@@ -39,6 +39,12 @@
 
   <!-- Chapter list -->
   <div class="chapter-container">
+
+
+
+
+
+
     <h2>Sommaire</h2>
     <% @ordered_chapter.each do |chapter| %>
     <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
@@ -48,7 +54,16 @@
       </div>
       <% if @ordered_chapter.index(chapter) == 0 %>
         <div class="progress-bar">
-          <progress max="50" value="30"></progress>
+          <div class="progress-test">
+            <div class="rounded">
+              <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
+            </div>
+          </div>
+
+          <!-- <progress max="50" value="<%= chapter.follows.count %>">
+            <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
+          </progress> -->
+          <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
         </div>
       <% end %>
       <div class="chapter-stats">
