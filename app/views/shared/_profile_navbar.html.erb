@@ -1,7 +1,7 @@
 <div class="dashboard-navbar">
 
   <div class="navbar-wagon-item">
-    <%= link_to root_path, class: "navbar-wagon-link"  do %>
+    <%= link_to root_path do %>
     <p>Accueil</p>
   <% end %>
   </div>
@@ -31,7 +31,7 @@
         </ul>
       </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "S'inscrire / Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "S'inscrire / Se connecter"), new_user_session_path, class: "navbar-wagon-item" %>
     <% end %>
   </div>
 
