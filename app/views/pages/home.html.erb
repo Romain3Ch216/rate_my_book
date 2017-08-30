@@ -58,6 +58,23 @@
   </a>
 </div>
 
+<div class="container-fluid first-banner" style="background-color: #FBFAF2;">
+  <div class="card-container classement-banner">
+    <h1>Top 3</h1>
+    <div class="row top-3">
+      <% @popular_books.each do |book| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+        <%= render 'books/book_cards', book: book %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to books_path(category: 'popular'), class: 'btn btn-cta enter-competition' do %>
+      Découvrez le classement
+    <% end %>
+  </div>
+</div>
+
+
 
 <!-- Tabs -->
 <div class="container">
@@ -138,26 +155,5 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="master-tab">
-    <div class="tabs" style="font-weight: bold">
-        <p>Les Plus Populaires</p>
-    </div>
-    <div class="tabs">
-      <%= link_to books_path(category: 'popular'), class: 'tab' do %>
-        <h2>Tout afficher</h2>
-      <% end %>
-    </div>
-  </div>
-</div>
 
-<div class="container-fluid" style="background-color: #FBFAF2;">
-  <div class="card-container">
-    <% @popular_books.each do |book| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-      <%= render 'books/book_cards', book: book %>
-      </div>
-    <% end %>
-  </div>
-</div>
 

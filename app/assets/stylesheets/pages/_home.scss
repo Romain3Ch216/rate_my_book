@@ -241,3 +241,31 @@
   position: relative;
   left: 3em;
 }
+
+.count-down {
+  width: 100%;
+  margin: 50px;
+  text-align: center;
+  p {
+    font-size: 40px;
+  }
+}
+
+.first-banner {
+  margin: 40px 0;
+}
+
+.classement-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top-3 {
+  margin: 30px 0 60px 0;
+}
+
+.enter-competition {
+  margin-bottom: 20px;
+}
