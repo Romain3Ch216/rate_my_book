@@ -32,6 +32,36 @@
   opacity: 0;
 }
 
+
+progress {
+  background-color: #eee;
+  border: 0;
+  height: 15px;
+  width: 200px;
+  border-radius: 10px;
+  border: solid #eee 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+// Chrome and Safari
+progress::-webkit-progress-bar {
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 1px transparent;
+}
+progress::-webkit-progress-value {
+  border-radius: 10px;
+  background-color: #000;
+}
+
+// Firefox
+progress::-moz-progress-bar {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+
+
 .chapter-stats {
   display: flex;
   justify-content: space-around;

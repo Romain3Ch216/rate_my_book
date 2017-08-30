@@ -20,6 +20,7 @@ class BooksController < ApplicationController
     @book.chapters.all.each do |chapter|
       chapter.reads.create(user: current_user)
     end
+    @ordered_chapter = @book.chapters.sort_by { |chapter| chapter.created_at }.reverse
   end
 
   def new
