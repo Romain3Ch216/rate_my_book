@@ -24,16 +24,17 @@ pierre = User.new ({
   })
 pierre.save!
 
-arnaud = User.new ({
-  first_name: 'Arnaud',
-  last_name: 'Dutronc',
+romain = User.new ({
+  first_name: 'Romain',
+  last_name: 'Thoreau',
   sex: 'Homme',
-  age: 23,
-  description: 'Lecteur curieux',
-  email: 'arnaud.dutronc@gmail.com',
+  age: 21,
+  description: 'Passionné par la lecture',
+  email: 'romain.thoreau@gmail.com',
   password: '123soleil'
   })
-arnaud.save!
+
+romain.save!
 
 boris = User.new ({
   first_name: 'Boris',
@@ -79,12 +80,6 @@ ida = User.new ({
   })
 ida.save!
 
-
-ecume_chapter_1 = Chapter.new({
-  title: 'Chapter 1',
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
-})
-
 arnaud = User.new ({
   first_name: 'Arnaud',
   last_name: 'Boba',
@@ -105,53 +100,30 @@ lana = User.new ({
   description: 'Jeune écrivain talentueux',
   email: 'lana@gmail.com',
   password: '123soleil'
-  })
+})
 
 
 lana.save!
 
 # -----------------------    BOOKS
 
+#--------------------------- Fantastique
+
 ecume = Book.new ({
   title: "L'écume des nuits",
-  summary: "The Dark Side of l'écume des jours",
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
   category: 'Fantastique'
   })
 ecume.user = boris
 ecume.save!
 
-tendre_est_la_nuit = Book.new ({
-  title: 'Tendre est la nuit',
-  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
-  category: 'Romance'
-  })
-tendre_est_la_nuit.user = pierre
-tendre_est_la_nuit.save!
-
-
-comment_perdre_sa_tete = Book.new ({
-  title: 'Comment perdre sa tête',
-  summary: "Comment perdre sa tête",
-  category: 'Biographie'
-  })
-comment_perdre_sa_tete.user = ida
-comment_perdre_sa_tete.save!
-
-coder_ou_respirer = Book.new ({
-  title: 'Coder ou respirer',
+atacama = Book.new ({
+  title: "Atacama ou la Vertu de l'Ignorance",
   summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit.",
-  category: 'Romance'
+  category: 'Fantastique'
   })
-coder_ou_respirer.user = leo
-coder_ou_respirer.save!
-
-histoire_dune_nuit = Book.new ({
-  title: "histoire d'une nuit",
-  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit.",
-  category: 'Biographie'
-  })
-histoire_dune_nuit.user = leo
-histoire_dune_nuit.save!
+atacama.user = leo
+atacama.save!
 
 zorro = Book.new ({
   title: "Zorro",
@@ -161,157 +133,218 @@ zorro = Book.new ({
 zorro.user = arnaud
 zorro.save!
 
-les_hemorroides_de_napoleon = Book.new ({
-  title: 'Les Hemorroides de Napoleon',
+#------------------------Romance
+
+tendre_est_la_nuit = Book.new ({
+  title: 'Tendre est la nuit',
   summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
-  category: 'Fantastique'
+  category: 'Romance'
+  })
+tendre_est_la_nuit.user = pierre
+tendre_est_la_nuit.save!
+
+coder_ou_respirer = Book.new ({
+  title: 'Coder ou respirer',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit.",
+  category: 'Romance'
+  })
+coder_ou_respirer.user = leo
+coder_ou_respirer.save!
+
+londres = Book.new ({
+  title: "Londres est une fête",
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit.",
+  category: 'Romance'
   })
 
-les_hemorroides_de_napoleon.user = lana
-les_hemorroides_de_napoleon.save!
+londres.user = leo
+londres.save!
+
+#----------------------------Biographie
+
+racines = Book.new ({
+  title: 'Les Racines de la Terre',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
+  category: 'Biographie'
+  })
+racines.user = ida
+racines.save!
+
+napoleon = Book.new ({
+  title: 'Napoleon, né pour régner',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
+  category: 'Biographie'
+  })
+
+napoleon.user = lana
+napoleon.save!
+
+sylvain = Book.new ({
+  title: 'Sylvain, né pour coder',
+  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit. Donec vitae odio quis elit imperdiet bibendum vel et odio. Mauris lacinia nisi non magna suscipit sagittis. Etiam maximus sodales ex, ut tristique lacus feugiat euismod.",
+  category: 'Biographie'
+  })
+
+sylvain.user = lana
+sylvain.save!
+
 
 # -----------------------    CHAPTERS
 
+atacama_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15
+})
+
+atacama_chapter_1.book = atacama
+62.times{Follow.create(user:leo, chapter:atacama_chapter_1)}
+105.times{Read.create(user:leo, chapter:atacama_chapter_1)}
+48.times{Review.create(user:boris, chapter: atacama_chapter_1, content:'')}
+
+atacama_chapter_1.save!
+
+atacama_chapter_2 = Chapter.new({
+  title: 'Chapter 2',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15,
+})
+
+atacama_chapter_2.book = atacama
+54.times{Follow.create(user:leo, chapter:atacama_chapter_2)}
+97.times{Read.create(user:leo, chapter:atacama_chapter_2)}
+Review.create(user:lana, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Review.create(user:pierre, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Review.create(user:ida, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Review.create(user:boris, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+28.times{Review.create(user:boris, chapter: atacama_chapter_1, content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
+
+
+atacama_chapter_2.save!
+
+atacama_chapter_3 = Chapter.new({
+  title: 'Chapter 3',
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15,
+})
+
+atacama_chapter_3.book = atacama
+36.times{Follow.create(user:leo, chapter:atacama_chapter_3)}
+51.times{Read.create(user:leo, chapter:atacama_chapter_3)}
+12.times{Review.create(user:boris, chapter: atacama_chapter_1, content:'')}
+
+
+atacama_chapter_3.save!
+
+#------------------------------
+
+tendre_est_la_nuit_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: ''
+})
+
+tendre_est_la_nuit_chapter_1.book = tendre_est_la_nuit
+103.times{Follow.create(user:leo, chapter:tendre_est_la_nuit_chapter_1)}
+197.times{Read.create(user:leo, chapter:tendre_est_la_nuit_chapter_1)}
+95.times{Review.create(user:boris, chapter: tendre_est_la_nuit_chapter_1, content:'')}
+
+tendre_est_la_nuit_chapter_1.save!
+
+#-----------------------------------
+
+racines_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: ''
+})
+
+racines_chapter_1.book = racines
+306.times{Follow.create(user:leo, chapter:racines_chapter_1)}
+567.times{Read.create(user:leo, chapter:racines_chapter_1)}
+136.times{Review.create(user:boris, chapter: racines_chapter_1, content:'')}
+
+racines_chapter_1.save!
+
+#------------------------
+
 ecume_chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  })
+  content: ''
+})
 
 ecume_chapter_1.book = ecume
+110.times{Follow.create(user:leo, chapter:ecume_chapter_1)}
+167.times{Read.create(user:leo, chapter:ecume_chapter_1)}
+68.times{Review.create(user:boris, chapter: ecume_chapter_1, content:'')}
+
 ecume_chapter_1.save!
 
-chapter_1_tendre_est_la_nuit = Chapter.new({
-  title: 'Chapter 1: Début de la fin',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  })
-chapter_1_tendre_est_la_nuit.book = tendre_est_la_nuit
-chapter_1_tendre_est_la_nuit.read_count = 768
-chapter_1_tendre_est_la_nuit.save!
-chapter_1_tendre_est_la_nuit.follows.create!(user: pierre)
-chapter_1_tendre_est_la_nuit.follows.create!(user: boris)
-chapter_1_tendre_est_la_nuit.follows.create!(user: bob)
+#------------------------
 
-chapter_2_tendre_est_la_nuit = Chapter.new({
-  title: 'Chapter 2: Retour vers le futur',
-  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
-  })
-chapter_2_tendre_est_la_nuit.book = tendre_est_la_nuit
-chapter_2_tendre_est_la_nuit.read_count = 468
-chapter_2_tendre_est_la_nuit.save!
-
-chapter_3_tendre_est_la_nuit = Chapter.new({
-  title: 'Chapter 3: Bien le bonjour!',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eleifend metus vel rhoncus efficitur. Mauris tortor lacus, sollicitudin ac orci fermentum, consectetur ornare nisl. Proin vel suscipit elit. In eget risus feugiat, vehicula magna vel, malesuada erat. Nulla egestas ante vel metus vehicula, vel sagittis mauris elementum. Duis vel bibendum lacus. Cras lobortis enim lorem, in dignissim metus gravida non. Nullam finibus dictum nibh ac commodo. Proin faucibus lacinia dolor, dapibus pellentesque odio hendrerit nec. Nam et ultrices tortor. Suspendisse eget magna augue. Sed imperdiet aliquet sagittis. Nam aliquet ac ex et iaculis. Donec eu urna tincidunt, volutpat lorem in, lacinia augue. Suspendisse ultricies suscipit feugiat. Quisque mattis pharetra vestibulum.
-Suspendisse potenti. Vivamus volutpat metus a elit sagittis, id molestie est maximus. Integer tempus a purus sed consectetur. Nam purus urna, malesuada nec ligula nec, mollis congue diam. Ut eget dui sodales, convallis mauris nec, sollicitudin turpis. Suspendisse ut fermentum mauris, vitae lacinia ipsum. Mauris pharetra cursus tincidunt. Duis commodo dapibus nunc, eget vestibulum nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sodales vel nisl at ultricies. Proin quis eros vitae erat efficitur varius. Proin at imperdiet odio, et aliquam felis. Aliquam molestie lacus in turpis pulvinar feugiat.
-Donec consequat tellus sed est accumsan elementum. Fusce pharetra facilisis sem ut cursus. Morbi dictum placerat est, in lacinia enim porttitor non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vestibulum volutpat ipsum, ut suscipit nisi porttitor non. Vivamus blandit tortor leo, vitae feugiat tellus lobortis vel. Vestibulum consectetur arcu odio, quis facilisis nisl vehicula non. Suspendisse condimentum massa quis sapien facilisis finibus. Cras urna lectus, molestie ac blandit id, blandit quis felis. In hac habitasse platea dictumst. In ac ante et leo tristique porttitor. Aliquam eleifend justo sed magna egestas, eu egestas magna euismod. Praesent quis dolor fermentum, laoreet enim a, porttitor felis. Mauris id est bibendum, cursus arcu in, commodo magna. Aliquam erat volutpat.
-In tristique urna nunc, non varius augue mollis ut. Donec dolor velit, molestie vel aliquet id, viverra in augue. Nulla fermentum sodales ornare. Integer rhoncus scelerisque mi vitae maximus. Sed nec nunc et diam mattis interdum. Nullam pretium purus vel tortor pharetra, non bibendum erat ornare. Morbi ornare ipsum dui, et fermentum dui facilisis et. Nam convallis vestibulum nibh ut dictum. Quisque hendrerit arcu eu porta venenatis. Mauris lectus est, sodales non eleifend at, fringilla ac erat. Morbi lacinia suscipit fermentum. Duis gravida hendrerit enim, vel mollis ipsum pharetra et. Sed sit amet lectus in orci convallis varius.
-Praesent ullamcorper purus eget lacus fermentum feugiat. Mauris eleifend dictum enim vel lobortis. Aliquam erat volutpat. Proin sed placerat nulla. Phasellus congue neque felis, aliquet suscipit mauris tristique vel. Mauris dui nibh, euismod volutpat ipsum ac, molestie scelerisque ipsum. Aenean ultricies fermentum urna, in molestie orci feugiat non. Nunc a convallis turpis.'
-  })
-chapter_3_tendre_est_la_nuit.book = tendre_est_la_nuit
-chapter_3_tendre_est_la_nuit.read_count = 168
-chapter_3_tendre_est_la_nuit.save!
-
-chapter_1_comment_perdre_sa_tete = Chapter.new({
+zorro_chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
-  })
-chapter_1_comment_perdre_sa_tete.book = comment_perdre_sa_tete
-chapter_1_comment_perdre_sa_tete.save!
+  content: ''
+})
 
-chapter_2_comment_perdre_sa_tete = Chapter.new({
-  title: 'Chapter 2',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10,
-  })
-chapter_2_comment_perdre_sa_tete.book = comment_perdre_sa_tete
-chapter_2_comment_perdre_sa_tete.save!
+zorro_chapter_1.book = zorro
+221.times{Follow.create(user:leo, chapter:zorro_chapter_1)}
+300.times{Read.create(user:leo, chapter:zorro_chapter_1)}
+90.times{Review.create(user:boris, chapter: zorro_chapter_1, content:'')}
 
-chapter_3_comment_perdre_sa_tete = Chapter.new({
-  title: 'Chapter 3',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*10
-  })
-chapter_3_comment_perdre_sa_tete.book = comment_perdre_sa_tete
-chapter_3_comment_perdre_sa_tete.save!
+zorro_chapter_1.save!
 
+#------------------------
 
-# -----------------------    REVIEWS
+sylvain_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: ''
+})
 
-review_1 = Review.new ({
-  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  })
-review_1.user = leo
-review_1.chapter = chapter_1_tendre_est_la_nuit
-review_1.save!
+sylvain_chapter_1.book = sylvain
+178.times{Follow.create(user:leo, chapter:sylvain_chapter_1)}
+200.times{Read.create(user:leo, chapter:sylvain_chapter_1)}
+100.times{Review.create(user:boris, chapter: sylvain_chapter_1, content:'')}
 
-review_2 = Review.new ({
-  content: "J'ai détesté, pourquoi avoir tué le personnage principal dès la troisième ligne ? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  })
-review_2.user = bob
-review_2.chapter = chapter_1_tendre_est_la_nuit
-review_2.save!
+sylvain_chapter_1.save!
 
-review_3 = Review.new
-review_3.content = "Incroyable, c'est une révélation."
-review_3.user = pierre
-review_3.chapter = ecume_chapter_1
-review_3.save!
+#---------------------------------
 
+napoleon_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: ''
+})
 
-review_1 = Review.new ({
-  content: "Super chapitre, j'adore. J'ai hâte de découvrir la suite! orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
-  })
-review_1.user = leo
-review_1.chapter = ecume_chapter_1
-review_1.save!
+napoleon_chapter_1.book = napoleon
+178.times{Follow.create(user:leo, chapter:napoleon_chapter_1)}
+200.times{Read.create(user:leo, chapter:napoleon_chapter_1)}
+100.times{Review.create(user:boris, chapter: napoleon_chapter_1, content:'')}
 
-review_2 = Review.new ({
-  content: "J'ai détesté, pourquoi avoir tué le personnage principal dès la troisième ligne ? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."*10,
-  })
-review_2.user = bob
-review_2.chapter = ecume_chapter_1
-review_2.save!
+napoleon_chapter_1.save!
 
+#-------------------------------
 
-# follow_1 = Follow.new
-# follow_1.user = pierre
-# follow_1.chapter = ecume_chapter_1
-# follow_1.save!
+londres_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: ''
+})
 
-review_1 = Review.new
-review_1.content = "Incroyable, c'est une révélation."
-review_1.user = pierre
-review_1.chapter = ecume_chapter_1
-review_1.save!
+londres_chapter_1.book = londres
+178.times{Follow.create(user:leo, chapter:londres_chapter_1)}
+200.times{Read.create(user:leo, chapter:londres_chapter_1)}
+100.times{Review.create(user:boris, chapter: londres_chapter_1, content:'')}
 
-# -----------------------    FOLLOWS
+londres_chapter_1.save!
 
-follow_1 = Follow.new
-follow_1.user = ida
-follow_1.chapter = ecume_chapter_1
-follow_1.save!
+#------------------------------------
 
-follow_2 = Follow.new
-follow_2.user = leo
-follow_2.chapter = ecume_chapter_1
-follow_2.save!
+coder_ou_respirer_chapter_1 = Chapter.new({
+  title: 'Chapter 1',
+  content: ''
+})
 
-follow_3 = Follow.new
-follow_3.user = leo
-follow_3.chapter = chapter_2_tendre_est_la_nuit
-follow_3.save!
+coder_ou_respirer_chapter_1.book = coder_ou_respirer
+178.times{Follow.create(user:leo, chapter:coder_ou_respirer_chapter_1)}
+200.times{Read.create(user:leo, chapter:coder_ou_respirer_chapter_1)}
+100.times{Review.create(user:boris, chapter: coder_ou_respirer_chapter_1, content:'')}
 
-follow_4 = Follow.new
-follow_4.user = leo
-follow_4.chapter = chapter_1_comment_perdre_sa_tete
-follow_4.save!
-
-follow_5 = Follow.new
-follow_5.user = leo
-follow_5.chapter = chapter_3_tendre_est_la_nuit
-follow_5.save!
-
-follow_6 = Follow.new
-follow_6.user = leo
-follow_6.chapter = chapter_2_comment_perdre_sa_tete
-follow_6.save!
+coder_ou_respirer_chapter_1.save!
 
 puts "Seed complete"
+
+

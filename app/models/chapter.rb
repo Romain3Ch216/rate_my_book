@@ -4,5 +4,5 @@ class Chapter < ApplicationRecord
   has_many :follows
   has_many :scrolls
   has_many :reads
-  validates :title, :content, presence: true
+  # validates :title, :content, presence: true pour la demo
 end
