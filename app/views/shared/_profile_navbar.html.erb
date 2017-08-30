@@ -1,6 +1,38 @@
 <div class="dashboard-navbar">
-  <%= link_to root_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-    <p>< Acceuil</p>
+
+  <div class="navbar-wagon-item">
+    <%= link_to root_path, class: "navbar-wagon-link"  do %>
+    <p>Accueil</p>
   <% end %>
-  <h1>Profile</h1>
+  </div>
+
+  <div class="logo">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
+    <h1>RateMyBook</h1>
+  </div>
+
+  <div class="search-navbar-right hidden-xs hidden-sm">
+    <% if user_signed_in? %>
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <ul class="list-inline">
+          <li>
+            <%= link_to dashboard_users_path, class: "navbar-wagon-link" do %>
+              <p>Profile</p>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, class: "navbar-wagon-link", method: :delete do %>
+              <p>Se déconnecter</p>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+      <%= link_to t(".sign_in", default: "S'inscrire / Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+
 </div>
