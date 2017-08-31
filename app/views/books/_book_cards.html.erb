@@ -17,7 +17,7 @@
           <%= image_tag "comment.svg" %>
         </div>
         <div class="stat">
-          <p><%= book.chapters.map { |chapter| chapter.reads.count }.inject(0) { |result, element| result + element } %></p>
+          <p><%= book.chapters.map { |chapter| chapter.reads.count { |read| read.is_read == true } }.inject(0) { |result, element| result + element } %></p>
           <p><%= book.chapters.map { |chapter| chapter.reviews.count }.inject(0) { |result, element| result + element } %></p>
         </div>
 

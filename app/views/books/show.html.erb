@@ -1,3 +1,6 @@
+<%= content_for :navbar do %>
+  <%= render 'shared/profile_navbar' %>
+<% end %>
 <div class="container margin-top">
 
   <div class="row">
@@ -85,9 +88,7 @@
             </div>
             <div class="stats">
             <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>
-
                 <%= render "shared/svg/comment" %>
-
               <p><%= chapter.reviews.count %></p>
             </div>
 

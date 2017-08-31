@@ -97,8 +97,14 @@
 }
 
 .logo {
-  // margin: 0 auto;
-  // margin-top: 18px;
+  position: absolute;
+  width: 500px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
