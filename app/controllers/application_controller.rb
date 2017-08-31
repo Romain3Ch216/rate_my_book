@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { host: ENV["HOST"] || "www.ratemybook.xyz" }
+    { host: ENV["HOST"] || "www.ratemybook.herokuapp.com" }
   end
 end
 
