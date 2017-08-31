@@ -61,7 +61,7 @@
           <div class="chapter-title">
             <%= chapter.title %>
           </div>
-          <% if @ordered_chapter.index(chapter) == 0 %>
+          <% if @ordered_chapter.reverse.index(chapter) == 0 %>
             <div class="progress-bar">
               <div class="progress-test">
                 <div class="rounded">
@@ -76,7 +76,7 @@
             </div>
           <% end %>
           <div class="chapter-stats">
-          <% unless @ordered_chapter.index(chapter) == 0 %>
+          <% unless @ordered_chapter.reverse.index(chapter) == 0 %>
             <div class="stats">
               <%= render "shared/svg/flag" %>
               <p><%= chapter.follows.count %></p>
