@@ -221,7 +221,7 @@ atacama_chapter_2 = Chapter.new({
 n = a.sample + 20
 atacama_chapter_2.book = atacama
 User.all[1,n].each{|user| Read.create(user: user, chapter:atacama_chapter_2, is_read: true)}
-User.all[0,n-11].each{|user| Follow.create(user: user, chapter:atacama_chapter_2)}
+User.all[0,46].each{|user| Follow.create(user: user, chapter:atacama_chapter_2)}
 User.all[0,n-23].each{|user| Review.create(user: user, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)}
 review_1 = Review.create(user: boris, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
 User.all[0, n -30].each{|user| Upvote.create(user: user, review: review_1)}
