@@ -12,8 +12,9 @@ $(document).ready(function() {
 
   $(".blocked").hover(function(e) {
     $(this).css({
-      "background-color": "rgba(230, 230, 230, 1)",
-      "border-left-color": "rgba(230, 230, 230, 1)",
+      "background-color": "rgba(255, 255, 255, 1)",
+      "border-left-color": "rgba(255, 255, 255, 1)",
+      "opacity": "0.3"
     });
   })
 

@@ -261,11 +261,12 @@
 }
 
 .blocked {
-  background-color: rgba(230, 230, 230, 1);
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 0.3;
   &:hover {
-    background-color: rgba(230, 230, 230, 1);
+    background-color: rgba(255, 255, 255, 1);
   }
   &:focus {
-    background-color: rgba(230, 230, 230, 1);
+    background-color: rgba(255, 255, 255, 1);
   }
 }
