@@ -13,19 +13,6 @@ puts "Generating seed"
 
 # -----------------------    USERS
 
-romain = User.new ({
-  first_name: 'Romain',
-  last_name: 'Thoreau',
-  sex: 'Homme',
-  age: 21,
-  description: 'Passionné par la lecture',
-  email: 'romain.thoreau@gmail.com',
-  password: '123soleil'
-  })
-
-romain.save!
-
-
 pierre = User.new ({
   first_name: 'Pierre',
   last_name: 'Dutronc',
@@ -377,6 +364,18 @@ User.all[0,n-11].each{|user| Follow.create(user: user, chapter:coder_ou_respirer
 User.all[0,n-23].each{|user| Review.create(user: user, chapter:coder_ou_respirer_chapter_1, content: '...')}
 
 coder_ou_respirer_chapter_1.save!
+
+romain = User.new ({
+  first_name: 'Romain',
+  last_name: 'Thoreau',
+  sex: 'Homme',
+  age: 21,
+  description: 'Passionné par la lecture',
+  email: 'romain.thoreau@gmail.com',
+  password: '123soleil'
+  })
+
+romain.save!
 
 puts "Seed complete"
 
