@@ -126,7 +126,7 @@ ecume.save!
 
 atacama = Book.new ({
   title: "Atacama ou la Vertu de l'Ignorance",
-  summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis nisi, pretium sit amet mauris vel, bibendum lobortis ante. Maecenas vel fringilla elit.",
+  summary: "La folle histoire d'un agent secret chilien en voyage au pays des merveilles. Accompagné de son fidèle compagnon, Diego le Brésilien, une perruche péruvienne, il part déjouer le complot qui vise sa majesté.",
   category: 'Fantastique'
   })
 atacama.user = leo
@@ -225,7 +225,7 @@ User.all[0,46].each{|user| Follow.create(user: user, chapter:atacama_chapter_2)}
 User.all[0,n-23].each{|user| Review.create(user: user, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)}
 review_1 = Review.create(user: boris, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
 User.all[0, n -30].each{|user| Upvote.create(user: user, review: review_1)}
-review_2 = Review.create(user: lana, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
+review_2 = Review.create(user: lana, chapter:atacama_chapter_2, content: "Très bon chapitre, je suis absorbée par l'intrigue. Cependant, je ne comprends pas, Carlota n'a fait de mal à personne.")
 User.all[0, n -25].each{|user| Upvote.create(user: user, review: review_2)}
 review_3 = Review.create(user: ida, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
 User.all[0, n -13].each{|user| Upvote.create(user: user, review: review_3)}
