@@ -6,7 +6,7 @@
 
   <div class="profile-details">
     <% if current_user.photo? %>
-      <%= cl_image_tag(current_user.photo,  width: 50, height: 50, radius: :max, crop: :fill,  gravity: :face)%>
+      <%= cl_image_tag(current_user.photo.path,  width: 70, height: 70, radius: :max, crop: :fill)%>
     <% else %>
       <%= image_tag "user.svg", width: "75"%>
     <% end %>

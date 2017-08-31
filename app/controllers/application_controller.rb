@@ -8,8 +8,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
 
-  def default_url_options
-    { host: ENV["HOST"] || "www.ratemybook.herokuapp.com" }
-  end
 end
 
