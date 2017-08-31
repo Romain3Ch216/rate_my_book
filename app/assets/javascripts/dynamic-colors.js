@@ -10,6 +10,15 @@ $(document).ready(function() {
     });
   })
 
+  $(".blocked").hover(function(e) {
+    $(this).css({
+      "background-color": "rgba(255, 255, 255, 1)",
+      "border-left-color": "rgba(255, 255, 255, 1)",
+      "opacity": "0.3"
+    });
+  })
+
+
   // $(".comment-link").hover(function(e) {
   //   $("#comment-icon").attr("fill", e.type === "mouseenter"?"#B2B2B2":"#C0C0C0");
   // });
