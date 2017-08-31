@@ -1,25 +1,30 @@
 <div class="search-navbar">
 
-  <div class="category-name">
-    <div class="logo">
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "logo.svg" %>
-      <% end %>
-    </div>
+  <div class="navbar-wagon-item">
+  <%= link_to root_path, class: "navbar-wagon-link"  do %>
+    <p>Accueil</p>
+  <% end %>
   </div>
 
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="search-navbar-headline">
+  <h1>Les Plus Populaires</h1>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "popular.svg" %>
+    <% end %>
+  </div>
+
+  <div class="search-navbar-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <ul class="list-inline">
           <li>
-            <%= link_to dashboard_users_path, class: "link" do %>
+            <%= link_to dashboard_users_path, class: "navbar-wagon-link" do %>
               <p>Profile</p>
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, class: "link", method: :delete do %>
+            <%= link_to destroy_user_session_path, class: "navbar-wagon-link", method: :delete do %>
               <p>Se déconnecter</p>
             <% end %>
           </li>

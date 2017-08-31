@@ -1,5 +1,8 @@
-<div class="dashboard">
+<%= content_for :navbar do %>
+  <%= render 'shared/profile_navbar' %>
+<% end %>
 
+<div class="dashboard">
 
   <div class="profile-details">
     <% if current_user.photo? %>

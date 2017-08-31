@@ -1,3 +1,6 @@
+<%= content_for :navbar do %>
+  <%= render 'shared/profile_navbar' %>
+<% end %>
 <div class="container margin-top">
 
   <div class="row">
@@ -54,13 +57,9 @@
         <div class="progress-bar">
           <div class="progress-test">
             <div class="rounded">
-              <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
+              <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px; background-color: <%= @book.hex_for_category %>"></div>
             </div>
           </div>
-
-          <!-- <progress max="50" value="<%= chapter.follows.count %>">
-            <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
-          </progress> -->
           <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
         </div>
       <% end %>

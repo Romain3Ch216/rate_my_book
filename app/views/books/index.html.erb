@@ -1,3 +1,7 @@
+<%= content_for :navbar do %>
+  <%= render 'shared/search_navbar' %>
+<% end %>
+
 <div class="index-content">
   <div class="row">
     <% @books.each do |book| %>
