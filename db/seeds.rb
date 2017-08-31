@@ -230,7 +230,6 @@ User.all[0, n -25].each{|user| Upvote.create(user: user, review: review_2)}
 review_3 = Review.create(user: ida, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
 User.all[0, n -13].each{|user| Upvote.create(user: user, review: review_3)}
 
-
 atacama_chapter_2.save!
 
 
@@ -255,7 +254,7 @@ tendre_est_la_nuit_chapter_1.save!
 
 racines_chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: ''
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra viverra purus, sed rhoncus lacus pretium a. Duis elementum augue a lobortis eleifend. Nunc mollis risus tincidunt, hendrerit mauris a, congue augue. Quisque eu lorem ac nisl tristique lobortis. Sed a metus libero. Vivamus sit amet diam nec quam gravida venenatis non sed dui. Nullam convallis justo enim, eget malesuada nisl euismod ut. Nullam eget felis nulla. Donec eu fermentum ligula. Aenean quis nibh risus. In laoreet porta est, eu volutpat risus vulputate dictum. Vivamus vestibulum, nisi faucibus gravida porta, orci nisi ullamcorper erat, et finibus nibh nisi in tellus. In at iaculis lectus, eget sodales elit. Nam commodo ante sapien, et luctus nulla commodo sit amet. Donec justo dolor, lobortis nec ante et, dignissim aliquet justo.'
 })
 
 racines_chapter_1.book = racines
@@ -269,7 +268,7 @@ racines_chapter_1.save!
 
 ecume_chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: ''
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra viverra purus, sed rhoncus lacus pretium a. Duis elementum augue a lobortis eleifend. Nunc mollis risus tincidunt, hendrerit mauris a, congue augue. Quisque eu lorem ac nisl tristique lobortis. Sed a metus libero. Vivamus sit amet diam nec quam gravida venenatis non sed dui. Nullam convallis justo enim, eget malesuada nisl euismod ut. Nullam eget felis nulla. Donec eu fermentum ligula. Aenean quis nibh risus. In laoreet porta est, eu volutpat risus vulputate dictum. Vivamus vestibulum, nisi faucibus gravida porta, orci nisi ullamcorper erat, et finibus nibh nisi in tellus. In at iaculis lectus, eget sodales elit. Nam commodo ante sapien, et luctus nulla commodo sit amet. Donec justo dolor, lobortis nec ante et, dignissim aliquet justo.'
 })
 
 ecume_chapter_1.book = ecume
@@ -376,6 +375,11 @@ romain = User.new ({
 
 romain.save!
 romain.photo_url = url
+
+Follow.create(user: romain, chapter: ecume_chapter_1)
+Follow.create(user: romain, chapter: racines_chapter_1)
+Scroll.create(user: romain, chapter: racines_chapter_1, scroll_value: 0)
+
 puts "Seed complete"
 
 
