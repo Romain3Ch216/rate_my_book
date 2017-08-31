@@ -64,14 +64,10 @@
           <% if @ordered_chapter.reverse.index(chapter) == 0 %>
             <div class="progress-bar">
               <div class="progress-test">
-                <div class="rounded">
-                  <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
+                <div class="rounded" style="background-color: <%= @book.hex_for_category %>;">
+                  <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;background-color: <%= @book.hex_for_category %>"></div>
                 </div>
               </div>
-
-              <!-- <progress max="50" value="<%= chapter.follows.count %>">
-                <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
-              </progress> -->
               <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
             </div>
           <% end %>
