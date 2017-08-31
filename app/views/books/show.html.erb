@@ -54,7 +54,7 @@
           Le prochain chapitre est en cours d'écriture. L'auteur pourra le publier si 50 lecteurs l'ont demandé.
       </div>
     <% end %>
-    <% @ordered_chapter.each_with_index do |chapter, index| %>
+    <% @ordered_chapter.reverse.each_with_index do |chapter, index| %>
       <% if current_user.read_previews_chapter(@book)[index] %>
         <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
         <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
