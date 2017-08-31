@@ -16,7 +16,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    byebug
     @book.chapters.all.each do |chapter|
       chapter.reads.create(user: current_user)
     end
