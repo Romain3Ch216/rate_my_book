@@ -43,6 +43,14 @@
   <!-- Chapter list -->
   <div class="chapter-container">
     <h2>Sommaire</h2>
+    <% if current_user.read_last_chapter?(@book) %>
+      <div class="chapter-info blocked" data-color="<%= @book.hex_for_category %>">
+        <div class="chapter-title">
+          Chapitre <%= @book.chapters.count + 1 %>
+        </div>
+          Le prochain chapitre est en cours d'écriture. L'auteur pourra le publier si 50 lecteurs l'ont demandé.
+      </div>
+    <% end %>
     <% @ordered_chapter.each_with_index do |chapter, index| %>
       <% if current_user.read_previews_chapter(@book)[index] %>
         <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
@@ -134,8 +142,11 @@
           <div class="chapter-title">
             <%= chapter.title %>
           </div>
+          <div>
+            Pour lire ce chapitre, vous devez avoir lu les précédents.
+          </div>
           <% if @ordered_chapter.index(chapter) == 0 %>
-            <div class="progress-bar">
+            <div class="progress-bar hidden">
               <div class="progress-test">
                 <div class="rounded">
                   <div class="progress-bar-test" style="width: <%= chapter.follows.count * 5 %>px;"></div>
@@ -148,7 +159,7 @@
               <p class="progress-score"><%= chapter.follows.count %>/50 votes</p>
             </div>
           <% end %>
-          <div class="chapter-stats">
+          <div class="chapter-stats hidden">
           <% unless @ordered_chapter.index(chapter) == 0 %>
             <div class="stats">
               <%= render "shared/svg/flag" %>
