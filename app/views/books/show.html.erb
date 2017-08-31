@@ -43,10 +43,8 @@
   <!-- Chapter list -->
   <div class="chapter-container">
     <h2>Sommaire</h2>
-
     <% @ordered_chapter.each_with_index do |chapter, index| %>
       <% if current_user.read_previews_chapter(@book)[index] %>
-        <%= current_user.read_previews_chapter(@book)[index] %>
         <div class="chapter-info" data-color="<%= @book.hex_for_category %>">
         <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
           <div class="chapter-title">
@@ -133,7 +131,6 @@
         </div>
       <% else %>
         <div class="chapter-info blocked" data-color="<%= @book.hex_for_category %>">
-        <%= link_to "", chapter_path(chapter), class: "chapter-link" %>
           <div class="chapter-title">
             <%= chapter.title %>
           </div>
