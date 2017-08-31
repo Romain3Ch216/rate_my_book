@@ -368,7 +368,7 @@ romain = User.new ({
   last_name: 'Thoreau',
   sex: 'Homme',
   age: 21,
-  description: 'Passionné par la lecture',
+  description: 'Photographe passionné par la lecture',
   email: 'romain.thoreau@gmail.com',
   password: '123soleil'
   })

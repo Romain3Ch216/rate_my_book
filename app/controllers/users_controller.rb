@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @follow_chapters = []
     current_user.follows.each {|follow| @follow_chapters << follow.chapter }
     @follow_chapters.sort_by { |chapter| chapter.created_at }.reverse
+    @no_footer = true
   end
 
   def show
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
   def become_writer
     @disable_nav = true
     @book = Book.new
+    @no_footer = true
   end
 
   def update

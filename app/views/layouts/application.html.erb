@@ -35,7 +35,7 @@
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render 'shared/footer' %>
+    <%= render 'shared/footer' unless @no_footer%>
     <%= javascript_include_tag 'application' %>
     <%= yield :after_js %>
   </body>

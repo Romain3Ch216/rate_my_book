@@ -80,7 +80,7 @@
             <% end %>
             <div class="stats">
               <%= render "shared/svg/eye" %>
-              <p><%= chapter.reads.count %></p>
+              <p><%= chapter.reads.count { |read| read.is_read == true } %></p>
             </div>
             <div class="stats">
             <%= link_to "", "#open-modal-#{chapter.id}", class: "comment-link"  %>
