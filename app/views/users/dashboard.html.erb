@@ -22,7 +22,7 @@
       <p class="tab-title">Lecteur</p>
       <div class="tabs">
         <a class="tab box-tab active" data-target="#news">
-          <p>Dernières sorties</p>
+          <p style="font-size: 12px">Chapitres suivis récemment publiés</p>
           <%= image_tag "right-arrow.svg", class: "tab-icon" %>
         </a>
         <a class="tab box-tab" data-target="#follows">
@@ -63,7 +63,7 @@
 <!-- Dernières sorties TAB -->
       <div class="tab-content" id="news">
         <div class="view-header">
-          <h1>Dernières sorties</h1>
+          <h1>Chapitres suivis récemment publiés</h1>
         </div>
         <div class="view-body">
           <% @follow_chapters.each do |chapter| %>
