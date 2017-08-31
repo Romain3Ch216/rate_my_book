@@ -1,0 +1,5 @@
+meta_product_name: "RateMyBook"
+meta_title: "RateMyBook - Le livre le plus plébiscité est édité"
+meta_description: "Lisez. Commentez. Votez. Influencez l'écriture d'un Best Seller. Vous avez du talent ? Le livre le plus plébiscité est édité !"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
