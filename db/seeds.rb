@@ -24,6 +24,7 @@ pierre = User.new ({
   })
 pierre.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1503912359/s4wfw81yyebjrrs52l17.jpg'
 boris = User.new ({
   first_name: 'Boris',
   last_name: 'Durand',
@@ -34,6 +35,7 @@ boris = User.new ({
   password: '123soleil'
   })
 boris.save!
+boris.photo_url = url
 
 bob = User.new ({
   first_name: 'Bob',
@@ -57,6 +59,7 @@ leo = User.new ({
   })
 leo.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1504188053/duras_qxfstz.jpg'
 ida = User.new ({
   first_name: 'Ida',
   last_name: 'Fornebu',
@@ -67,6 +70,7 @@ ida = User.new ({
   password: '123soleil'
   })
 ida.save!
+ida.photo_url = url
 
 arnaud = User.new ({
   first_name: 'Arnaud',
@@ -80,9 +84,10 @@ arnaud = User.new ({
 
 arnaud.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1504188271/natalie_hk1zvz.jpg'
 lana = User.new ({
   first_name: 'Lana',
-  last_name: 'Fornebu',
+  last_name: 'Duras',
   sex: 'Femme',
   age: 27,
   description: 'Jeune écrivain talentueux',
@@ -91,11 +96,12 @@ lana = User.new ({
 })
 
 lana.save!
+lana.photo_url = url
 
 100.times {
   user = User.new({
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     sex: 'Femme',
     age: '26',
     description: 'lecteur',
@@ -194,7 +200,7 @@ sylvain.save!
 
 atacama_chapter_1 = Chapter.new({
   title: 'Chapter 1',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra viverra purus, sed rhoncus lacus pretium a. Duis elementum augue a lobortis eleifend. Nunc mollis risus tincidunt, hendrerit mauris a, congue augue. Quisque eu lorem ac nisl tristique lobortis. Sed a metus libero. Vivamus sit amet diam nec quam gravida venenatis non sed dui. Nullam convallis justo enim, eget malesuada nisl euismod ut. Nullam eget felis nulla. Donec eu fermentum ligula. Aenean quis nibh risus. In laoreet porta est, eu volutpat risus vulputate dictum. Vivamus vestibulum, nisi faucibus gravida porta, orci nisi ullamcorper erat, et finibus nibh nisi in tellus. In at iaculis lectus, eget sodales elit. Nam commodo ante sapien, et luctus nulla commodo sit amet. Donec justo dolor, lobortis nec ante et, dignissim aliquet justo. '
 })
 
 atacama_chapter_1.book = atacama
@@ -209,33 +215,25 @@ atacama_chapter_1.save!
 
 atacama_chapter_2 = Chapter.new({
   title: 'Chapter 2',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15,
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra viverra purus, sed rhoncus lacus pretium a. Duis elementum augue a lobortis eleifend. Nunc mollis risus tincidunt, hendrerit mauris a, congue augue. Quisque eu lorem ac nisl tristique lobortis. Sed a metus libero. Vivamus sit amet diam nec quam gravida venenatis non sed dui. Nullam convallis justo enim, eget malesuada nisl euismod ut. Nullam eget felis nulla. Donec eu fermentum ligula. Aenean quis nibh risus. In laoreet porta est, eu volutpat risus vulputate dictum. Vivamus vestibulum, nisi faucibus gravida porta, orci nisi ullamcorper erat, et finibus nibh nisi in tellus. In at iaculis lectus, eget sodales elit. Nam commodo ante sapien, et luctus nulla commodo sit amet. Donec justo dolor, lobortis nec ante et, dignissim aliquet justo. '
 })
 
 n = a.sample + 20
 atacama_chapter_2.book = atacama
 User.all[1,n].each{|user| Read.create(user: user, chapter:atacama_chapter_2, is_read: true)}
 User.all[0,n-11].each{|user| Follow.create(user: user, chapter:atacama_chapter_2)}
-User.all[0,n-23].each{|user| Review.create(user: user, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
+User.all[0,n-23].each{|user| Review.create(user: user, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)}
+review_1 = Review.create(user: boris, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
+User.all[0, n -30].each{|user| Upvote.create(user: user, review: review_1)}
+review_2 = Review.create(user: lana, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
+User.all[0, n -25].each{|user| Upvote.create(user: user, review: review_2)}
+review_3 = Review.create(user: ida, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'*3)
+User.all[0, n -13].each{|user| Upvote.create(user: user, review: review_3)}
 
 
 atacama_chapter_2.save!
 
-atacama_chapter_3 = Chapter.new({
-  title: 'Chapter 3',
-  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'*15,
-})
 
-
-atacama_chapter_3.book = atacama
-
-n = a.sample
-User.all[1,n].each{|user| Read.create(user: user, chapter:atacama_chapter_3, is_read: true)}
-User.all[0,23].each{|user| Follow.create(user: user, chapter:atacama_chapter_3)}
-User.all[0,n-23].each{|user| Review.create(user: user, chapter:atacama_chapter_3, content: '...')}
-
-
-atacama_chapter_3.save!
 
 #------------------------------
 
@@ -365,6 +363,7 @@ User.all[0,n-23].each{|user| Review.create(user: user, chapter:coder_ou_respirer
 
 coder_ou_respirer_chapter_1.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1504187608/IMG_1479_zs507v.jpg'
 romain = User.new ({
   first_name: 'Romain',
   last_name: 'Thoreau',
@@ -376,7 +375,7 @@ romain = User.new ({
   })
 
 romain.save!
-
+romain.photo_url = url
 puts "Seed complete"
 
 

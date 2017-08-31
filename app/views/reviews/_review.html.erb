@@ -14,9 +14,9 @@
     <p class="reviews_count_<%= review.id %>" ><%= review.upvotes.size %></p>
   </div>
   <div class="review-content">
-    <% if current_user.photo? %>
+    <% if review.user.photo? %>
       <%= link_to dashboard_users_path, class: "review-user-avatar" do %>
-        <%= cl_image_tag(current_user.photo,  width: 75, height: 75, radius: :max, crop: :fill,  gravity: :face)%>
+        <%= cl_image_tag(review.user.photo.path,  width: 75, height: 75, radius: :max, crop: :fill,  gravity: :face)%>
       <% end %>
     <% else %>
       <%= link_to dashboard_users_path do %>
