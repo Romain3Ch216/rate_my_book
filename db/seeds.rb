@@ -24,6 +24,7 @@ pierre = User.new ({
   })
 pierre.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1503912359/s4wfw81yyebjrrs52l17.jpg'
 boris = User.new ({
   first_name: 'Boris',
   last_name: 'Durand',
@@ -34,6 +35,7 @@ boris = User.new ({
   password: '123soleil'
   })
 boris.save!
+boris.photo_url = url
 
 bob = User.new ({
   first_name: 'Bob',
@@ -57,6 +59,7 @@ leo = User.new ({
   })
 leo.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1504188053/duras_qxfstz.jpg'
 ida = User.new ({
   first_name: 'Ida',
   last_name: 'Fornebu',
@@ -67,6 +70,7 @@ ida = User.new ({
   password: '123soleil'
   })
 ida.save!
+ida.photo_url = url
 
 arnaud = User.new ({
   first_name: 'Arnaud',
@@ -80,6 +84,7 @@ arnaud = User.new ({
 
 arnaud.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1504188271/natalie_hk1zvz.jpg'
 lana = User.new ({
   first_name: 'Lana',
   last_name: 'Fornebu',
@@ -91,11 +96,12 @@ lana = User.new ({
 })
 
 lana.save!
+lana.photo_url = url
 
 100.times {
   user = User.new({
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     sex: 'Femme',
     age: '26',
     description: 'lecteur',
@@ -216,6 +222,9 @@ n = a.sample + 20
 atacama_chapter_2.book = atacama
 User.all[1,n].each{|user| Read.create(user: user, chapter:atacama_chapter_2, is_read: true)}
 User.all[0,n-11].each{|user| Follow.create(user: user, chapter:atacama_chapter_2)}
+Review.create(user: boris, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Review.create(user: lana, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+Review.create(user: ida, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
 User.all[0,n-23].each{|user| Review.create(user: user, chapter:atacama_chapter_2, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
 
 
@@ -365,6 +374,7 @@ User.all[0,n-23].each{|user| Review.create(user: user, chapter:coder_ou_respirer
 
 coder_ou_respirer_chapter_1.save!
 
+url = 'http://res.cloudinary.com/dbojzvt5e/image/upload/v1504187608/IMG_1479_zs507v.jpg'
 romain = User.new ({
   first_name: 'Romain',
   last_name: 'Thoreau',
@@ -376,7 +386,7 @@ romain = User.new ({
   })
 
 romain.save!
-
+romain.photo_url = url
 puts "Seed complete"
 
 
