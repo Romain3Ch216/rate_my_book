@@ -161,7 +161,12 @@
 }
 
 .following {
-  align-self: end;
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  img {
+    padding-right: 5px;
+  }
 }
 
 .comment-rollback {
