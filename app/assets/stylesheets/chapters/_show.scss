@@ -112,6 +112,7 @@
 .comment:hover {
   background-color: $reader;
   color: rgba(90, 90, 90, 1);
+  text-decoration: none;
 }
 
 #new_review {
@@ -138,11 +139,6 @@
   float: left;
 }
 
-#follow {
-  position: relative;
-  bottom: 6px;
-}
-
 #bookmark {
   background-color: transparent;
   border: none;
@@ -161,9 +157,10 @@
 }
 
 .following {
-  align-self: flex-end;
+  height: 35px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: flex-end;
   img {
     padding-right: 5px;
   }
